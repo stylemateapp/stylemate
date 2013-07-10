@@ -1,0 +1,6 @@
+runtime
+assets
+.idea
+reports
+environment.php
+db-local.php
