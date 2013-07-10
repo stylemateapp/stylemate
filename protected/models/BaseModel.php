@@ -50,6 +50,25 @@ class BaseModel extends CActiveRecord
     }
 
     /**
+     * named scope ordering by name field
+     *
+     * @param string $direction ASC or DESC ordering
+     *
+     * @return $this
+     */
+
+    public function orderByName($direction = 'ASC')
+    {
+        $this->getDbCriteria()->mergeWith(
+            array(
+                 'order' => 'name ' . $direction,
+            )
+        );
+
+        return $this;
+    }
+
+    /**
      * named scope ordering by sort field
      *
      * @param string $direction ASC or DESC ordering
