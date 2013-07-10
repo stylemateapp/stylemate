@@ -1,40 +1,17 @@
-.form .errorMessage {
+form .errorMessage {
     color: #ff6357;
 }
 
-.form div.success input, .form div.success textarea, .form div.success select, .form input.success, .form textarea.success, .form select.success {
+form .error {
+    color: #CC0000;
+}
+
+form div.success input, form div.success textarea, form div.success select, form input.success, form textarea.success, form select.success {
     background: #E6EFC2;
     border-color: #C6D880;
 }
 
-.form div.error input, .form div.error textarea, .form div.error select, .form input.error, .form textarea.error, .form select.error {
+form div.error input, form div.error textarea, form div.error select, form input.error, form textarea.error, form select.error {
     background: #FFEEEE;
     border-color: #CC0000;
-}
-
-.jumbotron:after {
-    background: url("../img/bs-docs-masthead-pattern.png") repeat scroll center center transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    left: 0;
-    opacity: 0.4;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.subhead {
-    border-bottom: 1px solid #DDDDDD;
-    text-align: left;
-}
-
-.jumbotron {
-    background: linear-gradient(45deg, #020031 0%, #6D3353 100%) repeat scroll 0 0 transparent;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
-    color: #FFFFFF;
-    padding: 40px 0;
-    position: relative;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
 }
