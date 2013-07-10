@@ -1,7 +1,7 @@
 <?php
     /**
      * @var Controller   $this
-     * @var Category     $model
+     * @var ClothingType $model
      * @var TbActiveForm $form
      */
 ?>
@@ -10,7 +10,7 @@
     $form = $this->beginWidget(
         'bootstrap.widgets.TbActiveForm',
         array(
-             'id'                     => 'category-form',
+             'id'                     => 'clothing-type-form',
              'enableClientValidation' => true,
              'clientOptions'          => array(
                  'validateOnSubmit' => true,
@@ -25,8 +25,6 @@
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->textFieldRow($model, 'name', array('class' => 'span5', 'maxlength' => 45)); ?>
-
-    <?php echo $form->dropDownListRow($model, 'category_group_id', CategoryGroup::getListData(), array('class' => 'span5')); ?>
 
     <div class="form-actions">
         <?php

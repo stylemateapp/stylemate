@@ -23,11 +23,17 @@
         public function actions()
         {
             return array(
+                'index'          => 'application.components.actions.frontend.admin.IndexAdminAction',
+
                 'category'       => 'application.components.actions.common.Manage',
                 'categoryDelete' => 'application.components.actions.common.Delete',
-                'index'          => 'application.components.actions.frontend.admin.IndexAdminAction',
                 'categoryCreate' => 'application.components.actions.frontend.admin.category.CreateCategoryAction',
                 'categoryUpdate' => 'application.components.actions.frontend.admin.category.UpdateCategoryAction',
+
+                'clothingType'       => 'application.components.actions.common.Manage',
+                'clothingTypeDelete' => 'application.components.actions.common.Delete',
+                'clothingTypeCreate' => 'application.components.actions.frontend.admin.clothingType.CreateClothingTypeAction',
+                'clothingTypeUpdate' => 'application.components.actions.frontend.admin.clothingType.UpdateClothingTypeAction',
             );
         }
 

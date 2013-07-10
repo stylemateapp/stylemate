@@ -46,7 +46,7 @@
         {
             return array(
                 array('name, category_group_id', 'required'),
-                array('name', 'length', 'max' => 45),
+                array('name', 'length', 'max' => 45, 'min' => 3),
                 array('category_group_id', 'length', 'max' => 11),
                 array('id, name, category_group_id', 'safe', 'on' => 'search'),
             );
@@ -72,7 +72,7 @@
         {
             return array(
                 'id'                => 'ID',
-                'name'              => 'Name',
+                'name'              => 'Category Name',
                 'category_group_id' => 'Category Group',
             );
         }

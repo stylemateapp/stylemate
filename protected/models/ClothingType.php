@@ -43,7 +43,7 @@
         {
             return array(
                 array('name', 'required'),
-                array('name', 'length', 'max' => 45),
+                array('name', 'length', 'max' => 45, 'min' => 3),
                 array('id, name', 'safe', 'on' => 'search'),
             );
         }
@@ -67,7 +67,7 @@
         {
             return array(
                 'id'   => 'ID',
-                'name' => 'Name',
+                'name' => 'Clothing Type Name',
             );
         }
 
