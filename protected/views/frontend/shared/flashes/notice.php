@@ -4,6 +4,6 @@
      */
 ?>
 
-<div class="flash-notice" >
+<div class="alert alert-success">
     <?php echo $message; ?>
 </div>

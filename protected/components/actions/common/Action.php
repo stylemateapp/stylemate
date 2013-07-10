@@ -8,6 +8,7 @@
  * @copyright Copyright &copy; 2011 Smirnov Egor aka LastDay
  *
  * @property string $modelName
+ * @property CActiveRecord $model
  *
  */
 
@@ -28,7 +29,6 @@ class Action extends CAction
         parent::__construct($controller,$id);
 
         $this->queryId = Yii::app()->request->getParam('id');
-        $this->buildEvents();
 
         if(method_exists($this, 'beforeRun'))
         {
@@ -107,45 +107,6 @@ class Action extends CAction
     }
 
     /**
-     * This method attaches handlers for all the events defined in $events property of action class
-     * it produces code like this:
-     *
-     * <code>
-     *      $handler = new ProfileHandler();
-     *      EventDispatcher::getInstance()->onProfileChanged = array($handler, 'updateCompleteness');
-     *      EventDispatcher::getInstance()->onProfileChanged = array($handler, 'updatePhoto');
-     * </code>
-     * 
-     * @throws CException
-     * @return void
-     */
-
-    public function buildEvents()
-    {
-        /*if(!empty($this->events))
-        {
-            if(!isset($this->events['handlerClass']))
-            {
-                throw new CException(Yii::t('yii', 'Handler Class for events of action controller are not set'));
-            }
-            if(empty($this->events['events']))
-            {
-                throw new CException(Yii::t('yii', 'Events array for action controller is not set'));
-            }
-
-            $handlerClass = new $this->events['handlerClass'];
-
-            foreach($this->events['events'] as $event => $handlers)
-            {
-                foreach($handlers as $handler)
-                {
-                    EventDispatcher::getInstance()->$event = array($handlerClass, $handler);
-                }
-            }
-        }*/
-    }
-
-    /**
      * Returns model name
      * By default it's controller name
      * @return string $modelName
@@ -155,7 +116,20 @@ class Action extends CAction
     {
         if($this->_modelName === null)
         {
-            $this->_modelName = ucfirst($this->controller->id);
+            if($this->controller->id === 'admin') {
+
+                $modelName = ucfirst($this->controller->action->id);
+
+                $modelName = str_replace('Delete', '', $modelName);
+                $modelName = str_replace('Update', '', $modelName);
+                $modelName = str_replace('Create', '', $modelName);
+
+                $this->_modelName = $modelName;
+            }
+            else {
+
+                $this->_modelName = ucfirst($this->controller->id);
+            }
         }
 
         return $this->_modelName;
@@ -181,33 +155,5 @@ class Action extends CAction
     public function setModelName($value)
     {
         $this->_modelName = $value;
-    }
-
-    /**
-     * Call method from Manager Class
-     * @param string $managerClassName manager class name
-     * @param string $methodName
-     * @param array $postParams
-     */
-
-    protected function callManagerMethod($managerClassName, $methodName, array $postParams)
-    {
-        $manager = new $managerClassName();
-
-        $valid = true;
-
-        // checking that we have all needed $_POST variables
-
-        foreach($postParams as $param)
-        {
-            $valid = $valid && !empty($_POST[$param]);
-        }
-
-        // if we have necessary $_POST variables call the method from manager class
-
-        if($valid)
-        {
-            $manager->$methodName();
-        }
     }
 }
