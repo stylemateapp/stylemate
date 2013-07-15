@@ -27,6 +27,7 @@
              'dataProvider' => $model->search(),
              'filter'       => $model,
              'template'     => "{items}\n{pager}",
+             'type'         => 'striped bordered condensed',
              'columns'      => array(
                  'id',
                  array(
@@ -36,10 +37,10 @@
                      'value'  => 'CHtml::link($data->name, Yii::app()->controller->createUrl("admin/categoryUpdate/", array("id" => $data->id)))',
                  ),
                  array(
-                     'name' => 'category_group_id',
+                     'name'   => 'category_group_id',
                      'header' => 'Category Group',
                      'filter' => CategoryGroup::getListData(),
-                     'value' => '$data->categoryGroup->name',
+                     'value'  => '$data->categoryGroup->name',
                  ),
                  array(
                      'class'    => 'bootstrap.widgets.TbButtonColumn',
@@ -52,7 +53,6 @@
                              'url' => 'Yii::app()->controller->createUrl("admin/categoryDelete", array("id" => $data[id]))',
                          ),
                      ),
-
                  ),
              ),
         )

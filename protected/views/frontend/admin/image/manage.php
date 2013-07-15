@@ -1,18 +1,18 @@
 <?php
     /**
      * @var Controller $this
-     * @var ClothingType $model
+     * @var Image $model
      */
 ?>
 
-<h1>Clothing Types</h1>
+<h1>Images</h1>
 
 <div class="well">
 
     <?php
         echo CHtml::link(
-            'Create New Clothing Type',
-            $this->createUrl('admin/clothingTypeCreate'),
+            'Create New Image',
+            $this->createUrl('admin/imageCreate'),
             array('class' => 'btn btn-primary')
         );
     ?>
@@ -23,7 +23,7 @@
     $this->widget(
         'bootstrap.widgets.TbGridView',
         array(
-             'id'           => 'clothing-type-grid',
+             'id'           => 'image-grid',
              'dataProvider' => $model->search(),
              'filter'       => $model,
              'template'     => "{items}\n{pager}",
@@ -33,18 +33,30 @@
                  array(
                      'name'   => 'name',
                      'type'   => 'raw',
-                     'header' => 'Clothing Type Name',
-                     'value'  => 'CHtml::link($data->name, Yii::app()->controller->createUrl("admin/clothingTypeUpdate/", array("id" => $data->id)))',
+                     'header' => 'Image File',
+                     'value'  => 'CHtml::link(CHtml::image($data->imageUrl, "", array("width" => "150")), Yii::app()->controller->createUrl("admin/imageUpdate/", array("id" => $data->id)))',
+                 ),
+                 array(
+                     'name'   => 'categoriesStyleList',
+                     'header' => 'Styles',
+                 ),
+                 array(
+                     'name'   => 'categoriesWeatherList',
+                     'header' => 'Weather',
+                 ),
+                 array(
+                     'name'   => 'categoriesOccasionList',
+                     'header' => 'Occasions',
                  ),
                  array(
                      'class'    => 'bootstrap.widgets.TbButtonColumn',
                      'template' => '{update}{delete}',
                      'buttons'  => array(
                          'update' => array(
-                             'url' => 'Yii::app()->controller->createUrl("admin/clothingTypeUpdate", array("id" => $data[id]))',
+                             'url' => 'Yii::app()->controller->createUrl("admin/imageUpdate", array("id" => $data[id]))',
                          ),
                          'delete' => array(
-                             'url' => 'Yii::app()->controller->createUrl("admin/clothingTypeDelete", array("id" => $data[id]))',
+                             'url' => 'Yii::app()->controller->createUrl("admin/imageDelete", array("id" => $data[id]))',
                          ),
                      ),
                  ),

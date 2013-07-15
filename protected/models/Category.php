@@ -96,4 +96,25 @@
                 )
             );
         }
+
+        /**
+         * Returns array with all categories with concrete category group
+         *
+         * @param null|int $categoryGroup - number of category group we want to retrieve
+         *
+         * @return array
+         */
+
+        public static function getCategoriesByGroup($categoryGroup = null)
+        {
+            if (is_int($categoryGroup)) {
+
+                return Category::model()->orderByName()->findAllByAttributes(
+                    array('category_group_id' => $categoryGroup)
+                );
+            } else {
+
+                return Category::model()->orderByName()->findAll();
+            }
+        }
     }

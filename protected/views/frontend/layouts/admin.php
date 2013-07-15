@@ -10,10 +10,18 @@
     <meta name="language" content="en">
     <meta charset="utf-8">
 
+    <?php
+        Yii::app()->clientScript->scriptMap = array('jquery.js' => false);
+    ?>
+
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/app.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/app-admin.css">
+
+    <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/magicsuggest-1.3.0-min.css">
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/jquery-1.8.3-min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/magicsuggest-1.3.0-min.js"></script>
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -33,7 +41,7 @@
                 array(
                      'items'       => array(
                          array('label' => 'Admin Home', 'url' => array('admin/index')),
-                         array('label' => 'Images', 'url' => array('admin/images')),
+                         array('label' => 'Images', 'url' => array('admin/image')),
                          array('label' => 'Categories', 'url' => array('admin/category')),
                          array('label' => 'Clothing Types', 'url' => array('admin/clothingType')),
                          array('label' => 'Logout', 'url' => array('site/logout')),

@@ -89,4 +89,17 @@
                 )
             );
         }
+
+        /**
+         * @return array
+         */
+
+        public static function getListData()
+        {
+            return CHtml::listData(
+                ClothingType::model()->orderByName()->findAll(),
+                'id',
+                'name'
+            );
+        }
     }

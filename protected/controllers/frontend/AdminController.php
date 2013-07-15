@@ -25,6 +25,13 @@
             return array(
                 'index'          => 'application.components.actions.frontend.admin.IndexAdminAction',
 
+                'image'          => 'application.components.actions.common.Manage',
+                'imageDelete'    => 'application.components.actions.common.Delete',
+                'imageCreate'    => 'application.components.actions.frontend.admin.image.CreateImageAction',
+                'imageUpdate'    => 'application.components.actions.frontend.admin.image.UpdateImageAction',
+
+                'imageFieldDelete' => 'application.components.actions.common.Delete',
+
                 'category'       => 'application.components.actions.common.Manage',
                 'categoryDelete' => 'application.components.actions.common.Delete',
                 'categoryCreate' => 'application.components.actions.frontend.admin.category.CreateCategoryAction',

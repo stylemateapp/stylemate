@@ -1,3 +1,11 @@
+.ms-ctn {
+    width: 500px !important;
+}
+
+.ms-res-ctn {
+    width: 500px !important;
+}
+
 .jumbotron:after {
     background: url("../img/bs-docs-masthead-pattern.png") repeat scroll center center transparent;
     bottom: 0;

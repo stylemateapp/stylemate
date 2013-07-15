@@ -12,7 +12,7 @@
             <?php echo CHtml::link('Admin Home', $this->createUrl('admin/index')); ?>
         </li>
         <li>
-            <?php echo CHtml::link('Images', $this->createUrl('admin/images')); ?>
+            <?php echo CHtml::link('Images', $this->createUrl('admin/image')); ?>
         </li>
         <li>
             <?php echo CHtml::link('Categories', $this->createUrl('admin/category')); ?>
