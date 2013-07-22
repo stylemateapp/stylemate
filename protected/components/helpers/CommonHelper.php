@@ -7,7 +7,7 @@
  *
  * @author    Smirnov Egor <egorsmir@gmail.com>
  * @link      http://lastdayz.ru
- * @copyright Copyright &copy; 2012 Smirnov Egor aka LastDay
+ * @copyright Copyright &copy; 2013 Smirnov Egor aka LastDay
  *
  */
 

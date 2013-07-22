@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="stylemate">
+<head>
+    <meta charset="utf-8">
+    <title>Stylemate</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div ng-include src="'app/views/debug.html'"></div>
+
+<div id="container" ui-view>
+
+</div>
+
+
+<script src="components/angular/angular.min.js"></script>
+<script src="components/angular-mobile/angular-mobile.min.js"></script>
+<script src="components/angular-ui-router/angular-ui-router.min.js"></script>
+
+<script src="app/scripts/app.js"></script>
+<script src="app/scripts/modules/states/states.js"></script>
+<script src="app/scripts/modules/authorization/login.js"></script>
+
+<script src="app/scripts/controllers/login.js"></script>
+<script src="app/scripts/controllers/sign-up.js"></script>
+<script src="app/scripts/controllers/home-page.js"></script>
+
+</body>
+</html>
