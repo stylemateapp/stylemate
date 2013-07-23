@@ -39,6 +39,7 @@ input {
     -ms-transition: border linear .3s,box-shadow linear .3s;
     transition: border linear .3s,box-shadow linear .3s;
     -moz-appearance:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 [required] {
@@ -98,7 +99,8 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
 
 body {
 	color: #fff;
-	font: 12px Times New Roman, Arial, sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 12px;
 }
 
 #container {
@@ -151,7 +153,7 @@ header.main {
 }
 
 #sign-up {
-	background: url("../images/arrow.png") no-repeat 285px center;
+	background: url("../images/arrow.png") no-repeat 318px 6px;
 	width: 362px;
 	height: 25px;
 	font-size: 24px;

@@ -27,6 +27,7 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
             $state.transitionTo(state);
         };
 
+
         /*$rootScope.isAnythingLoading = function () {
 
             return $http.pendingRequests.length > 0;
