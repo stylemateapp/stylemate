@@ -80,6 +80,7 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
     font-size: 18px;
     opacity: 0;
     height: 21px;
+    color: #b64747;
 }
 
 .validation-message:not(:empty) {

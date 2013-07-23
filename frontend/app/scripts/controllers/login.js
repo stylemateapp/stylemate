@@ -8,10 +8,6 @@ function LoginController($scope, $http, $rootScope, $state, serverUrl) {
 
         if(!formInvalid) {
 
-            var signInButton =  angular.element(document.getElementById('sign-in-button'));
-
-            signInButton.attr('disabled', 'disabled');
-
             $http.post(serverUrl + '/user/login', {email: $scope.email, password: $scope.password})
 
                 .success(function (data, status, error, config) {
@@ -26,20 +22,16 @@ function LoginController($scope, $http, $rootScope, $state, serverUrl) {
 
                         $scope.errorMessage = 'User with provided email and password was not found';
                     }
-
-                    signInButton.removeAttr('disabled');
                 })
 
                 .error(function (data, status, error, config) {
 
                     $scope.errorMessage = 'Error logging in';
-
-                    signInButton.removeAttr('disabled');
                 });
         }
         else {
 
-            $scope.errorMessage = 'Please fill in email and password';
+            $scope.errorMessage = 'Please fill in email and password correctly';
         }
     };
 }

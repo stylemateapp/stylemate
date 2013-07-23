@@ -19,6 +19,5 @@
 
 .main-view-leave.main-view-leave-active {
     opacity: 0;
-    display:none;
+    display: none;
 }
-
