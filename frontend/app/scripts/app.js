@@ -7,7 +7,7 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
 
     // discussion on this here: https://github.com/angular-ui/ui-router/issues/110
 
-    .value('$anchorScroll', angular.noop)
+    //.value('$anchorScroll', angular.noop)
 
     .constant('serverUrl', 'http://lastdayz.ru/stylemate')
 

@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+html {
+    -webkit-text-size-adjust: none;
+    background: #fff;
+}
+
 ::-webkit-input-placeholder {
 	color: #7294b9;
 }
@@ -66,6 +71,9 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
 }
 
 .validation-message {
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
     transition: opacity .5s linear;
     margin: 0 0 7px 82px;
     font-size: 18px;
@@ -97,6 +105,7 @@ body {
 	background: url(../images/background.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
+    overflow: hidden;
 }
 
 header.main {
