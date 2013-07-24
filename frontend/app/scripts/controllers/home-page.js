@@ -1,13 +1,29 @@
 'use strict';
 
-function HomePageController($scope, $http, serverUrl) {
+function HomePageController($scope, $http,  $state, serverUrl) {
 
-    $http.get(serverUrl + '/user/location/')
-        .success(function (response) {
+    $scope.checkUserLocation = function () {
 
+        $http.get(serverUrl + '/user/getLocation/')
 
-        });
+            .success(function (data, status, error, config) {
 
+                $scope.checkUserStyles();
+            })
+
+            .error(function (data, status, error, config) {
+
+                $state.transitionTo('set-location');
+            });
+    };
+
+    $scope.checkUserStyles = function () {
+
+        // TODO
+
+    };
+
+    $scope.checkUserLocation();
 }
 
-HomePageController.$inject = ['$scope', '$http', 'serverUrl'];
+HomePageController.$inject = ['$scope', '$http', '$state', 'serverUrl'];

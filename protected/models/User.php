@@ -13,6 +13,8 @@
      *
      * The followings are the available model relations:
      * @property Category[] $categories
+     *
+     * @method User findByPk
      */
 
     class User extends BaseModel

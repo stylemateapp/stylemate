@@ -19,8 +19,9 @@
         public function actions()
         {
             return array(
-                'login'  => 'application.components.actions.frontend.user.LoginUserAction',
-                'signUp' => 'application.components.actions.frontend.user.SignUpUserAction',
+                'login'       => 'application.components.actions.frontend.user.LoginUserAction',
+                'signUp'      => 'application.components.actions.frontend.user.SignUpUserAction',
+                'getLocation' => 'application.components.actions.frontend.user.GetUserLocationAction',
             );
         }
 
