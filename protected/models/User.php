@@ -46,11 +46,19 @@
         public function rules()
         {
             return array(
-                array('email, password', 'required'),
-                array('is_facebook', 'numerical', 'integerOnly' => true),
-                array('password', 'length', 'min' => 3),
+                array('email', 'required', 'message' => 'Email cannot be blank'),
+                array('email', 'email', 'message' => 'Email is invalid'),
+                array('email', 'unique', 'message' => 'Email already exists'),
+                array('password', 'required', 'message' => 'Password cannot be blank'),
+                array('password', 'length', 'min' => 3, 'tooShort' => 'Password should be at least 3 characters'),
+                array('is_facebook', 'boolean'),
                 array('email, password, location', 'length', 'max' => 100),
-                array('role', 'length', 'max' => 15)
+                array('role', 'length', 'max' => 15),
+                array(
+                    'email, password, location',
+                    'filter',
+                    'filter' => 'strip_tags'
+                ),
             );
         }
 
