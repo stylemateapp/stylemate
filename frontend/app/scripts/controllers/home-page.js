@@ -10,4 +10,4 @@ function HomePageController($scope, $http, serverUrl) {
 
 }
 
-SignUpController.$inject = ['$scope', '$http', 'serverUrl'];
+HomePageController.$inject = ['$scope', '$http', 'serverUrl'];

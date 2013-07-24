@@ -30,4 +30,13 @@ angular.module('stylemate.states', ['ui.state'])
         };
 
         $stateProvider.state(signUp);
+
+        var setLocation = {
+            name: 'set-location',
+            url: '/set-location',
+            templateUrl: 'app/views/set-location.html',
+            controller: SetLocationController
+        };
+
+        $stateProvider.state(setLocation);
     }]);

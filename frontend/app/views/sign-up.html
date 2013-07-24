@@ -8,7 +8,7 @@
 
         </div>
     </div>
-    <div class="next">
+    <div class="next" ng-click="goToSetLocation()">
 
     </div>
 </header>
@@ -19,9 +19,11 @@
         ACCOUNT
     </div>
 
-    <form class="form" action="">
-        <input type="text" class="text-field username" placeholder="username">
-        <input type="password" class="text-field password" placeholder="password">
+    <div class="validation-message">{{errorMessage}}</div>
+
+    <form class="form" name="signUpForm">
+        <input type="text" class="text-field username" placeholder="email" ng-model="email" required>
+        <input type="password" class="text-field password" placeholder="password" ng-model="password" required>
 
         <div id="profile">
             PROFILE
@@ -31,8 +33,8 @@
     <form class="facebook-form" action="">
         <div id="facebook">
         </div>
-        <input type="text" class="text-field name" placeholder="name">
-        <input type="email" class="text-field email" placeholder="email">
+        <input type="text" class="text-field name" placeholder="name(TBD)">
+        <input type="email" class="text-field email" placeholder="email(TBD)">
     </form>
 
 </section>
