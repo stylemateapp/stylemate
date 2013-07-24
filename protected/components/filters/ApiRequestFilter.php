@@ -10,6 +10,11 @@
 
     class ApiRequestFilter extends CFilter
     {
+        protected $ignoredControllers = array(
+            array('controller' => 'user', 'action' => 'login'),
+            array('controller' => 'user', 'action' => 'signUp'),
+        );
+
         /**
          * @param CFilterChain $filterChain
          *
@@ -18,7 +23,17 @@
 
         public function preFilter(CFilterChain $filterChain)
         {
-            if(Yii::app()->controller->id == 'user' && Yii::app()->controller->action->id == 'login') {
+            $controllerIsInIgnoreList = false;
+
+            foreach($this->ignoredControllers as $controller) {
+
+                if($controller['controller'] == Yii::app()->controller->id && $controller['action'] == Yii::app()->controller->action->id) {
+
+                    $controllerIsInIgnoreList = true;
+                }
+            }
+
+            if($controllerIsInIgnoreList) {
 
                 $filterChain->run();
             }

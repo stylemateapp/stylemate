@@ -47,6 +47,10 @@ class ResponseHelper
 
             switch ($status) {
 
+                case 400:
+                    $message = 'Bad request';
+                    break;
+
                 case 401:
                     $message = 'You must be authorized to view this page.';
                     break;
@@ -103,5 +107,27 @@ class ResponseHelper
     public static function getRequestData()
     {
     	return CJSON::decode(@file_get_contents('php://input'));
+    }
+
+    /**
+     * By using model's validation errors array provide string that is convenient to use by API
+     *
+     * @param array $validationErrors - model's validation errors
+     *
+     * @return string
+     */
+
+    public static function returnValidationErrorsString($validationErrors)
+    {
+        $errorArr = array();
+
+        foreach ($validationErrors as $error) {
+
+            $errorArr[] = strtolower($error[0]);
+        }
+
+        $errorString = implode(' and ', $errorArr);
+
+        return ucfirst($errorString);
     }
 }
