@@ -108,7 +108,6 @@ body {
 	background: url(../images/background.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
-    overflow: hidden;
 }
 
 header.main {
