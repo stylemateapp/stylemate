@@ -17,7 +17,7 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
 
     }])
 
-    .run(['$rootScope', '$http', '$state', '$stateParams', function ($rootScope, $http, $state, $stateParams) {
+    .run(['$rootScope', '$http', '$state', '$stateParams', 'serverUrl', function ($rootScope, $http, $state, $stateParams, serverUrl) {
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -26,6 +26,29 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
 
             $state.transitionTo(state);
         };
+
+        $rootScope.checkUserLocation = function () {
+
+            $http.get(serverUrl + '/user/getLocation/')
+
+                .success(function (data, status, error, config) {
+
+                    $rootScope.checkUserStyles();
+                })
+
+                .error(function (data, status, error, config) {
+
+                    $state.transitionTo('set-location');
+                });
+        };
+
+        $rootScope.checkUserStyles = function () {
+
+            // TODO
+
+        };
+
+        $rootScope.checkUserLocation();
 
 
         /*$rootScope.isAnythingLoading = function () {
