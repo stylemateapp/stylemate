@@ -27,7 +27,7 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
             $state.transitionTo(state);
         };
 
-        $rootScope.checkUserLocation = function () {
+        $rootScope.checkUserProfileCompleteness = function () {
 
             $http.get(serverUrl + '/user/getLocation/')
 
@@ -48,8 +48,13 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login'])
 
         };
 
-        $rootScope.checkUserLocation();
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 
+            if(toState.name != 'sign-up') {
+
+                $rootScope.checkUserProfileCompleteness();
+            }
+        });
 
         /*$rootScope.isAnythingLoading = function () {
 
