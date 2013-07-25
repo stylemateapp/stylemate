@@ -23,6 +23,7 @@
                 'signUp'      => 'application.components.actions.frontend.user.SignUpUserAction',
                 'getLocation' => 'application.components.actions.frontend.user.GetUserLocationAction',
                 'setLocation' => 'application.components.actions.frontend.user.SetUserLocationAction',
+                'getStyles'   => 'application.components.actions.frontend.user.GetUserStylesAction',
             );
         }
 

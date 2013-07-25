@@ -51,8 +51,12 @@ var GeoLocationService = (function () {
                         if(city.long_name !== '') {
 
                             var scope = angular.element(document.getElementById('location')).scope();
-                            scope.location = city.long_name;
-                            scope.$apply();
+
+                            if(scope) {
+
+                                scope.location = city.long_name;
+                                scope.$apply();
+                            }
                         }
                     }
                 }

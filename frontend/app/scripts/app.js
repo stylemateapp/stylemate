@@ -27,8 +27,8 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
     }])
 
     .run([
-        '$rootScope', '$http', '$state', '$stateParams', 'serverUrl',
-        function ($rootScope, $http, $state, $stateParams, serverUrl) {
+        '$rootScope', '$http', '$state', '$stateParams', 'GeoLocationService', 'serverUrl',
+        function ($rootScope, $http, $state, $stateParams, GeoLocationService, serverUrl) {
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
