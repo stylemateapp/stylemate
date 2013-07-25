@@ -12,7 +12,7 @@
      * @property string     $role
      *
      * The followings are the available model relations:
-     * @property Category[] $categories
+     * @property Category[] $userStyles
      *
      * @method User findByPk
      */
@@ -39,6 +39,19 @@
         public function tableName()
         {
             return 'user';
+        }
+
+        /**
+         * @return array
+         */
+
+        public function behaviors()
+        {
+            return array(
+                'CAdvancedArBehavior' => array(
+                    'class' => 'application.extensions.CAdvancedArBehavior'
+                )
+            );
         }
 
         /**

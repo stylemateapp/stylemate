@@ -8,30 +8,24 @@
 
         </div>
     </div>
-    <div class="next">
+    <div class="next" ng-click="goToHomepage()">
 
     </div>
 </header>
 
 <section class="main">
 
+    <div class="validation-message">{{errorMessage}}</div>
+
     <div id="account">
         SELECT YOUR STYLE(S)
     </div>
 
-
     <form class="form" action="">
         <ul class="choose-style">
-            <li>hipster</li>
-            <li>grunge</li>
-            <li>preppy</li>
-            <li>boho</li>
-            <li>minimal</li>
-            <li>urban</li>
-            <li>trendy</li>
-            <li>glam</li>
-            <li>sporty</li>
-            <li>casual</li>
+            <li ng-repeat="style in styles | orderBy:style.name" ng-class="style.selected"
+                ng-click="toggleStyle(style.id)" id="user-style-{{style.id}}">{{style.name}}
+            </li>
         </ul>
     </form>
 

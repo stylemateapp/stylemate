@@ -3,6 +3,7 @@
 function SetLocationController($scope, $http, $state, GeoLocationService, serverUrl, topLocations) {
 
     $scope.topLocations = topLocations;
+    $scope.errorMessage = '';
 
     $scope.goToChooseStyles = function () {
 

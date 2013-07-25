@@ -55,7 +55,20 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
 
             $rootScope.checkUserStyles = function () {
 
-                // TODO
+                $http.get(serverUrl + '/user/getStyles/')
+
+                    .success(function (data, status, error, config) {
+
+                        if (!data.selectedStyles.length) {
+
+                            $state.transitionTo('choose-styles');
+                        }
+                    })
+
+                    .error(function (data, status, error, config) {
+
+                        $state.transitionTo('choose-styles');
+                    });
             };
 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {

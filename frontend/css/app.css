@@ -282,6 +282,12 @@ ul.choose-location li:hover {
 	font-weight: bold;
 }
 
+ul.choose-style {
+    overflow: auto;
+    height: 500px;
+    width: 481px;
+}
+
 ul.choose-style li {
 	background: #c8d6e4;
 	width: 441px;
@@ -289,14 +295,18 @@ ul.choose-style li {
 	list-style: none;
 	font-size: 22px;
 	color: #7294b9;
-	margin: 0 0 10px 87px;
+	margin: 0 0 10px 0;
 	padding: 25px 0 0 22px;
 	cursor: pointer;
 }
 
 ul.choose-style li:hover {
 	background: #dae4ee;
-	font-weight: bold;
+}
+
+ul.choose-style li.selected {
+    background: #dae4ee;
+    font-weight: bold;
 }
 
 .logo-long {

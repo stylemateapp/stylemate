@@ -24,6 +24,7 @@
                 'getLocation' => 'application.components.actions.frontend.user.GetUserLocationAction',
                 'setLocation' => 'application.components.actions.frontend.user.SetUserLocationAction',
                 'getStyles'   => 'application.components.actions.frontend.user.GetUserStylesAction',
+                'setStyles'   => 'application.components.actions.frontend.user.SetUserStylesAction',
             );
         }
 
@@ -36,14 +37,5 @@
             return array(
                 array('application.components.filters.ApiRequestFilter'),
             );
-        }
-
-        /**
-         *
-         */
-
-        public function actionLocation()
-        {
-
         }
     }
