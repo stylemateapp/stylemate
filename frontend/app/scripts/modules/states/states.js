@@ -39,4 +39,13 @@ angular.module('stylemate.states', ['ui.state'])
         };
 
         $stateProvider.state(setLocation);
+
+        var chooseStyles = {
+            name: 'choose-styles',
+            url: '/choose-styles',
+            templateUrl: 'app/views/choose-styles.html',
+            controller: ChooseStylesController
+        };
+
+        $stateProvider.state(chooseStyles);
     }]);

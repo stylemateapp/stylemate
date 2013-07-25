@@ -53,9 +53,13 @@
                 array('email', 'unique', 'message' => 'Email already exists'),
                 array('password', 'required', 'message' => 'Password cannot be blank'),
                 array('password', 'length', 'min' => 3, 'tooShort' => 'Password should be at least 3 characters'),
+
+                array('location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
+
                 array('is_facebook', 'boolean'),
                 array('email, password, location', 'length', 'max' => 100),
                 array('role', 'length', 'max' => 15),
+
                 array(
                     'email, password, location',
                     'filter',

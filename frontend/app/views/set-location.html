@@ -8,19 +8,21 @@
 
         </div>
     </div>
-    <div class="next">
+    <div class="next" ng-click="goToChooseStyles()">
 
     </div>
 </header>
 
 <section class="main">
 
+    <div class="validation-message">{{errorMessage}}</div>
+
     <div id="account">
-        LOCATION
+        ENTER YOUR LOCATION
     </div>
 
-    <form class="form" action="">
-        <input type="text" class="text-field search-location" placeholder="search location">
+    <form class="form" name="setLocationForm">
+        <choose-location source="topLocations"></choose-location>
     </form>
 
 </section>

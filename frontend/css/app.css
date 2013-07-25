@@ -223,6 +223,11 @@ header.main {
 	font-size: 24px;
 }
 
+.sub-header {
+	margin: 19px 0 19px 86px;
+	font-size: 24px;
+}
+
 #profile {
 	font-size: 24px;
 	margin-left: 86px;
@@ -251,6 +256,30 @@ header.main {
 	background: url("../images/search-location.png") no-repeat;
 	margin: 0 87px 0 87px;
 	width: 379px;
+}
+
+ul.choose-location {
+    overflow: auto;
+    height: 500px;
+    margin-top: 21px;
+    width: 467px;
+}
+
+ul.choose-location li {
+	background: #c4d4e3;
+	height: 48px;
+	list-style: none;
+	font-size: 22px;
+	color: #7294b9;
+	margin: 0 0 10px 0;
+	padding: 25px 0 0 22px;
+	cursor: pointer;
+    text-transform: uppercase;
+}
+
+ul.choose-location li:hover {
+	background: #dae4ee;
+	font-weight: bold;
 }
 
 ul.choose-style li {
