@@ -21,7 +21,7 @@ var GeoLocationService = (function () {
 
         if (navigator.geolocation) {
 
-            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+            setTimeout(function() {navigator.geolocation.getCurrentPosition(successFunction, errorFunction);}, 2000);
         }
 
         function codeLatLng(lat, lng) {
@@ -59,8 +59,6 @@ var GeoLocationService = (function () {
             });
         }
 
-        var self = this;
-
         function successFunction(position) {
 
             var lat = position.coords.latitude;
@@ -74,5 +72,6 @@ var GeoLocationService = (function () {
 
     return GeoLocationService;
 })();
+
 
 google.maps.event.addDomListener(window, 'load', GeoLocationService.initializeGeoLocation);
