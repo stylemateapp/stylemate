@@ -7,7 +7,7 @@ function HomePageController($scope, $rootScope, WeatherService, userLocations) {
     $scope.location = userLocations.default;
     $scope.location.temperature = 'N/A';
     $scope.location.cloudyClass = '';
-    $scope.location.cloudyPhrase = 'N/A';
+    $scope.location.cloudyPhrase = 'Cloud Cover N/A';
 
     var conditions = WeatherService.getCurrentConditions(userLocations.default.latitude, userLocations.default.longitude);
 

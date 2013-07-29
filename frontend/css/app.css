@@ -400,6 +400,7 @@ ul.choose-occasion li:hover {
     width: 440px;
     height: 391px;
     margin-bottom: 77px;
+    background: url("../images/partially-cloudy.png") no-repeat;
 }
 
 #cloudCover.partially-cloudy {
