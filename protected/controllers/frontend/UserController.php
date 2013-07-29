@@ -20,6 +20,7 @@
         {
             return array(
                 'login'        => 'application.components.actions.frontend.user.LoginUserAction',
+                'logout'       => 'application.components.actions.frontend.user.LogoutUserAction',
                 'signUp'       => 'application.components.actions.frontend.user.SignUpUserAction',
                 'getLocations' => 'application.components.actions.frontend.user.GetUserLocationsAction',
                 'setLocation'  => 'application.components.actions.frontend.user.SetUserLocationAction',

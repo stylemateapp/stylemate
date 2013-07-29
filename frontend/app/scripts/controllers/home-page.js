@@ -2,6 +2,8 @@
 
 function HomePageController($scope, $rootScope, WeatherService, userLocations) {
 
+    $scope.logOut = $rootScope.logOut;
+
     $scope.location = userLocations.default;
     $scope.location.temperature = 'N/A';
     $scope.location.cloudyClass = '';

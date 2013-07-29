@@ -20,15 +20,15 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
         'San Francisco'
     ])
 
-    .config(['$urlRouterProvider', function ($urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('homepage');
 
     }])
 
     .run([
-        '$rootScope', '$state', '$stateParams',
-        function ($rootScope, $state, $stateParams) {
+        '$rootScope', '$http', '$state', '$stateParams', 'serverUrl',
+        function ($rootScope, $http, $state, $stateParams, serverUrl) {
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
@@ -37,4 +37,14 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
 
                 $state.transitionTo(state);
             };
+
+            $rootScope.logOut = function() {
+
+                $http.get(serverUrl + '/user/logout')
+
+                    .success(function() {
+
+                        $state.transitionTo('login');
+                    });
+            }
     }]);
