@@ -1,4 +1,4 @@
-angular.module('stylemate.directives', [])
+angular.module('stylemate.directives')
 
     .directive('chooseLocation', function () {
         return {

@@ -4,10 +4,23 @@ angular.module('stylemate.states', ['ui.state'])
 
     .config(['$stateProvider', function($stateProvider) {
 
+        var resolveLocationAndStyle = {
+
+            userLocations: ['UserService', function (UserService) {
+
+                return UserService.getLocations();
+            }],
+            userStyles: ['UserService', function (UserService) {
+
+                return UserService.getStyles();
+            }]
+        };
+
         var homePage = {
             name: 'homepage',
             url: '/homepage',
             templateUrl: 'app/views/home-page.html',
+            resolve: resolveLocationAndStyle,
             controller: HomePageController
         };
 

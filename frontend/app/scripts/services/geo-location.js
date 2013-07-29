@@ -2,22 +2,24 @@
 
 angular.module('stylemate.services', []).
 
-    factory('GeoLocationService', function () {
+    factory('GeoLocationService', ['$http', 'serverUrl', function ($http, serverUrl) {
 
-        return new GeoLocationService();
-    });
-
+        return new GeoLocationService($http, serverUrl);
+    }]);
 
 var GeoLocationService = (function () {
 
     var geoCoder;
 
-    function GeoLocationService($http) {
+    function GeoLocationService($http, serverUrl) {
 
-        geoCoder = new google.maps.Geocoder();
+        this.$http = $http;
+        this.serverUrl = serverUrl;
     }
 
     GeoLocationService.initializeGeoLocation = function() {
+
+        geoCoder = new google.maps.Geocoder();
 
         if (navigator.geolocation) {
 

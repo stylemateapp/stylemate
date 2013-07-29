@@ -1,6 +1,6 @@
 <?php
 /**
- * Controller class action for retrieving of user location through web API
+ * Controller class action for retrieving of user locations array through web API
  *
  * Used in AngularJS application
  *
@@ -13,7 +13,7 @@
  * @property Controller $controller
  */
 
-class GetUserLocationAction extends Action
+class GetUserLocationsAction extends Action
 {
     /**
      * Main action method
@@ -25,7 +25,23 @@ class GetUserLocationAction extends Action
 
         if (!empty($user->location)) {
 
-            ResponseHelper::sendResponse(200, array('success' => true));
+            $coordinates = GeoLocationHelper::getCoordinatesByAddress($user->location);
+
+            $defaultLocation = array(
+                'name'      => $user->location,
+                'latitude'  => $coordinates['latitude'],
+                'longitude' => $coordinates['longitude'],
+            );
+
+            ResponseHelper::sendResponse(
+                200,
+                array(
+                     'success' => true,
+                     'locations' => array(
+                         'default' => $defaultLocation
+                     )
+                )
+            );
         }
         else {
 

@@ -19,12 +19,13 @@
         public function actions()
         {
             return array(
-                'login'       => 'application.components.actions.frontend.user.LoginUserAction',
-                'signUp'      => 'application.components.actions.frontend.user.SignUpUserAction',
-                'getLocation' => 'application.components.actions.frontend.user.GetUserLocationAction',
-                'setLocation' => 'application.components.actions.frontend.user.SetUserLocationAction',
-                'getStyles'   => 'application.components.actions.frontend.user.GetUserStylesAction',
-                'setStyles'   => 'application.components.actions.frontend.user.SetUserStylesAction',
+                'login'        => 'application.components.actions.frontend.user.LoginUserAction',
+                'signUp'       => 'application.components.actions.frontend.user.SignUpUserAction',
+                'getLocations' => 'application.components.actions.frontend.user.GetUserLocationsAction',
+                'setLocation'  => 'application.components.actions.frontend.user.SetUserLocationAction',
+                'getStyles'    => 'application.components.actions.frontend.user.GetUserStylesAction',
+                'setStyles'    => 'application.components.actions.frontend.user.SetUserStylesAction',
+                'getWeather'   => 'application.components.actions.frontend.user.GetWeatherAction',
             );
         }
 
