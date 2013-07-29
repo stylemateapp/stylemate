@@ -1,1 +1,38 @@
-<br><br><br><br><br><br><h1>HOMEPAGE CURRENTLY NOT IMPLEMENTED</h1>
+<div id="sub-container-weather" class="{{location.cloudyClass}}">
+
+    <header class="header" ng-show="loggedIn" ng-animate="'fade'">
+        <div class="logo-long">
+
+        </div>
+        <nav class="settings">
+            <ul class="settings-submenu">
+                <li><a href="#/home-page">EDIT LOCATIONS</a></li>
+                <li><a href="#/home-page">EDIT STYLES</a></li>
+                <li><a href="#/home-page">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main" ng-show="loggedIn" ng-animate="'fade'">
+        <div id="city">
+            {{location.name}}
+        </div>
+        <div id="weather-conditions">
+            {{location.cloudyPhrase}}
+        </div>
+        <div id="degree">
+            {{location.temperature}}
+        </div>
+        <div id="cloudCover" class="{{location.cloudyClass}}">
+
+        </div>
+
+        <ul class="buttons">
+            <li>DRESS FOR TODAY</li>
+            <li>DRESS FOR FUTURE</li>
+        </ul>
+
+
+    </section>
+
+</div>

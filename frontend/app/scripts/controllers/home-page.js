@@ -1,8 +1,34 @@
 'use strict';
 
-function HomePageController($scope, $http,  $state, serverUrl) {
+function HomePageController($scope, $rootScope, WeatherService, userLocations) {
 
+    $scope.location = userLocations.default;
+    $scope.location.temperature = 'N/A';
+    $scope.location.cloudyClass = '';
+    $scope.location.cloudyPhrase = 'N/A';
 
+    var conditions = WeatherService.getCurrentConditions(userLocations.default.latitude, userLocations.default.longitude);
+
+    if (conditions) {
+
+        $scope.location.temperature = Math.round(conditions.getTemperature());
+
+        if(conditions.getCloudCover() >= 0 && conditions.getCloudCover() < 0.4) {
+
+            $scope.location.cloudyClass = 'sunny';
+            $scope.location.cloudyPhrase = 'Mostly Sunny';
+        }
+        else if (conditions.getCloudCover() >= 0.4 && conditions.getCloudCover() < 0.75) {
+
+            $scope.location.cloudyClass = 'partially-cloudy';
+            $scope.location.cloudyPhrase = 'Partly Cloudy';
+        }
+        else if (conditions.getCloudCover() > 0.75) {
+
+            $scope.location.cloudyClass = 'cloudy';
+            $scope.location.cloudyPhrase = 'Cloudy';
+        }
+    }
 }
 
-HomePageController.$inject = ['$scope', '$http', '$state', 'serverUrl'];
+HomePageController.$inject = ['$scope', '$rootScope', 'WeatherService', 'userLocations'];
