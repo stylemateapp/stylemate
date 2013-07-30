@@ -365,8 +365,41 @@ ul.choose-occasion li {
 
 ul.choose-occasion li:hover {
 	background: #dae4ee;
-	font-weight: bold;
 }
+
+ul.choose-occasion li.selected {
+	background: #dae4ee;
+    font-weight: bold;
+}
+
+#sub-container-weather.sunny ul.choose-occasion li {
+    background: #e8e2bf;
+    color: #9d9773;
+}
+
+#sub-container-weather.sunny ul.choose-occasion li:hover {
+    background: #ece7cc;
+}
+
+#sub-container-weather.sunny ul.choose-occasion li.selected {
+	background: #e8e2bf;
+    font-weight: bold;
+}
+
+#sub-container-weather.cloudy ul.choose-occasion li {
+    background: #d6dee5;
+    color: #697e8e;
+}
+
+#sub-container-weather.cloudy ul.choose-occasion li:hover {
+    background: #dee5ea;
+}
+
+#sub-container-weather.cloudy ul.choose-occasion li.selected {
+    background: #d6dee5;
+    font-weight: bold;
+}
+
 
 .header {
     position:relative;

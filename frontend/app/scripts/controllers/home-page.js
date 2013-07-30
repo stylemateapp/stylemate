@@ -1,6 +1,6 @@
 'use strict';
 
-function HomePageController($scope, $rootScope, WeatherService, Search, userLocations, userStyles) {
+function HomePageController($scope, $rootScope, $state, WeatherService, Search, userLocations, userStyles) {
 
     $scope.logOut = $rootScope.logOut;
 
@@ -15,6 +15,7 @@ function HomePageController($scope, $rootScope, WeatherService, Search, userLoca
         Search.setParam('temperature', $scope.location.temperature);
         Search.setParam('location', $scope.location);
         Search.setParam('date', 'today');
+        Search.setParam('cloudyClass', $scope.location.cloudyClass);
     };
 
     $scope.goToDressForToday = function() {
@@ -47,4 +48,4 @@ function HomePageController($scope, $rootScope, WeatherService, Search, userLoca
     }
 }
 
-HomePageController.$inject = ['$scope', '$rootScope', 'WeatherService', 'Search', 'userLocations', 'userStyles'];
+HomePageController.$inject = ['$scope', '$rootScope', '$state', 'WeatherService', 'Search', 'userLocations', 'userStyles'];

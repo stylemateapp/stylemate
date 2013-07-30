@@ -1,0 +1,26 @@
+<div id="sub-container-weather" class="{{cloudyClass}}">
+    <header class="header" ng-show="loggedIn" ng-animate="'fade'">
+        <div class="logo-long">
+
+        </div>
+        <div ng-include src="'app/views/settings.html'"></div>
+    </header>
+
+    <section class="main" ng-show="loggedIn">
+
+        <div class="validation-message">{{errorMessage}}</div>
+
+        <div id="occasion">
+            SELECT OCCASION
+        </div>
+
+        <form class="form" action="">
+            <ul class="choose-occasion">
+                <li ng-repeat="occasion in occasions | orderBy:occasion.name"
+                    ng-click="toggleOccasion(occasion.id)" id="occasion-{{occasion.id}}">{{occasion.name}}
+                </li>
+            </ul>
+        </form>
+
+    </section>
+</div>

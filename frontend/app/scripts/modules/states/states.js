@@ -61,4 +61,14 @@ angular.module('stylemate.states', ['ui.state'])
         };
 
         $stateProvider.state(chooseStyles);
+
+        var chooseOccasion = {
+            name: 'choose-occasion',
+            url: '/choose-occasion',
+            templateUrl: 'app/views/choose-occasion.html',
+            resolve: resolveLocationAndStyle,
+            controller: ChooseOccasionController
+        };
+
+        $stateProvider.state(chooseOccasion);
     }]);

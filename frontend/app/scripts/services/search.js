@@ -12,7 +12,8 @@ app.factory('Search', [function () {
             occasion: -1,
             location: '',
             date: 'today',
-            styles: {}
+            styles: {},
+            cloudyClass: ''
         }
     }
 
