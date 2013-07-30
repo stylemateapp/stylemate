@@ -1,6 +1,6 @@
 'use strict';
 
-function HomePageController($scope, $rootScope, WeatherService, userLocations) {
+function HomePageController($scope, $rootScope, WeatherService, Search, userLocations, userStyles) {
 
     $scope.logOut = $rootScope.logOut;
 
@@ -8,6 +8,20 @@ function HomePageController($scope, $rootScope, WeatherService, userLocations) {
     $scope.location.temperature = 'N/A';
     $scope.location.cloudyClass = '';
     $scope.location.cloudyPhrase = 'Cloud Cover N/A';
+
+    $scope.prepareSearchParams = function() {
+
+        Search.setParam('styles', userStyles.selectedStyles);
+        Search.setParam('temperature', $scope.location.temperature);
+        Search.setParam('location', $scope.location);
+        Search.setParam('date', 'today');
+    };
+
+    $scope.goToDressForToday = function() {
+
+        $scope.prepareSearchParams();
+        $state.transitionTo('choose-occasion');
+    };
 
     var conditions = WeatherService.getCurrentConditions(userLocations.default.latitude, userLocations.default.longitude);
 
@@ -33,4 +47,4 @@ function HomePageController($scope, $rootScope, WeatherService, userLocations) {
     }
 }
 
-HomePageController.$inject = ['$scope', '$rootScope', 'WeatherService', 'userLocations'];
+HomePageController.$inject = ['$scope', '$rootScope', 'WeatherService', 'Search', 'userLocations', 'userStyles'];

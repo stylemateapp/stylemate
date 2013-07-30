@@ -46,5 +46,5 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
 
                         $state.transitionTo('login');
                     });
-            }
+            };
     }]);
