@@ -32,6 +32,16 @@ app.factory('Search', [function () {
         return this.searchParams[key];
     };
 
+    Search.prototype.isValidForOccasionPage = function() {
+
+        var valid = this.searchParams.temperature > -100;
+        valid = valid && this.searchParams.location != '';
+        valid = valid && this.searchParams.date != '';
+        valid = valid && this.searchParams.styles != {};
+
+        return valid;
+    };
+
     Search.prototype.isValid = function () {
 
         var valid = this.searchParams.temperature > -100;

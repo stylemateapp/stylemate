@@ -10,11 +10,11 @@
 
         <div class="validation-message">{{errorMessage}}</div>
 
-        <div id="occasion">
+        <div id="occasion" ng-show="errorMessage == ''">
             SELECT OCCASION
         </div>
 
-        <form class="form" action="">
+        <form class="form" action="" ng-show="errorMessage == ''">
             <ul class="choose-occasion">
                 <li ng-repeat="occasion in occasions | orderBy:occasion.name"
                     ng-click="toggleOccasion(occasion.id)" id="occasion-{{occasion.id}}">{{occasion.name}}

@@ -2,9 +2,13 @@
 
 function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
 
-    $scope.selectedOccasion = -1;
     $scope.errorMessage = '';
     $scope.cloudyClass = Search.getParam('cloudyClass');
+
+    if(!Search.isValidForOccasionPage()) {
+
+        $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
+    }
 
     $http.get(serverUrl + '/user/getOccasions')
 
@@ -29,17 +33,8 @@ function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
 
         angular.element(document.getElementById('occasion-' + id)).toggleClass('selected');
 
-        angular.forEach($scope.occasions, function (value) {
-
-            var elementId = value.id;
-
-            if(elementId != id) {
-
-                angular.element(document.getElementById('occasion-' + elementId)).removeClass('selected');
-            }
-        });
-
-        $scope.selectedOccasion = id;
+        Search.setParam('occasion', id);
+        $state.transitionTo('search-results');
     };
 }
 
