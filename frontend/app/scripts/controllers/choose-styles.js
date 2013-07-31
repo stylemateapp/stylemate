@@ -16,13 +16,13 @@ function ChooseStylesController($scope, $http,  $state, serverUrl) {
             }
             else {
 
-                alert('Error retrieving user styles. Refresh page please.');
+                $scope.errorMessage = 'Error retrieving user styles. Refresh page please.';
             }
         })
 
         .error(function (data, status, error, config) {
 
-            alert('Error retrieving user styles. Refresh page please.');
+            $scope.errorMessage = 'Error retrieving user styles. Refresh page please.';
         });
 
     $scope.toggleStyle = function (id) {

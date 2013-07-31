@@ -11,33 +11,35 @@ function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
 
         $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
     }
+    else {
 
-    $http.get(serverUrl + '/user/getOccasions')
+        $http.get(serverUrl + '/user/getOccasions')
 
-        .success(function (data, status, error, config) {
+            .success(function (data, status, error, config) {
 
-            if (data.success === true) {
+                if (data.success === true) {
 
-                $scope.occasions = data.occasions;
-            }
-            else {
+                    $scope.occasions = data.occasions;
+                }
+                else {
 
-                alert('Error retrieving occasions');
-            }
-        })
+                    $scope.errorMessage = 'Error retrieving occasions';
+                }
+            })
 
-        .error(function (data, status, error, config) {
+            .error(function (data, status, error, config) {
 
-            alert('Error retrieving occasions');
-        });
+                $scope.errorMessage = 'Error retrieving occasions';
+            });
 
-    $scope.toggleOccasion = function (id) {
+        $scope.toggleOccasion = function (id) {
 
-        angular.element(document.getElementById('occasion-' + id)).toggleClass('selected');
+            angular.element(document.getElementById('occasion-' + id)).toggleClass('selected');
 
-        Search.setParam('occasion', id);
-        $state.transitionTo('search-results');
-    };
+            Search.setParam('occasion', id);
+            $state.transitionTo('search-results');
+        };
+    }
 }
 
 ChooseOccasionController.$inject = ['$scope', '$http', '$state', 'Search', 'serverUrl'];
