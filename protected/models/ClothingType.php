@@ -9,6 +9,8 @@
      *
      * The followings are the available model relations:
      * @property ImageField[] $imageFields
+     *
+     * @method ClothingType findByPk
      */
 
     class ClothingType extends BaseModel

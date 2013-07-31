@@ -19,6 +19,7 @@
      * @property ImageField[] $imageFields
      *
      * @method Image findByPk
+     * @method Image[] findAll
      */
 
     class Image extends BaseModel

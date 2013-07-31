@@ -28,6 +28,7 @@
                 'setStyles'    => 'application.components.actions.frontend.user.SetUserStylesAction',
                 'getWeather'   => 'application.components.actions.frontend.user.GetWeatherAction',
                 'getOccasions' => 'application.components.actions.frontend.user.GetOccasionsAction',
+                'getImages'    => 'application.components.actions.frontend.user.GetImagesAction',
             );
         }
 

@@ -12,6 +12,8 @@
      * @property CategoryGroup $categoryGroup
      * @property Image[]       $images
      * @property User[]        $users
+     *
+     * @method Category findByAttributes
      */
 
     class Category extends BaseModel
