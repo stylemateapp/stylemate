@@ -71,4 +71,14 @@ angular.module('stylemate.states', ['ui.state'])
         };
 
         $stateProvider.state(chooseOccasion);
+
+        var searchResults = {
+            name: 'search-results',
+            url: '/search-results',
+            templateUrl: 'app/views/search-results.html',
+            resolve: resolveLocationAndStyle,
+            controller: SearchResultsController
+        };
+
+        $stateProvider.state(searchResults);
     }]);
