@@ -5,6 +5,8 @@ function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
     $scope.errorMessage = '';
     $scope.cloudyClass = Search.getParam('cloudyClass');
 
+    Search.setParam('occasion', -1);
+
     if(!Search.isValidForOccasionPage()) {
 
         $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';

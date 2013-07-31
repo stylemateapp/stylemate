@@ -6,20 +6,46 @@ app.factory('Search', [function () {
 
     function Search() {
 
-        this.searchParams = {
+        if (localStorage) {
 
-            temperature: -1000,
-            occasion: -1,
-            location: '',
-            date: 'today',
-            styles: {},
-            cloudyClass: ''
+            if (localStorage.getItem('searchParams')) {
+
+                this.searchParams = JSON.parse(localStorage.getItem('searchParams'));
+            }
+            else {
+                this.searchParams = {
+
+                    temperature: -1000,
+                    occasion: -1,
+                    location: '',
+                    date: 'today',
+                    styles: {},
+                    cloudyClass: ''
+                }
+            }
+        }
+        else {
+
+            this.searchParams = {
+
+                temperature: -1000,
+                occasion: -1,
+                location: '',
+                date: 'today',
+                styles: {},
+                cloudyClass: ''
+            }
         }
     }
 
     Search.prototype.setParam = function (key, value) {
 
         this.searchParams[key] = value;
+
+        if (localStorage) {
+
+            localStorage.setItem('searchParams', JSON.stringify(this.searchParams));
+        }
     };
 
     Search.prototype.getParams = function() {
