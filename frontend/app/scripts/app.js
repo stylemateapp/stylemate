@@ -40,13 +40,18 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
                 $state.transitionTo(state);
             };
 
-            $rootScope.logOut = function() {
+            $rootScope.logOut = function () {
 
                 $http.get(serverUrl + '/user/logout')
 
-                    .success(function() {
+                    .success(function () {
 
                         $state.transitionTo('login');
                     });
+            };
+
+            $rootScope.goToHomepage = function () {
+
+                $state.transitionTo('homepage');
             };
     }]);

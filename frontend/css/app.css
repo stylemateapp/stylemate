@@ -266,13 +266,13 @@ header.main {
 }
 
 .text-field.name {
-	background: url("../images/form-name.png") no-repeat;
-	margin: 0 82px 20px 86px;
+    background: url("../images/form-email.png") no-repeat;
+    margin: 0 82px 40px 86px;
 }
 
 .text-field.email {
-	background: url("../images/form-email.png") no-repeat;
-	margin: 0 82px 40px 86px;
+    background: url("../images/form-name.png") no-repeat;
+    margin: 0 82px 20px 86px;
 }
 
 .text-field.search-location {
