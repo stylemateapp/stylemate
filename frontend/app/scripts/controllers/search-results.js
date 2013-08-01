@@ -10,6 +10,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     $scope.selectedIndex = 0;
     $scope.arrayIndex = 0;
     $scope.querySuccess = false;
+    $scope.showItems = false;
 
     if (!Search.isValid()) {
 
@@ -71,6 +72,24 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             $scope.selectedIndex = key;
 
             $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+        };
+
+        $scope.showItemsBlock = function(item) {
+
+            $scope.showItems = true;
+            $scope.items = item;
+        };
+
+        $scope.goBack = function() {
+
+            if(!$scope.showItems) {
+
+                $scope.goTo('choose-occasion');
+            }
+            else {
+
+                $scope.showItems = false;
+            }
         };
     }
 }

@@ -1,6 +1,6 @@
 <div id="sub-container-search-results">
     <header class="header">
-        <div class="back" ng-click="goTo('choose-occasion')">
+        <div class="back" ng-click="goBack()">
 
         </div>
         <div class="logo-long-results">
@@ -10,25 +10,38 @@
 
     <section class="main">
 
-            <div class="gallery">
-                <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}</div>
-                <div class="gallery-window">
-                    <ul class="gallery-list" ng-style="listPosition">
-                        <li ng-repeat="image in images">
-                            <img ng-src="{{imagePath + image.name}}" width="640" height="1008">
-                        </li>
-                    </ul>
-                    <div id="gallery-next" ng-click="goNext()" ng-show="querySuccess && selectedIndex != imageKeys[imageKeys.length - 1]"></div>
-                    <div id="gallery-previous" ng-click="goPrevious()" ng-show="querySuccess && selectedIndex != imageKeys[0]"></div>
-                </div>
+        <div class="gallery">
+            <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}
             </div>
-
-            <section class="shop-look" tabindex="0" ng-show="querySuccess" ng-animate="'fade'">
-                <div>Shop this look</div>
-                <ul class="clothing-items">
-                    <li ng-repeat="(name, item) in selected.items">{{name}}</li>
+            <div class="gallery-window">
+                <ul class="gallery-list" ng-style="listPosition">
+                    <li ng-repeat="image in images">
+                        <img ng-src="{{imagePath + image.name}}">
+                    </li>
                 </ul>
-            </section>
+                <div id="gallery-next" ng-click="goNext()"
+                     ng-show="querySuccess && selectedIndex != imageKeys[imageKeys.length - 1]"></div>
+                <div id="gallery-previous" ng-click="goPrevious()"
+                     ng-show="querySuccess && selectedIndex != imageKeys[0]"></div>
+            </div>
+        </div>
+
+        <section class="shop-look" ng-show="querySuccess" ng-animate="'fade'">
+            <div>Shop this look</div>
+            <ul class="clothing-items">
+                <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)">{{name}}</li>
+            </ul>
+        </section>
+
+        <section id="gallery-items" ng-show="showItems">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a href="{{item.reference_url}}">
+                        <img ng-src="{{item.reference_image}}">
+                    </a>
+                </li>
+            </ul>
+        </section>
 
     </section>
 

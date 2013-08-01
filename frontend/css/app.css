@@ -580,7 +580,7 @@ ul.settings-submenu li a {
 	font-size: 25px;
 	font-weight: bold;
 	color: #666666;
-	margin-top: -86px;
+	margin-top: -446px;
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
@@ -648,6 +648,8 @@ ul.settings-submenu li a {
 
 .gallery ul li {
     display: inline-block;
+    width: 640px;
+    text-align: center;
 }
 
 .gallery-window {
@@ -670,7 +672,7 @@ ul.settings-submenu li a {
 #gallery-next {
     position: absolute;
     top: 277px;
-    left: 577px;
+    left: 547px;
     width: 50px;
     height: 50px;
     background: url('../images/gallery-next.png') no-repeat;
@@ -693,7 +695,7 @@ ul.settings-submenu li a {
 #gallery-previous {
     position: absolute;
     top: 277px;
-    left: 13px;
+    left: 43px;
     width: 50px;
     height: 50px;
     background: url('../images/gallery-previous.png') no-repeat;
@@ -711,4 +713,31 @@ ul.settings-submenu li a {
     -webkit-opacity: 1.0;
     -moz-opacity: 1.0;
     opacity: 1.0;
+}
+
+#gallery-items {
+    position: absolute;
+    width: 640px;
+    height: 580px;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+#gallery-items li {
+    display: inline-block;
+    width: 269px;
+    text-align: center;
+    border-bottom: 1px solid #d1cfcf;
+    border-right: 1px solid #d1cfcf;
+    padding: 20px;
+}
+
+#gallery-items li:nth-child(2n) {
+    border-right: 0;
+}
+
+#gallery-items li:last-child, #gallery-items li:nth-last-child(2) {
+    border-bottom: 0;
 }

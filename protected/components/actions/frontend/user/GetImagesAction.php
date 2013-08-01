@@ -105,8 +105,8 @@ class GetImagesAction extends Action
 
                 $newImageFields[$key][$clothingType][] =
                     array(
-                        'reference_url' => $item['reference_url'],
-                        'reference_image' => $item['reference_url']
+                        'reference_url'   => $item['reference_url'],
+                        'reference_image' => $item['reference_image']
                     );
             }
         }
