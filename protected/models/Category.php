@@ -14,6 +14,7 @@
      * @property User[]        $users
      *
      * @method Category findByAttributes
+     * @method Category findByPk
      */
 
     class Category extends BaseModel

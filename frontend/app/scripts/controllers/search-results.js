@@ -20,7 +20,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
         // @TODO: This should be directive..
 
-        $http.get(serverUrl + '/user/getImages?occasion=' + Search.getParam('occasion') + '&temperature=' + Search.getParam('temperature'))
+        $http.get(serverUrl + '/user/getImages?occasion=' + Search.getParam('occasion') + '&temperature=' + Search.getParam('temperature') + '&date=' + Search.getParam('date'))
 
             .success(function (data) {
 
@@ -85,6 +85,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             if(!$scope.showItems) {
 
                 $scope.goTo('choose-occasion');
+
             }
             else {
 

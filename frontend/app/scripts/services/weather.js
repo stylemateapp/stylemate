@@ -11,7 +11,7 @@ app.factory('WeatherService', ['serverUrl', function (serverUrl) {
 
     ForecastIO.prototype.requestData = function (latitude, longitude) {
 
-        var request_url = this.PROXY_SCRIPT + '?url=' + latitude + ',' + longitude + '?units=us';
+        var request_url = this.PROXY_SCRIPT + '?url=' + latitude + ',' + longitude + '&units=us&exclude=hourly,minutely,daily,alerts,flags';
         var xhr = new XMLHttpRequest();
         var content;
         xhr.onreadystatechange = function () {
