@@ -1,0 +1,32 @@
+<header class="wizard">
+    <div class="left">
+
+        <div class="back" ng-click="goToHomepage()">
+
+        </div>
+        <div class="logo" ng-click="goToHomepage()">
+
+        </div>
+    </div>
+    <div class="next" ng-click="goToSelectDay()">
+
+    </div>
+</header>
+
+<section class="main" ng-show="loggedIn">
+
+    <div class="validation-message">{{errorMessage}}</div>
+
+    <div id="occasion" ng-show="errorMessage == ''">
+        SELECT DATE
+    </div>
+
+    <form class="form" action="" ng-show="errorMessage == ''">
+        <ul class="choose-occasion">
+            <li ng-repeat="date in dates"
+                ng-click="selectDate(date.id)" id="date-{{date.id}}">{{date.name}}
+            </li>
+        </ul>
+    </form>
+
+</section>

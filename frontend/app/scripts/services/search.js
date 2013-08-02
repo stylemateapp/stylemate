@@ -60,7 +60,7 @@ app.factory('Search', [function () {
 
     Search.prototype.isValidForOccasionPage = function() {
 
-        var valid = this.searchParams.temperature > -100;
+        var valid = this.searchParams.temperature > -100 || typeof this.searchParams.temperature == 'string';
         valid = valid && this.searchParams.location != '';
         valid = valid && this.searchParams.date != '';
         valid = valid && this.searchParams.styles != {};
@@ -70,7 +70,7 @@ app.factory('Search', [function () {
 
     Search.prototype.isValid = function () {
 
-        var valid = this.searchParams.temperature > -100;
+        var valid = this.searchParams.temperature > -100 || typeof this.searchParams.temperature == 'string';
         valid = valid && this.searchParams.occasion > 0;
         valid = valid && this.searchParams.location != '';
         valid = valid && this.searchParams.date != '';

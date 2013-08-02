@@ -91,4 +91,14 @@ angular.module('stylemate.states', ['ui.state'])
         };
 
         $stateProvider.state(dressForFutureLocation);
+
+        var dressForFutureDate = {
+            name: 'dress-for-future-date',
+            url: '/dress-for-future-date',
+            templateUrl: 'app/views/dress-for-future-date.html',
+            resolve: resolveLocationAndStyle,
+            controller: DressForFutureDateController
+        };
+
+        $stateProvider.state(dressForFutureDate);
     }]);

@@ -21,6 +21,7 @@ function DressForFutureLocationController($scope, $http, $state, GeoLocationServ
             Search.setParam('temperature', location);
             Search.setParam('location', location);
             Search.setParam('date', '');
+            Search.setParam('cloudyClass', '');
 
             $state.transitionTo('dress-for-future-date');
         }

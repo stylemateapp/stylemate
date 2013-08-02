@@ -580,7 +580,7 @@ ul.settings-submenu li a {
 	font-size: 25px;
 	font-weight: bold;
 	color: #666666;
-	margin-top: -446px;
+	margin-top: -86px;
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
@@ -718,7 +718,7 @@ ul.settings-submenu li a {
 #gallery-items {
     position: absolute;
     width: 640px;
-    height: 580px;
+    height: 1008px;
     overflow: auto;
     top: 0;
     left: 0;
