@@ -650,6 +650,7 @@ ul.settings-submenu li a {
     display: inline-block;
     width: 640px;
     text-align: center;
+    vertical-align: top;
 }
 
 .gallery-window {
