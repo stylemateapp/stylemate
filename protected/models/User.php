@@ -112,7 +112,7 @@
          * @return bool
          */
 
-        protected function beforeSave()
+        /*protected function beforeSave()
         {
             if ($this->scenario == 'insert') {
 
@@ -121,7 +121,7 @@
             }
 
             return parent::beforeSave();
-        }
+        }*/
 
         /**
          * @param $password

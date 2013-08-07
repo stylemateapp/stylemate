@@ -50,7 +50,7 @@ class UserIdentity extends CUserIdentity
         }
         else
         {
-            if($user->password !== $user->encrypt($this->password, $user->password))
+            if($user->password !== $this->password)
             {
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             }
