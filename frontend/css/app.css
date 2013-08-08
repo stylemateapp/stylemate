@@ -219,6 +219,11 @@ header.main {
 	margin: 0 0 0 87px;
 }
 
+.logo.choose-occasion {
+    background: url("../images/logo.png") !important;
+    width: 431px !important;
+}
+
 .logo:hover {
 	background-position: 0 -86px;
 }
