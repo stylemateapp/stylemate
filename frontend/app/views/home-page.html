@@ -1,32 +1,34 @@
 <div id="sub-container-weather" class="{{location.cloudyClass}}">
 
-    <header class="header" ng-show="loggedIn" ng-animate="'fade'">
-        <div class="logo-long">
+	<header class="header" ng-show="loggedIn" ng-animate="'fade'">
+		<div class="logo-long">
 
-        </div>
-        <div ng-include src="'app/views/settings.html'"></div>
-    </header>
+		</div>
+		<div ng-include src="'app/views/settings.html'"></div>
+	</header>
 
-    <section class="main" ng-show="loggedIn" ng-animate="'fade'">
-        <div id="city">
-            {{location.name}}
-        </div>
-        <div id="weather-conditions">
-            {{location.cloudyPhrase}}
-        </div>
-        <div id="degree">
-            {{location.temperature}}
-        </div>
-        <div id="cloudCover" class="{{location.cloudyClass}}">
+	<section class="main" ng-show="loggedIn" ng-animate="'fade'">
+		<div id="city">
+			{{location.name}}
+		</div>
+		<div id="weather-conditions">
+			{{location.cloudyPhrase}}
+		</div>
+		<div id="degree">
+			{{location.temperature}}
+		</div>
+		<div class="weather-image">
+			<div id="cloudCover" class="{{location.cloudyClass}}">
 
-        </div>
+			</div>
+		</div>
 
-        <ul class="buttons">
-            <li ng-click="goToDressForToday()">DRESS FOR TODAY</li>
-            <li ng-click="goToDressForFuture()">DRESS FOR FUTURE</li>
-        </ul>
+		<ul class="buttons">
+			<li ng-click="goToDressForToday()">DRESS FOR TODAY</li>
+			<li ng-click="goToDressForFuture()">DRESS FOR FUTURE</li>
+		</ul>
 
 
-    </section>
+	</section>
 
 </div>

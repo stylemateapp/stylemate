@@ -133,6 +133,31 @@ body {
 	height: 1094px;
 }
 
+#sub-container-weather.night {
+	background: url(../images/background-night.png) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.cloudy-night {
+	background: url(../images/background-night.png) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.rain {
+	background: url(../images/background-cloudy.png) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.snow {
+	background: url(../images/background-cloudy.png) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+
 header.main {
 	padding-top: 129px;
 	text-align: center;
@@ -486,6 +511,61 @@ ul.choose-occasion li.selected {
     font-weight: bold;
 }
 
+#sub-container-weather.night ul.choose-occasion li {
+	background: #a3adb9;
+	color: #6585a9;
+}
+
+#sub-container-weather.night ul.choose-occasion li:hover {
+	background: #b4bdc6;
+}
+
+#sub-container-weather.night ul.choose-occasion li.selected {
+	background: #a3adb9;
+    font-weight: bold;
+}
+
+#sub-container-weather.cloudy-night ul.choose-occasion li {
+	background: #a3adb9;
+	color: #6585a9;
+}
+
+#sub-container-weather.cloudy-night ul.choose-occasion li:hover {
+	background: #b4bdc6;
+}
+
+#sub-container-weather.cloudy-night ul.choose-occasion li.selected {
+	background: #a3adb9;
+    font-weight: bold;
+}
+
+#sub-container-weather.rain ul.choose-occasion li {
+    background: #d6dee5;
+    color: #697e8e;
+}
+
+#sub-container-weather.rain ul.choose-occasion li:hover {
+    background: #dee5ea;
+}
+
+#sub-container-weather.rain ul.choose-occasion li.selected {
+    background: #d6dee5;
+    font-weight: bold;
+}
+
+#sub-container-weather.snow ul.choose-occasion li {
+    background: #d6dee5;
+    color: #697e8e;
+}
+
+#sub-container-weather.snow ul.choose-occasion li:hover {
+    background: #dee5ea;
+}
+
+#sub-container-weather.snow ul.choose-occasion li.selected {
+    background: #d6dee5;
+    font-weight: bold;
+}
 .header {
 	position: relative;
 	width: 640px;
@@ -519,10 +599,15 @@ ul.choose-occasion li.selected {
 	background: url("../images/degrees.png") no-repeat 360px 9px;
 }
 
+.weather-image {
+	width: 440px;
+	height: 440px;
+	margin-bottom: 77px;
+}
+
 #cloudCover {
 	width: 440px;
 	height: 391px;
-	margin-bottom: 77px;
 	background: url("../images/partially-cloudy.png") no-repeat;
 }
 
@@ -532,13 +617,36 @@ ul.choose-occasion li.selected {
 
 #cloudCover.cloudy {
 	background: url("../images/cloudy.png") no-repeat;
-	margin-top: -50px;
 }
 
 #cloudCover.sunny {
 	width: 432px;
 	height: 434px;
 	background: url("../images/sunny.png") no-repeat;
+}
+
+#cloudCover.night {
+	width: 402px;
+	height: 400px;
+	background: url("../images/night.png") no-repeat;
+}
+
+#cloudCover.cloudy-night {
+	width: 424px;
+	height: 394px;
+	background: url("../images/cloudy-night.png") no-repeat;
+}
+
+#cloudCover.rain {
+	width: 402px;
+	height: 400px;
+	background: url("../images/rain.png") no-repeat;
+}
+
+#cloudCover.snow {
+	width: 402px;
+	height: 400px;
+	background: url("../images/snow.png") no-repeat;
 }
 
 ul.buttons li {
@@ -554,6 +662,10 @@ ul.buttons li {
 	padding: 25px 0 0 22px;
 }
 
+ul.buttons li:hover {
+	background: #dae4ee;
+}
+
 #sub-container-weather.sunny ul.buttons li {
 	background: #e8e2bf;
 	color: #9d9773;
@@ -564,8 +676,24 @@ ul.buttons li {
 	color: #8092a0;
 }
 
-ul.buttons li:hover {
-	background: #dae4ee;
+#sub-container-weather.night ul.buttons li {
+	background: #a3adb9;
+	color: #6585a9;
+}
+
+#sub-container-weather.cloudy-night ul.buttons li {
+	background: #a3adb9;
+	color: #6585a9;
+}
+
+#sub-container-weather.rain ul.buttons li {
+	background: #d6dee5;
+	color: #8092a0;
+}
+
+#sub-container-weather.snow ul.buttons li {
+	background: #d6dee5;
+	color: #8092a0;
 }
 
 #sub-container-weather.sunny ul.buttons li:hover {
@@ -573,6 +701,26 @@ ul.buttons li:hover {
 }
 
 #sub-container-weather.cloudy ul.buttons li:hover {
+	background: #dee5ea;
+	color: #697e8e;
+}
+
+#sub-container-weather.night ul.buttons li:hover {
+	background: #b4bdc6;
+	color: #7294b9;
+}
+
+#sub-container-weather.cloudy-night ul.buttons li:hover {
+	background: #b4bdc6;
+	color: #7294b9;
+}
+
+#sub-container-weather.rain ul.buttons li:hover {
+	background: #dee5ea;
+	color: #697e8e;
+}
+
+#sub-container-weather.snow ul.buttons li:hover {
 	background: #dee5ea;
 	color: #697e8e;
 }
