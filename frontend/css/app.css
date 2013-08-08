@@ -199,15 +199,15 @@ header.main {
 	float: left;
 }
 
+.back:hover {
+	background-position: 0 -86px;
+}
+
 #sub-container-search-results .back {
 	background: url("../images/back-results.png");
 }
 
 #sub-container-search-results .back:hover {
-	background-position: 0 -86px;
-}
-
-.back:hover {
 	background-position: 0 -86px;
 }
 
