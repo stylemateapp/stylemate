@@ -86,6 +86,10 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
 	opacity: 1;
 }
 
+#choose-styles .validation-message {
+    margin: -40px 0 40px 82px;
+}
+
 .debug {
 	text-align: center;
 	color: #000;
@@ -264,6 +268,20 @@ header.main {
 	font-size: 24px;
 }
 
+#select-styles {
+	margin: -25px 0 19px 86px;
+	font-size: 24px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #select-styles {
+        margin: -35px 0 19px 86px;
+    }
+}
+
 .sub-header {
 	margin: 19px 0 19px 86px;
 	font-size: 24px;
@@ -324,21 +342,34 @@ ul.choose-location li:hover {
 }
 
 ul.choose-style {
-	overflow: auto;
-	height: 500px;
+	overflow: hidden;
+	height: 825px;
 	width: 481px;
 }
 
 ul.choose-style li {
 	background: #c8d6e4;
 	width: 441px;
-	height: 48px;
+	height: 45px;
 	list-style: none;
-	font-size: 22px;
+	font-size: 21px;
 	color: #7294b9;
 	margin: 0 0 10px 0;
-	padding: 25px 0 0 22px;
+	padding: 20px 0 0 22px;
 	cursor: pointer;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    ul.choose-style {
+    	height: 727px;
+    }
+
+    ul.choose-style li {
+        height: 36px;
+    }
 }
 
 ul.choose-style li:hover {
