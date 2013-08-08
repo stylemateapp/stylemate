@@ -7,25 +7,20 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
     .constant('imageWidth', '640')
 
     .constant('topLocations',
-        ['Atlanta',
-        'Boston',
-        'Chicago',
-        'Dallas',
-        'Washington DC',
-        'Driven',
-        'Jetset',
-        'Las Vegas',
-        'Los Angeles',
-        'Miami',
-        'National',
+        ['Los Angeles',
+        'San Francisco',
         'New York',
-        'San Francisco'
+        'Chicago',
+        'Miami',
+        'Dallas',
+        'London',
+        'Paris',
+        'Sydney'
     ])
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('homepage');
-
     }])
 
     .run([
