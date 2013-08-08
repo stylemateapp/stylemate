@@ -90,6 +90,10 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
     margin: -40px 0 40px 82px;
 }
 
+#choose-location .validation-message {
+    margin: -40px 0 40px 82px;
+}
+
 .debug {
 	text-align: center;
 	color: #000;
@@ -273,6 +277,11 @@ header.main {
 	font-size: 24px;
 }
 
+#select-location {
+    margin: -25px 0 19px 86px;
+	font-size: 24px;
+}
+
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
@@ -318,22 +327,36 @@ and (max-device-width : 480px) {
 }
 
 ul.choose-location {
-	overflow: auto;
-	height: 500px;
+	overflow: hidden;
+	height: 700px;
 	margin-top: 21px;
 	width: 467px;
 }
 
 ul.choose-location li {
 	background: #c4d4e3;
-	height: 48px;
+	height: 46px;
 	list-style: none;
 	font-size: 22px;
 	color: #7294b9;
 	margin: 0 0 10px 0;
-	padding: 25px 0 0 22px;
+	padding: 22px 0 0 22px;
 	cursor: pointer;
-	text-transform: uppercase;
+	text-transform: lowercase;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    ul.choose-location {
+        height: 620px;
+    }
+
+    ul.choose-location li {
+        height: 42px;
+        padding: 16px 0 0 22px;
+    }
 }
 
 ul.choose-location li:hover {
@@ -357,6 +380,7 @@ ul.choose-style li {
 	margin: 0 0 10px 0;
 	padding: 20px 0 0 22px;
 	cursor: pointer;
+    text-transform: lowercase;
 }
 
 @media only screen

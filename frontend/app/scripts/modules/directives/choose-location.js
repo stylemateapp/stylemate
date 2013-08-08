@@ -32,7 +32,7 @@ angular.module('stylemate.directives')
                 };
             },
             template:  '<input type="text" class="text-field search-location" ng-model="location" name="location" id="location" placeholder="start typing" required focus-element>' +
-                       '<div class="sub-header">OR CHOOSE IT FROM TOP CITIES</div>' +
+                       '<div class="sub-header">OR CHOOSE FROM TOP CITIES</div>' +
                        '<ul class="choose-location" ng-show="showing">' +
                            '<li ng-repeat="location in source | filter:location" ng-click="setValue(location)">{{location}}</li>' +
                        '</ul>'
