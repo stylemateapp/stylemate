@@ -125,6 +125,8 @@ class GetImagesAction extends Action
             }
         }
 
+        shuffle($images);
+
         if (!empty($images)) {
 
             ResponseHelper::sendResponse(
