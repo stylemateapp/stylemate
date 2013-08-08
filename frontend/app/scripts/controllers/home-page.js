@@ -9,19 +9,26 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
     $scope.location.cloudyClass = '';
     $scope.location.cloudyPhrase = 'Cloud Cover N/A';
 
-    $scope.prepareSearchParams = function() {
+    $scope.goToDressForToday = function() {
 
         Search.setParam('styles', userStyles.selectedStyles);
         Search.setParam('temperature', $scope.location.temperature);
         Search.setParam('location', $scope.location);
         Search.setParam('date', 'today');
         Search.setParam('cloudyClass', $scope.location.cloudyClass);
+
+        $state.transitionTo('choose-occasion');
     };
 
-    $scope.goToDressForToday = function() {
+    $scope.goToDressForFuture = function () {
 
-        $scope.prepareSearchParams();
-        $state.transitionTo('choose-occasion');
+        Search.setParam('styles', userStyles.selectedStyles);
+        Search.setParam('temperature', $scope.location.name);
+        Search.setParam('location', $scope.location.name);
+        Search.setParam('date', '');
+        Search.setParam('cloudyClass', '');
+
+        $state.transitionTo('dress-for-future-date');
     };
 
     var conditions = WeatherService.getCurrentConditions(userLocations.default.latitude, userLocations.default.longitude);

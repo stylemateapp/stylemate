@@ -82,16 +82,6 @@ angular.module('stylemate.states', ['ui.state'])
 
         $stateProvider.state(searchResults);
 
-        var dressForFutureLocation = {
-            name: 'dress-for-future-location',
-            url: '/dress-for-future-location',
-            templateUrl: 'app/views/dress-for-future-location.html',
-            resolve: resolveLocationAndStyle,
-            controller: DressForFutureLocationController
-        };
-
-        $stateProvider.state(dressForFutureLocation);
-
         var dressForFutureDate = {
             name: 'dress-for-future-date',
             url: '/dress-for-future-date',
