@@ -1,11 +1,21 @@
 'use strict';
 
-function SetLocationController($scope, $http, $state, GeoLocationService, serverUrl, topLocations) {
+function SetLocationController($scope, $rootScope, $http, $state, GeoLocationService, serverUrl, topLocations) {
 
     $scope.topLocations = topLocations;
     $scope.errorMessage = '';
+    $scope.previousStateName = $rootScope.previousStateName;
 
-    $scope.goToChooseStyles = function () {
+    if ($scope.previousStateName === 'sign-up') {
+
+        $scope.className = 'next';
+    }
+    else {
+
+        $scope.className = 'done';
+    }
+
+    $scope.goToNextState = function () {
 
         var location = $scope.setLocationForm.location.$viewValue;
 
@@ -15,8 +25,14 @@ function SetLocationController($scope, $http, $state, GeoLocationService, server
 
                 if (data.success === true) {
 
-                    $state.transitionTo('choose-styles');
+                    if ($scope.previousStateName === 'sign-up') {
 
+                        $state.transitionTo('choose-styles');
+                    }
+                    else {
+
+                        $state.transitionTo('homepage');
+                    }
                 }
                 else {
 
@@ -31,4 +47,4 @@ function SetLocationController($scope, $http, $state, GeoLocationService, server
     };
 }
 
-SetLocationController.$inject = ['$scope', '$http', '$state', 'GeoLocationService', 'serverUrl', 'topLocations'];
+SetLocationController.$inject = ['$scope', '$rootScope', '$http', '$state', 'GeoLocationService', 'serverUrl', 'topLocations'];

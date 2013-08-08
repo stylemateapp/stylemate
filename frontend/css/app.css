@@ -235,6 +235,19 @@ header.main {
 	background-position: 0 -86px;
 }
 
+.done {
+	background: url("../images/done.png") no-repeat;
+	width: 161px;
+	height: 86px;
+	cursor: pointer;
+	float: right;
+}
+
+.done:hover {
+	background-position: 0 -86px;
+}
+
+
 .wizard {
 	width: 640px;
 	height: 86px;

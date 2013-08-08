@@ -35,6 +35,11 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
 
+            $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+
+                $rootScope.previousStateName = fromState.name;
+            });
+
             $rootScope.goTo = function (state) {
 
                 $state.transitionTo(state);
