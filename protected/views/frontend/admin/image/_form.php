@@ -45,6 +45,31 @@
     <?php endif; ?>
 
     <div class="well">
+        <div class="control-group">
+            <?php echo $form->labelEx($model, 'title', array('label' => 'Image Title')); ?>
+            <div class="controls">
+                <?php echo $form->textField(
+                    $model,
+                    'title',
+                    array('class' => 'control-label', 'placeholder' => 'Image Title')
+                ); ?>
+                <?php echo $form->error($model, 'title'); ?>
+            </div>
+        </div>
+        <div class="control-group">
+            <?php echo $form->labelEx($model, 'url', array('label' => 'Image URL')); ?>
+            <div class="controls">
+                <?php echo $form->textField(
+                    $model,
+                    'url',
+                    array('class' => 'control-label', 'placeholder' => 'Image URL')
+                ); ?>
+                <?php echo $form->error($model, 'title'); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
         <label>Select Style(s)</label>
         <div id="image-categories-styles"></div>
         <script>

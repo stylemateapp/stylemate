@@ -6,6 +6,8 @@
      * The followings are the available columns in table 'image':
      * @property string       $id
      * @property string       $name
+     * @property string       $title
+     * @property string       $url
      * @property string       $imageUrl
      * @property string       $categoriesStyleList
      * @property string       $categoriesWeatherList
@@ -66,7 +68,8 @@
         public function rules()
         {
             return array(
-                array('name', 'length', 'max' => 255),
+                array('name, title, url', 'length', 'max' => 255),
+                array('title, url', 'safe'),
                 array('id, name', 'safe', 'on' => 'search'),
                 array(
                     'name',

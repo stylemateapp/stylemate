@@ -28,59 +28,67 @@ class UpdateImageAction extends Action
 
             $model->attributes = $_POST['Image'];
 
-            if (isset($_POST['ImageField']['new'])) {
+            if ($model->save()) {
 
-                $imageField             = new ImageField();
-                $imageField->attributes = $_POST['ImageField']['new'];
-                $imageField->image_id   = $model->id;
-                $imageField->save();
+                if (isset($_POST['ImageField']['new'])) {
 
-                $newImageFieldAdded = true;
+                    $imageField = new ImageField();
+                    $imageField->attributes = $_POST['ImageField']['new'];
+                    $imageField->image_id = $model->id;
+                    $imageField->save();
 
-                $model->refresh();
-            }
+                    $newImageFieldAdded = true;
 
-            if (isset($_POST['ImageField'])) {
-
-                $valid = true;
-
-                foreach ($imageFields as $i => $image) {
-
-                    if (isset($_POST['ImageField'][$i])) {
-
-                        $image->attributes = $_POST['ImageField'][$i];
-                    }
-
-                    $valid = $image->validate() && $valid;
+                    $model->refresh();
                 }
 
-                if ($valid) {
+                if (isset($_POST['ImageField'])) {
 
-                    if ($model->save()) {
+                    $valid = true;
 
-                        $saveDone = true;
+                    foreach ($imageFields as $i => $image) {
 
-                        foreach ($imageFields as $image) {
+                        if (isset($_POST['ImageField'][$i])) {
 
-                            $saveDone = $image->save() && $saveDone;
+                            $image->attributes = $_POST['ImageField'][$i];
                         }
 
-                        if($saveDone) {
+                        $valid = $image->validate() && $valid;
+                    }
 
-                            $this->controller->setNotice('Image was successfully updated');
+                    if ($valid) {
 
-                            if (isset($newImageFieldAdded)) {
+                        if ($model->save()) {
 
-                                $this->controller->redirect(
-                                    $this->controller->createUrl('admin/imageUpdate', array('id' => $model->id)) . '#imageFields'
-                                );
-                            } else {
+                            $saveDone = true;
 
-                                $this->controller->redirect($this->controller->createUrl('admin/image'));
+                            foreach ($imageFields as $image) {
+
+                                $saveDone = $image->save() && $saveDone;
+                            }
+
+                            if ($saveDone) {
+
+                                $this->controller->setNotice('Image was successfully updated');
+
+                                if (isset($newImageFieldAdded)) {
+
+                                    $this->controller->redirect(
+                                        $this->controller->createUrl(
+                                            'admin/imageUpdate',
+                                            array('id' => $model->id)
+                                        ) . '#imageFields'
+                                    );
+                                } else {
+
+                                    $this->controller->redirect($this->controller->createUrl('admin/image'));
+                                }
                             }
                         }
                     }
                 }
+
+
             }
         }
 
