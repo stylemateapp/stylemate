@@ -41,6 +41,14 @@
 
                 if (!Yii::app()->user->isGuest) {
 
+                    $user = User::model()->findByPk(Yii::app()->user->id, array('select' => 'id, role'));
+
+                    if(is_null($user)) {
+
+                        Yii::app()->user->logout();
+                        ResponseHelper::sendResponse(401);
+                    }
+
                     $filterChain->run();
 
                 } else {

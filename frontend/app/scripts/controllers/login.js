@@ -8,9 +8,9 @@ function LoginController($scope, $http, $rootScope, $state, serverUrl) {
 
         if(!formInvalid) {
 
-            $http.post(serverUrl + '/user/login', {email: $scope.email, password: $scope.password})
+            $http.post(serverUrl + '/user/login', {username: $scope.username, password: $scope.password})
 
-                .success(function (data, status, error, config) {
+                .success(function (data) {
 
                     if (data.success === true) {
 
@@ -20,18 +20,18 @@ function LoginController($scope, $http, $rootScope, $state, serverUrl) {
                     }
                     else {
 
-                        $scope.errorMessage = 'User with provided email and password was not found';
+                        $scope.errorMessage = 'User with provided username and password was not found';
                     }
                 })
 
-                .error(function (data, status, error, config) {
+                .error(function () {
 
                     $scope.errorMessage = 'Error logging in';
                 });
         }
         else {
 
-            $scope.errorMessage = 'Please fill in email and password correctly';
+            $scope.errorMessage = 'Please fill in username and password correctly';
         }
     };
 }

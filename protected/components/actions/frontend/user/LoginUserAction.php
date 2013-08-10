@@ -21,8 +21,8 @@ class LoginUserAction extends Action
     {
         $credentials = ResponseHelper::getRequestData();
 
-        $model           = new LoginForm;
-        $model->email    = strip_tags($credentials['email']);
+        $model           = new LoginFormFrontend();
+        $model->username = strip_tags($credentials['username']);
         $model->password = strip_tags($credentials['password']);
 
         if ($model->validate() && $model->login()) {

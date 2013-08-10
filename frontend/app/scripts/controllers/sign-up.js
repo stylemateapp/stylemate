@@ -6,9 +6,9 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
 
     $scope.goToSetLocation = function() {
 
-        $http.post(serverUrl + '/user/signUp', {email: $scope.email, password: $scope.password})
+        $http.post(serverUrl + '/user/signUp', {username: $scope.username, name: $scope.name, email: $scope.email, password: $scope.password})
 
-            .success(function (data, status, error, config) {
+            .success(function (data) {
 
                 if (data.success === true) {
 
@@ -21,7 +21,7 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
                 }
             })
 
-            .error(function (data, status, error, config) {
+            .error(function (data) {
 
                 $scope.errorMessage = data.errorMessage;
             });
@@ -30,9 +30,9 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
 
     $scope.login = function () {
 
-        $http.post(serverUrl + '/user/login', {email: $scope.email, password: $scope.password})
+        $http.post(serverUrl + '/user/login', {username: $scope.username, password: $scope.password})
 
-            .success(function (data, status, error, config) {
+            .success(function (data) {
 
                 if (data.success === true) {
 
@@ -46,7 +46,7 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
                 }
             })
 
-            .error(function (data, status, error, config) {
+            .error(function () {
 
                 $scope.errorMessage = 'Error logging in using newly created user';
             });

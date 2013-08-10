@@ -42,7 +42,12 @@ class UserIdentity extends CUserIdentity
             return self::ERROR_NONE;
         }
 
-        $user = User::model()->findByAttributes(array('email' => $this->username));
+        $user = User::model()->findByAttributes(array('username' => $this->username));
+
+        if ($user === null)
+        {
+            $user = User::model()->findByAttributes(array('email' => $this->username));
+        }
 
         if($user === null)
         {

@@ -64,13 +64,17 @@
                 array('email', 'required', 'message' => 'Email cannot be blank'),
                 array('email', 'email', 'message' => 'Email is invalid'),
                 array('email', 'unique', 'message' => 'Email already exists'),
+
+                array('username', 'required', 'message' => 'Username cannot be blank'),
+                array('username', 'unique', 'message' => 'Username already exists'),
+
                 array('password', 'required', 'message' => 'Password cannot be blank'),
                 array('password', 'length', 'min' => 3, 'tooShort' => 'Password should be at least 3 characters'),
 
                 array('location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
 
                 array('is_facebook', 'boolean'),
-                array('email, password, location', 'length', 'max' => 100),
+                array('email, password, location, username, name', 'length', 'max' => 100),
                 array('role', 'length', 'max' => 15),
 
                 array(

@@ -22,7 +22,7 @@
     <div class="validation-message">{{errorMessage}}</div>
 
     <form class="form" name="signUpForm">
-        <input type="text" class="text-field username" placeholder="username" ng-model="email" required focus-element>
+        <input type="text" class="text-field username" placeholder="username" ng-model="username" required focus-element>
         <input type="password" class="text-field password" placeholder="password" ng-model="password" required>
 
         <div id="profile">
@@ -33,8 +33,8 @@
     <form class="facebook-form" action="">
         <div id="facebook">
         </div>
-        <input type="email" class="text-field email" placeholder="email">
-        <input type="text" class="text-field name" placeholder="name">
+        <input type="email" class="text-field email" placeholder="email" ng-model="email" required>
+        <input type="text" class="text-field name" placeholder="name" ng-model="name">
     </form>
 
 </section>
