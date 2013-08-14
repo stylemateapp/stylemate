@@ -22,6 +22,24 @@ angular.module('stylemate.directives')
             replace: false,
             controller: function ($scope, $element, $attrs, $http, serverUrl) {
 
+                if (navigator.geolocation) {
+
+                    navigator.geolocation.getCurrentPosition(
+
+                        function (position) {
+
+                            $scope.$apply(function () {
+
+                                $http.post(serverUrl + '/user/setDefaultLocation/', {latitude: position.coords.latitude, longitude: position.coords.longitude})
+
+                                    .then(function (result) {
+
+                                        $scope.locations = result.data.locations;
+                                    });
+                            });
+                        });
+                }
+
                 $http.get(serverUrl + '/user/getLocations/')
 
                     .success(function (data) {
@@ -45,9 +63,18 @@ angular.module('stylemate.directives')
 
                                 .success(function (data) {
 
+                                    $scope.errorMessage = '';
                                     $scope.locations = data.locations;
                                 });
                         }
+                        else {
+
+                            $scope.errorMessage = 'This location is already added';
+                        }
+                    }
+                    else {
+
+                        $scope.errorMessage = 'No more than 5 locations please';
                     }
                 };
 
@@ -61,6 +88,7 @@ angular.module('stylemate.directives')
 
                             .success(function (data) {
 
+                                $scope.errorMessage = '';
                                 $scope.locations = data.locations;
                             });
                     }

@@ -19,17 +19,18 @@
         public function actions()
         {
             return array(
-                'login'          => 'application.components.actions.frontend.user.LoginUserAction',
-                'logout'         => 'application.components.actions.frontend.user.LogoutUserAction',
-                'signUp'         => 'application.components.actions.frontend.user.SignUpUserAction',
-                'getLocations'   => 'application.components.actions.frontend.user.GetUserLocationsAction',
-                'setLocation'    => 'application.components.actions.frontend.user.SetUserLocationAction',
-                'deleteLocation' => 'application.components.actions.frontend.user.DeleteUserLocationAction',
-                'getStyles'      => 'application.components.actions.frontend.user.GetUserStylesAction',
-                'setStyles'      => 'application.components.actions.frontend.user.SetUserStylesAction',
-                'getWeather'     => 'application.components.actions.frontend.user.GetWeatherAction',
-                'getOccasions'   => 'application.components.actions.frontend.user.GetOccasionsAction',
-                'getImages'      => 'application.components.actions.frontend.user.GetImagesAction',
+                'login'              => 'application.components.actions.frontend.user.LoginUserAction',
+                'logout'             => 'application.components.actions.frontend.user.LogoutUserAction',
+                'signUp'             => 'application.components.actions.frontend.user.SignUpUserAction',
+                'getLocations'       => 'application.components.actions.frontend.user.GetUserLocationsAction',
+                'setLocation'        => 'application.components.actions.frontend.user.SetUserLocationAction',
+                'setDefaultLocation' => 'application.components.actions.frontend.user.SetUserDefaultLocationAction',
+                'deleteLocation'     => 'application.components.actions.frontend.user.DeleteUserLocationAction',
+                'getStyles'          => 'application.components.actions.frontend.user.GetUserStylesAction',
+                'setStyles'          => 'application.components.actions.frontend.user.SetUserStylesAction',
+                'getWeather'         => 'application.components.actions.frontend.user.GetWeatherAction',
+                'getOccasions'       => 'application.components.actions.frontend.user.GetOccasionsAction',
+                'getImages'          => 'application.components.actions.frontend.user.GetImagesAction',
             );
         }
 

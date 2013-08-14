@@ -44,6 +44,44 @@ class GeoLocationHelper
     }
 
     /**
+     * @param float $latitude
+     * @param float $longitude
+     *
+     * @return string
+     */
+
+    public static function getAddressByCoordinates($latitude, $longitude)
+    {
+        $url     = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $latitude . ',' . $longitude . '&sensor=false&language=en';
+        $data    = self::sendRequest($url);
+
+        if ($data) {
+
+            $data   = json_decode($data);
+            $status = $data->status;
+
+            if ($status == 'OK') {
+
+                if (!empty($data->results[0]->address_components)) {
+
+                    foreach ($data->results[0]->address_components as $component) {
+
+                        foreach ($component->types as $type) {
+
+                            if ($type == 'locality') {
+
+                                return $component->long_name;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return '';
+    }
+
+    /**
      * @param $url
      *
      * @return mixed

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('stylemate.services');
+var app = angular.module('stylemate.services', []);
 
 app.factory('UserService', ['$rootScope', '$http', '$q', '$state', 'serverUrl', function ($rootScope, $http, $q, $state, serverUrl) {
 
