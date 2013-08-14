@@ -23,12 +23,12 @@ class GetUserLocationsAction extends Action
     {
         $user = User::model()->findByPk(Yii::app()->user->id);
 
-        if (!empty($user->location)) {
+        if (!empty($user->defaultLocation->name)) {
 
-            $coordinates = GeoLocationHelper::getCoordinatesByAddress($user->location);
+            $coordinates = GeoLocationHelper::getCoordinatesByAddress($user->defaultLocation->name);
 
             $defaultLocation = array(
-                'name'      => $user->location,
+                'name'      => $user->defaultLocation->name,
                 'latitude'  => $coordinates['latitude'],
                 'longitude' => $coordinates['longitude'],
             );
@@ -36,14 +36,14 @@ class GetUserLocationsAction extends Action
             ResponseHelper::sendResponse(
                 200,
                 array(
-                     'success' => true,
+                     'success'   => true,
                      'locations' => array(
-                         'default' => $defaultLocation
+                         'default'        => $defaultLocation,
+                         'otherLocations' => $user->locations
                      )
                 )
             );
-        }
-        else {
+        } else {
 
             ResponseHelper::sendResponse(
                 400,

@@ -1,10 +1,11 @@
 'use strict';
 
-function SetLocationController($scope, $rootScope, $http, $state, GeoLocationService, serverUrl, topLocations) {
+function SetLocationController($scope, $rootScope, $http, $state, serverUrl, topLocations) {
 
     $scope.topLocations = topLocations;
     $scope.errorMessage = '';
     $scope.previousStateName = $rootScope.previousStateName;
+    $scope.locations = [];
 
     if ($scope.previousStateName === 'sign-up') {
 
@@ -15,36 +16,33 @@ function SetLocationController($scope, $rootScope, $http, $state, GeoLocationSer
         $scope.className = 'done';
     }
 
+    $http.get(serverUrl + '/user/getLocations/')
+
+        .success(function (data) {
+
+            $scope.locations = data.locations;
+        });
+
     $scope.goToNextState = function () {
 
-        var location = $scope.setLocationForm.location.$viewValue;
+        var defaultLocation = $scope.locations.default;
 
-        $http.post(serverUrl + '/user/setLocation', {location: location})
+        if (defaultLocation) {
 
-            .success(function (data, status, error, config) {
+            if ($scope.previousStateName === 'sign-up') {
 
-                if (data.success === true) {
+                $state.transitionTo('choose-styles');
+            }
+            else {
 
-                    if ($scope.previousStateName === 'sign-up') {
+                $state.transitionTo('homepage');
+            }
+        }
+        else {
 
-                        $state.transitionTo('choose-styles');
-                    }
-                    else {
-
-                        $state.transitionTo('homepage');
-                    }
-                }
-                else {
-
-                    $scope.errorMessage = data.errorMessage;
-                }
-            })
-
-            .error(function (data, status, error, config) {
-
-                $scope.errorMessage = data.errorMessage;
-            });
+            $scope.errorMessage = 'You have not selected default location';
+        }
     };
 }
 
-SetLocationController.$inject = ['$scope', '$rootScope', '$http', '$state', 'GeoLocationService', 'serverUrl', 'topLocations'];
+SetLocationController.$inject = ['$scope', '$rootScope', '$http', '$state', 'serverUrl', 'topLocations'];

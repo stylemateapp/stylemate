@@ -94,6 +94,25 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
     margin: -40px 0 40px 82px;
 }
 
+.default-location {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    width: 640px;
+    height: 60px;
+    text-transform: uppercase;
+}
+
+.default-location-name {
+    text-decoration: underline;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.default-location .bigger-font {
+    font-size: 30px;
+}
+
 .debug {
 	text-align: center;
 	color: #000;
@@ -303,7 +322,7 @@ header.main {
 }
 
 #select-location {
-    margin: -25px 0 19px 86px;
+    margin: 0 0 19px 86px;
 	font-size: 24px;
 }
 
@@ -351,6 +370,10 @@ and (max-device-width : 480px) {
 	width: 379px;
 }
 
+#location-main-block {
+    margin-top: -40px;
+}
+
 ul.choose-location {
 	overflow: hidden;
 	height: 700px;
@@ -387,6 +410,39 @@ and (max-device-width : 480px) {
 ul.choose-location li:hover {
 	background: #dae4ee;
 	font-weight: bold;
+}
+
+ul.other-locations {
+	overflow: hidden;
+	margin-top: 21px;
+	width: 467px;
+}
+
+ul.other-locations li {
+	background: #c4d4e3;
+	height: 70px;
+	list-style: none;
+	font-size: 22px;
+	color: #7294b9;
+	margin: 0 0 10px 0;
+	text-transform: uppercase;
+}
+
+ul.other-locations li .text {
+    display: block;
+    width: 345px;
+    height: 47px;
+    float: left;
+    margin: 23px 0 0 22px;
+}
+
+ul.other-locations li .location-delete {
+    display: block;
+    float: right;
+    width: 100px;
+    height: 70px;
+    cursor: pointer;
+    background: url('../images/location-delete.png') no-repeat;
 }
 
 ul.choose-style {

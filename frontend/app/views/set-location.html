@@ -13,16 +13,27 @@
     </div>
 </header>
 
-<section class="main" id="choose-location">
+<section class="main" id="location-main-block">
 
     <div class="validation-message" ng-show="errorMessage">{{errorMessage}}</div>
 
+    <div class="default-location">
+        <div ng-show="locations.default">
+            YOUR LOCATION IS SET FOR
+            <div class="default-location-name">{{locations.default.name}}</div>
+        </div>
+        <div ng-show="!locations.default" class="bigger-font">
+            YOU HAVE NOT SELECTED
+            <div>A LOCATION YET</div>
+        </div>
+    </div>
+
     <div id="select-location">
-        ENTER YOUR LOCATION
+        SELECT UP TO 5 LOCATION(S)
     </div>
 
     <form class="form" name="setLocationForm">
-        <choose-location source="topLocations"></choose-location>
+        <choose-location top-locations="topLocations" other-locations="locations.otherLocations"></choose-location>
     </form>
 
 </section>

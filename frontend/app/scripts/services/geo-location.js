@@ -80,4 +80,4 @@ var GeoLocationService = (function () {
 })();
 
 
-google.maps.event.addDomListener(window, 'load', GeoLocationService.initializeGeoLocation);
+//google.maps.event.addDomListener(window, 'load', GeoLocationService.initializeGeoLocation);

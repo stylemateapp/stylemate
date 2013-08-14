@@ -7,12 +7,13 @@
      * @property string     $id
      * @property string     $email
      * @property string     $password
-     * @property string     $location
+     * @property Location   $defaultLocation
      * @property integer    $is_facebook
      * @property string     $role
      *
      * The followings are the available model relations:
      * @property Category[] $userStyles
+     * @property Location[] $locations
      *
      * @method User findByPk
      */
@@ -71,14 +72,14 @@
                 array('password', 'required', 'message' => 'Password cannot be blank'),
                 array('password', 'length', 'min' => 3, 'tooShort' => 'Password should be at least 3 characters'),
 
-                array('location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
+                array('default_location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
 
                 array('is_facebook', 'boolean'),
-                array('email, password, location, username, name', 'length', 'max' => 100),
+                array('email, password, default_location, username, name', 'length', 'max' => 100),
                 array('role', 'length', 'max' => 15),
 
                 array(
-                    'email, password, location',
+                    'email, password, default_location',
                     'filter',
                     'filter' => 'strip_tags'
                 ),
@@ -93,6 +94,7 @@
         {
             return array(
                 'userStyles' => array(self::MANY_MANY, 'Category', 'user_style(user_id, category_id)'),
+                'locations'  => array(self::HAS_MANY, 'Location', 'user_id'),
             );
         }
 
@@ -106,10 +108,27 @@
                 'id'          => 'ID',
                 'email'       => 'Email',
                 'password'    => 'Password',
-                'location'    => 'Location',
                 'is_facebook' => 'Is Facebook',
                 'role'        => 'Role',
             );
+        }
+
+        /**
+         * Getter for default location
+         *
+         * @return Location|null
+         */
+
+        public function getDefaultLocation()
+        {
+            $location = Location::model()->findByPk($this->default_location);
+
+            if(!is_null($location)) {
+
+                return $location;
+            }
+
+            return null;
         }
 
         /**
