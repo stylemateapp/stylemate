@@ -17,6 +17,8 @@ class DeleteUserLocationAction extends Action
 
     public function run()
     {
+        $user = User::model()->findByPk(Yii::app()->user->id);
+
         $credentials  = ResponseHelper::getRequestData();
         $locationName = strip_tags($credentials['location']);
 
@@ -29,7 +31,16 @@ class DeleteUserLocationAction extends Action
 
         if (!is_null($location) && $location->delete()) {
 
-            ResponseHelper::sendResponse(200, array('success' => true));
+            ResponseHelper::sendResponse(
+                200,
+                array(
+                     'success'   => true,
+                     'locations' => array(
+                         'default'        => $user->defaultLocation,
+                         'otherLocations' => $user->otherLocations
+                     )
+                )
+            );
         }
         else {
 

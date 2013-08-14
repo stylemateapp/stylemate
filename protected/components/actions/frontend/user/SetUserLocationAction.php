@@ -17,21 +17,14 @@ class SetUserLocationAction extends Action
 
     public function run()
     {
-        $addingNewLocationAllowed = true;
+        $addingNewLocationAllowed  = true;
 
         $user = User::model()->findByPk(Yii::app()->user->id);
 
-        if(sizeof($user->locations) >= 5) {
+        if (sizeof($user->locations) >= 5) {
 
             $addingNewLocationAllowed = false;
         }
-
-        /**
-         * THIS IS CASE OF DEFAULT LOCATION SETTING
-         *
-         * $user = User::model()->findByPk(Yii::app()->user->id);
-
-        $user->setScenario('setLocation');*/
 
         if ($addingNewLocationAllowed) {
 
@@ -45,21 +38,33 @@ class SetUserLocationAction extends Action
                 )
             );
 
-            if(is_null($location)) {
+            if (is_null($location)) {
 
-                $location = new Location();
+                $location          = new Location();
                 $location->user_id = Yii::app()->user->id;
                 $location->name    = $locationName;
 
                 if ($location->save()) {
 
-                    ResponseHelper::sendResponse(200, array('success' => true));
+                    $user->refresh();
+
+                    ResponseHelper::sendResponse(
+                        200,
+                        array(
+                             'success'   => true,
+                             'locations' => array(
+                                 'default'        => $user->defaultLocation,
+                                 'otherLocations' => $user->otherLocations
+                             )
+                        )
+                    );
 
                 } else {
 
                     ResponseHelper::sendResponse(
                         400,
-                        array('success'     => false,
+                        array(
+                             'success'      => false,
                              'errorMessage' => ResponseHelper::returnValidationErrorsString($location->errors)
                         )
                     );

@@ -6,6 +6,8 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
     $scope.errorMessage = '';
     $scope.previousStateName = $rootScope.previousStateName;
     $scope.locations = [];
+    $scope.locations.default = [];
+    $scope.locations.otherLocations = [];
 
     if ($scope.previousStateName === 'sign-up') {
 
@@ -15,13 +17,6 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
 
         $scope.className = 'done';
     }
-
-    $http.get(serverUrl + '/user/getLocations/')
-
-        .success(function (data) {
-
-            $scope.locations = data.locations;
-        });
 
     $scope.goToNextState = function () {
 

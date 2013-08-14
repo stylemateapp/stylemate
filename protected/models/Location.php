@@ -61,4 +61,19 @@
                 'user' => array(self::BELONGS_TO, 'User', 'user_id'),
             );
         }
+
+        /**
+         * Here we set default location for user in case it's not saved yet
+         */
+
+        protected function afterSave()
+        {
+            if (is_null($this->user->defaultLocation)) {
+
+                $this->user->default_location = $this->id;
+                $this->user->save(false);
+            }
+
+            parent::afterSave();
+        }
     }

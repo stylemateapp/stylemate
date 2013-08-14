@@ -18,11 +18,11 @@
     <div class="validation-message" ng-show="errorMessage">{{errorMessage}}</div>
 
     <div class="default-location">
-        <div ng-show="locations.default">
+        <div ng-show="locations.default.name">
             YOUR LOCATION IS SET FOR
             <div class="default-location-name">{{locations.default.name}}</div>
         </div>
-        <div ng-show="!locations.default" class="bigger-font">
+        <div ng-show="!locations.default.name" class="bigger-font">
             YOU HAVE NOT SELECTED
             <div>A LOCATION YET</div>
         </div>
@@ -33,7 +33,7 @@
     </div>
 
     <form class="form" name="setLocationForm">
-        <choose-location top-locations="topLocations" other-locations="locations.otherLocations"></choose-location>
+        <choose-location top-locations="topLocations"></choose-location>
     </form>
 
 </section>

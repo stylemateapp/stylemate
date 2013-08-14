@@ -1,3 +1,18 @@
+/**
+ * PLEASE NOTE THAT THIS DIRECTIVE HAS SHARED WITH CONTROLLER SCOPE
+ */
+
+Object.prototype.findByName = function (value) {
+
+    for (var prop in this) {
+
+        if (this.hasOwnProperty(prop)) {
+
+            if(this[prop].name && this[prop].name === value) return prop;
+        }
+    }
+};
+
 angular.module('stylemate.directives')
 
     .directive('chooseLocation', function () {
@@ -5,49 +20,32 @@ angular.module('stylemate.directives')
             restrict: 'EA',
             transclude: false,
             replace: false,
-            scope: {
-                'topLocations': '=',
-                'otherLocations': '='
-            },
-            controller: function ($scope, $element, $http, serverUrl) {
+            controller: function ($scope, $element, $attrs, $http, serverUrl) {
 
-                if(!$scope.otherLocations) {
+                $http.get(serverUrl + '/user/getLocations/')
 
-                    $scope.otherLocations = [];
-                }
+                    .success(function (data) {
 
-                /*$scope.addLocation = function (value) {
+                        $scope.locations = data.locations;
+                    });
 
-                    if ($scope.addedLocations.indexOf(value) == -1) {
+                $scope.addLocation = function (name) {
 
-                        $http.post(serverUrl + '/user/setLocation', {location: value})
+                    if ($scope.locations.default.name && $scope.locations.default.name == name) return;
 
-                            .success(function (data) {
+                    var length = Object.keys($scope.locations.otherLocations).length;
 
-                                $scope.addedLocations.push(value);
-                            });
-                    }
-                };*/
+                    if (length < 4) {
 
-                $scope.addLocation = function (value) {
+                        var found = $scope.locations.otherLocations.findByName(name);
 
-                    if ($scope.otherLocations.length < 4) {
+                        if (!found) {
 
-                        function findByName(source, name) {
+                            $http.post(serverUrl + '/user/setLocation', {location: name})
 
-                            return source.filter(function (obj) {
+                                .success(function (data) {
 
-                                return obj.name.toLowerCase() == name.toLowerCase();
-                            })[0];
-                        }
-
-                        if (typeof findByName($scope.otherLocations, value) == 'undefined') {
-
-                            $http.post(serverUrl + '/user/setLocation', {location: value})
-
-                                .success(function () {
-
-                                    $scope.otherLocations.push({name: value});
+                                    $scope.locations = data.locations;
                                 });
                         }
                     }
@@ -55,15 +53,15 @@ angular.module('stylemate.directives')
 
                 $scope.deleteLocation = function (name) {
 
-                    var pos = $scope.otherLocations.indexOf(name);
+                    var found = $scope.locations.otherLocations.findByName(name);
 
-                    if (pos >= -1) {
+                    if (found) {
 
                         $http.post(serverUrl + '/user/deleteLocation', {location: name})
 
-                            .success(function () {
+                            .success(function (data) {
 
-                                $scope.otherLocations.splice(pos, 1);
+                                $scope.locations = data.locations;
                             });
                     }
                 };
@@ -85,7 +83,7 @@ angular.module('stylemate.directives')
             },
             template:  '<input type="text" class="text-field search-location" ng-model="location" name="location" id="location" placeholder="start typing">' +
                        '<ul class="other-locations">' +
-                           '<li ng-repeat="location in otherLocations"><span class="text">{{location.name}}</span><span class="location-delete" ng-click="deleteLocation(location.name)"></span></li>' +
+                           '<li ng-repeat="location in locations.otherLocations"><span class="text">{{location.name}}</span><span class="location-delete" ng-click="deleteLocation(location.name)"></span></li>' +
                        '</ul>' +
                        '<div class="sub-header">OR CHOOSE FROM TOP CITIES</div>' +
                        '<ul class="choose-location">' +

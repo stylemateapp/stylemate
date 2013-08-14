@@ -39,7 +39,7 @@ class GetUserLocationsAction extends Action
                      'success'   => true,
                      'locations' => array(
                          'default'        => $defaultLocation,
-                         'otherLocations' => $user->locations
+                         'otherLocations' => $user->otherLocations
                      )
                 )
             );

@@ -8,12 +8,14 @@
      * @property string     $email
      * @property string     $password
      * @property Location   $defaultLocation
+     * @property integer    $default_location
      * @property integer    $is_facebook
      * @property string     $role
      *
      * The followings are the available model relations:
      * @property Category[] $userStyles
      * @property Location[] $locations
+     * @property Location[] $otherLocations
      *
      * @method User findByPk
      */
@@ -72,7 +74,7 @@
                 array('password', 'required', 'message' => 'Password cannot be blank'),
                 array('password', 'length', 'min' => 3, 'tooShort' => 'Password should be at least 3 characters'),
 
-                array('default_location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
+                //array('default_location', 'required', 'message' => 'Please provide non-empty location', 'on' => 'setLocation'),
 
                 array('is_facebook', 'boolean'),
                 array('email, password, default_location, username, name', 'length', 'max' => 100),
@@ -129,6 +131,31 @@
             }
 
             return null;
+        }
+
+        /**
+         * Getter for default location
+         *
+         * @return Location|null
+         */
+
+        public function getOtherLocations()
+        {
+            $locations       = $this->locations;
+            $defaultLocation = $this->defaultLocation;
+
+            if (!is_null($defaultLocation)) {
+
+                foreach ($locations as $key => $location) {
+
+                    if ($location->id == $defaultLocation->id) {
+
+                        unset($locations[$key]);
+                    }
+                }
+            }
+
+            return $locations;
         }
 
         /**
