@@ -32,8 +32,18 @@ class GetWeatherAction extends Action
         }
 
         $url = $url . urldecode($_GET['url']);
-        $url = file_get_contents($url);
 
-        print_r($url);
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        $response = curl_exec($ch);
+
+        curl_close($ch);
+
+        print_r($response);
     }
 }

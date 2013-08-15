@@ -76,6 +76,8 @@ angular.module('stylemate.directives')
 
                         $scope.errorMessage = 'No more than 5 locations please';
                     }
+
+                    $scope.ajaxDropdownData = [];
                 };
 
                 $scope.deleteLocation = function (name) {
@@ -96,8 +98,6 @@ angular.module('stylemate.directives')
 
                 $element.bind('keyup', function (evt) {
 
-                    // HERE CALL AJAX DROPDOWN
-
                     $scope.$apply(function () {
 
                         $scope.handleKeypress.call($scope, evt.which);
@@ -106,16 +106,31 @@ angular.module('stylemate.directives')
 
                 $scope.handleKeypress = function (key) {
 
+                    if($scope.search_city && $scope.search_city.length >= 3) {
 
+                        var url = "http://gd.geobytes.com/AutoCompleteCity?callback=JSON_CALLBACK&q=" + $scope.search_city;
+
+                        $http.jsonp(url)
+
+                            .success(function (data) {
+
+                                $scope.ajaxDropdownData = data.splice(0, 7);
+                            });
+                    }
+                    else {
+
+                        $scope.ajaxDropdownData = [];
+                    }
                 };
             },
-            template:  '<input type="text" class="text-field search-location" ng-model="location" name="location" id="location" placeholder="start typing">' +
+            template:  '<div class="locations-block"><input type="text" class="text-field search-location" ng-model="search_city" placeholder="start typing">' +
+                       '<ul class="location-ajax-dropdown"><li ng-repeat="city in ajaxDropdownData" ng-click="addLocation(city)">{{city}}</li></ul>' +
                        '<ul class="other-locations">' +
                            '<li ng-repeat="location in locations.otherLocations"><span class="text">{{location.name}}</span><span class="location-delete" ng-click="deleteLocation(location.name)"></span></li>' +
                        '</ul>' +
                        '<div class="sub-header">OR CHOOSE FROM TOP CITIES</div>' +
                        '<ul class="choose-location">' +
                            '<li ng-repeat="location in topLocations" ng-click="addLocation(location)">{{location}}</li>' +
-                       '</ul>'
+                       '</ul></div>'
         };
     });

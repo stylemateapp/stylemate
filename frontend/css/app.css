@@ -412,6 +412,28 @@ ul.choose-location li:hover {
 	font-weight: bold;
 }
 
+.locations-block {
+    position: relative;
+}
+
+ul.location-ajax-dropdown {
+    position: absolute;
+    list-style: none;
+    left: 158px;
+    text-transform: uppercase;
+}
+
+ul.location-ajax-dropdown li {
+    width: 336px;
+    height: 48px;
+    color: #7294b9;
+    font-size: 22px;
+    background: url('../images/ajax-dropdown.png') no-repeat;
+    cursor: pointer;
+    margin-top: 1px;
+    padding: 22px 40px 0 20px;
+}
+
 ul.other-locations {
 	overflow: hidden;
 	margin-top: 21px;
