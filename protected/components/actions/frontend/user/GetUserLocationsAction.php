@@ -33,13 +33,28 @@ class GetUserLocationsAction extends Action
                 'longitude' => $coordinates['longitude'],
             );
 
+            $otherLocations = array();
+
+            foreach ($user->otherLocations as $location) {
+
+                $coordinates = GeoLocationHelper::getCoordinatesByAddress($location->name);
+
+                $arr = array(
+                    'name'      => $location->name,
+                    'latitude'  => $coordinates['latitude'],
+                    'longitude' => $coordinates['longitude'],
+                );
+
+                $otherLocations[] = $arr;
+            }
+
             ResponseHelper::sendResponse(
                 200,
                 array(
                      'success'   => true,
                      'locations' => array(
                          'default'        => $defaultLocation,
-                         'otherLocations' => $user->otherLocations
+                         'otherLocations' => $otherLocations
                      )
                 )
             );
