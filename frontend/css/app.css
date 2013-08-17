@@ -424,14 +424,15 @@ ul.location-ajax-dropdown {
 }
 
 ul.location-ajax-dropdown li {
-    width: 336px;
-    height: 48px;
+    width: 306px;
+    height: 58px;
     color: #7294b9;
     font-size: 22px;
     background: url('../images/ajax-dropdown.png') no-repeat;
     cursor: pointer;
     margin-top: 1px;
-    padding: 22px 40px 0 20px;
+    padding: 12px 70px 0 20px;
+    border: 1px solid #f3faff;
 }
 
 ul.other-locations {
@@ -452,8 +453,9 @@ ul.other-locations li {
 
 ul.other-locations li .text {
     display: block;
+    overflow: hidden;
     width: 345px;
-    height: 47px;
+    height: 27px;
     float: left;
     margin: 23px 0 0 22px;
 }
@@ -660,6 +662,10 @@ ul.choose-occasion li.selected {
     position: relative;
 }
 
+#homepage-location-block {
+    height: 760px;
+}
+
 #location-next {
     position: absolute;
     top: 3px;
@@ -681,6 +687,7 @@ ul.choose-occasion li.selected {
 }
 
 #city {
+    width: 400px;
 	font-size: 30px;
 	text-align: center;
 	margin-bottom: 23px;

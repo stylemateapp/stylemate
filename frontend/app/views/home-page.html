@@ -9,20 +9,22 @@
         </header>
 
         <section class="main" id="main-home-page" ng-show="loggedIn">
-            <div id="location-next" ng-click="goNext()" ng-show="isNext()"></div>
-            <div id="location-previous" ng-click="goPrevious()" ng-show="isPrevious()"></div>
-            <div id="city">
-                {{location.name}}
-            </div>
-            <div id="weather-conditions">
-                {{location.cloudyPhrase}}
-            </div>
-            <div id="degree">
-                {{location.temperature}}
-            </div>
-            <div class="weather-image">
-                <div id="cloudCover" class="{{location.cloudyClass}}">
+            <div id="homepage-location-block">
+                <div id="location-next" ng-click="goNext()" ng-show="isNext()"></div>
+                <div id="location-previous" ng-click="goPrevious()" ng-show="isPrevious()"></div>
+                <div id="city">
+                    {{location.name}}
+                </div>
+                <div id="weather-conditions">
+                    {{location.cloudyPhrase}}
+                </div>
+                <div id="degree">
+                    {{location.temperature}}
+                </div>
+                <div class="weather-image">
+                    <div id="cloudCover" class="{{location.cloudyClass}}">
 
+                    </div>
                 </div>
             </div>
 
