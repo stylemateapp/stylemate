@@ -140,42 +140,71 @@ body {
 	background: none;
 }
 
-#sub-container-weather.sunny {
-	background: url(../images/background-sunny.png) no-repeat;
+#sub-container-weather.clear-morning {
+	background: url(../images/background-clear-morning.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
-#sub-container-weather.cloudy {
-	background: url(../images/background-cloudy.png) no-repeat;
+#sub-container-weather.clear-evening {
+	background: url(../images/background-clear-evening.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
-#sub-container-weather.night {
+#sub-container-weather.clear-night {
 	background: url(../images/background-night.png) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.cloudy-morning {
+	background: url(../images/background-cloudy-morning.jpg) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.cloudy-day {
+	background: url(../images/background-cloudy-day.jpg) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.cloudy-evening {
+	background: url(../images/background-cloudy-evening.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
 #sub-container-weather.cloudy-night {
-	background: url(../images/background-night.png) no-repeat;
+	background: url(../images/background-cloudy-night.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
-#sub-container-weather.rain {
-	background: url(../images/background-cloudy.png) no-repeat;
+#sub-container-weather.rainy-morning {
+	background: url(../images/background-rainy-morning.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
-#sub-container-weather.snow {
-	background: url(../images/background-cloudy.png) no-repeat;
+#sub-container-weather.rainy-day {
+	background: url(../images/background-rainy-day.jpg) no-repeat;
 	width: 640px;
 	height: 1094px;
 }
 
+#sub-container-weather.rainy-evening {
+	background: url(../images/background-rainy-evening.jpg) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
+
+#sub-container-weather.rainy-night {
+	background: url(../images/background-rainy-night.jpg) no-repeat;
+	width: 640px;
+	height: 1094px;
+}
 
 header.main {
 	padding-top: 129px;
@@ -563,89 +592,114 @@ ul.choose-occasion li.selected {
     font-weight: bold;
 }
 
-#sub-container-weather.sunny ul.choose-occasion li {
-    background: #e8e2bf;
-    color: #9d9773;
+#sub-container-weather.clear-morning ul.choose-occasion li {
+	background: #c1c1d4;
+    color: #fff;
 }
 
-#sub-container-weather.sunny ul.choose-occasion li:hover {
-    background: #ece7cc;
+#sub-container-weather.clear-morning ul.choose-occasion li:hover {
+	background: #cacbdb;
 }
 
-#sub-container-weather.sunny ul.choose-occasion li.selected {
-	background: #e8e2bf;
-    font-weight: bold;
+#sub-container-weather.clear-day ul.choose-occasion li {
+    background: #b8cadb;
+    color: #fff;
 }
 
-#sub-container-weather.cloudy ul.choose-occasion li {
-    background: #d6dee5;
-    color: #697e8e;
+#sub-container-weather.clear-day ul.choose-occasion li:hover {
+    background: #c6d4e3;
 }
 
-#sub-container-weather.cloudy ul.choose-occasion li:hover {
-    background: #dee5ea;
+#sub-container-weather.clear-evening ul.choose-occasion li {
+	background: #dcd0c7;
+    color: #fff;
 }
 
-#sub-container-weather.cloudy ul.choose-occasion li.selected {
-    background: #d6dee5;
-    font-weight: bold;
+#sub-container-weather.clear-evening ul.choose-occasion li:hover {
+	background: #e1d9d3;
 }
 
-#sub-container-weather.night ul.choose-occasion li {
+#sub-container-weather.clear-night ul.choose-occasion li {
 	background: #a3adb9;
-	color: #6585a9;
+    color: #fff;
 }
 
-#sub-container-weather.night ul.choose-occasion li:hover {
+#sub-container-weather.clear-night ul.choose-occasion li:hover {
 	background: #b4bdc6;
 }
 
-#sub-container-weather.night ul.choose-occasion li.selected {
-	background: #a3adb9;
-    font-weight: bold;
+#sub-container-weather.cloudy-morning ul.choose-occasion li {
+    color: #fff;
+	background: #cfcfda;
+}
+
+#sub-container-weather.cloudy-morning ul.choose-occasion li:hover {
+	background: #d7d7e0;
+}
+
+#sub-container-weather.cloudy-day ul.choose-occasion li {
+    color: #fff;
+	background: #cad4dd;
+}
+
+#sub-container-weather.cloudy-day ul.choose-occasion li:hover {
+	background: #d4dce4;
+}
+
+#sub-container-weather.cloudy-evening ul.choose-occasion li {
+    color: #fff;
+	background: #d0cdca;
+}
+
+#sub-container-weather.cloudy-evening ul.choose-occasion li:hover {
+	background: #d9d6d4;
 }
 
 #sub-container-weather.cloudy-night ul.choose-occasion li {
-	background: #a3adb9;
-	color: #6585a9;
+    color: #fff;
+	background: #b6babe;
 }
 
 #sub-container-weather.cloudy-night ul.choose-occasion li:hover {
-	background: #b4bdc6;
+	background: #c3c6ca;
 }
 
-#sub-container-weather.cloudy-night ul.choose-occasion li.selected {
-	background: #a3adb9;
-    font-weight: bold;
+#sub-container-weather.rainy-morning ul.choose-occasion li {
+    color: #fff;
+	background: #cfcfda;
 }
 
-#sub-container-weather.rain ul.choose-occasion li {
-    background: #d6dee5;
-    color: #697e8e;
+#sub-container-weather.rainy-morning ul.choose-occasion li:hover {
+	background: #d7d7e0;
 }
 
-#sub-container-weather.rain ul.choose-occasion li:hover {
-    background: #dee5ea;
+#sub-container-weather.rainy-day ul.choose-occasion li {
+    color: #fff;
+	background: #cad4dd;
 }
 
-#sub-container-weather.rain ul.choose-occasion li.selected {
-    background: #d6dee5;
-    font-weight: bold;
+#sub-container-weather.rainy-day ul.choose-occasion li:hover {
+	background: #d4dce4;
 }
 
-#sub-container-weather.snow ul.choose-occasion li {
-    background: #d6dee5;
-    color: #697e8e;
+#sub-container-weather.rainy-evening ul.choose-occasion li {
+    color: #fff;
+	background: #d0cdca;
 }
 
-#sub-container-weather.snow ul.choose-occasion li:hover {
-    background: #dee5ea;
+#sub-container-weather.rainy-evening ul.choose-occasion li:hover {
+	background: #d9d6d5;
 }
 
-#sub-container-weather.snow ul.choose-occasion li.selected {
-    background: #d6dee5;
-    font-weight: bold;
+#sub-container-weather.rainy-night ul.choose-occasion li {
+    color: #fff;
+	background: #b5b9be;
 }
+
+#sub-container-weather.rainy-night ul.choose-occasion li:hover {
+	background: #c3c6ca;
+}
+
 .header {
 	position: relative;
 	width: 640px;
@@ -663,7 +717,7 @@ ul.choose-occasion li.selected {
 }
 
 #homepage-location-block {
-    height: 760px;
+    height: 720px;
 }
 
 #location-next {
@@ -704,14 +758,13 @@ ul.choose-occasion li.selected {
 #degree {
 	font-size: 70px;
 	text-align: center;
-	margin-bottom: 80px;
+	margin-bottom: 20px;
 	background: url("../images/degrees.png") no-repeat 360px 9px;
 }
 
 .weather-image {
 	width: 440px;
 	height: 440px;
-	margin-bottom: 77px;
 }
 
 #cloudCover {
@@ -720,42 +773,34 @@ ul.choose-occasion li.selected {
 	background: url("../images/partially-cloudy.png") no-repeat;
 }
 
-#cloudCover.partially-cloudy {
-	background: url("../images/partially-cloudy.png") no-repeat;
+#cloudCover.clear-day, #cloudCover.clear-evening, #cloudCover.clear-morning {
+    width: 432px;
+    height: 434px;
+    background: url("../images/sunny.png") no-repeat;
 }
 
-#cloudCover.cloudy {
-	background: url("../images/cloudy.png") no-repeat;
-}
-
-#cloudCover.sunny {
-	width: 432px;
-	height: 434px;
-	background: url("../images/sunny.png") no-repeat;
-}
-
-#cloudCover.night {
+#cloudCover.clear-night {
 	width: 402px;
 	height: 400px;
 	background: url("../images/night.png") no-repeat;
 }
 
-#cloudCover.cloudy-night {
-	width: 424px;
-	height: 394px;
-	background: url("../images/cloudy-night.png") no-repeat;
+#cloudCover.cloudy-day, #cloudCover.cloudy-evening, #cloudCover.cloudy-morning {
+	width: 407px;
+	height: 405px;
+	background: url("../images/cloudy.png") no-repeat;
 }
 
-#cloudCover.rain {
-	width: 402px;
-	height: 400px;
-	background: url("../images/rain.png") no-repeat;
+#cloudCover.rainy-night, #cloudCover.rainy-morning, #cloudCover.rainy-evening  {
+	width: 403px;
+	height: 403px;
+	background: url("../images/rain1.png") no-repeat;
 }
 
-#cloudCover.snow {
-	width: 402px;
-	height: 400px;
-	background: url("../images/snow.png") no-repeat;
+#cloudCover.rainy-day {
+	width: 404px;
+	height: 356px;
+	background: url("../images/rain2.png") no-repeat;
 }
 
 ul.buttons li {
@@ -773,65 +818,115 @@ ul.buttons li {
 
 ul.buttons li:hover {
 	background: #dae4ee;
+    font-weight: bold;
 }
 
-#sub-container-weather.sunny ul.buttons li {
-	background: #e8e2bf;
-	color: #9d9773;
+#sub-container-weather.clear-morning ul.buttons li {
+    color: #fff;
+    background: #c1c1d4;
 }
 
-#sub-container-weather.cloudy ul.buttons li {
-	background: #d6dee5;
-	color: #8092a0;
+#sub-container-weather.clear-morning ul.buttons li:hover {
+    background: #cbcbdb;
 }
 
-#sub-container-weather.night ul.buttons li {
+#sub-container-weather.clear-day ul.buttons li {
+    color: #fff;
+    background: #b8cadb;
+}
+
+#sub-container-weather.clear-day ul.buttons li:hover {
+    background: #c6d4e3;
+}
+
+#sub-container-weather.clear-evening ul.buttons li {
+    color: #fff;
+    background: #dcd0c7;
+}
+
+#sub-container-weather.clear-evening ul.buttons li:hover {
+    background: #e1d9d3;
+}
+
+#sub-container-weather.clear-night ul.buttons li {
+    color: #fff;
 	background: #a3adb9;
-	color: #6585a9;
+}
+
+#sub-container-weather.clear-night ul.buttons li:hover {
+	background: #b4bdc6;
+}
+
+#sub-container-weather.cloudy-morning ul.buttons li {
+    color: #fff;
+	background: #cfcfda;
+}
+
+#sub-container-weather.cloudy-morning ul.buttons li:hover {
+	background: #d7d7e0;
+}
+
+#sub-container-weather.cloudy-day ul.buttons li{
+    color: #fff;
+	background: #cad4dd;
+}
+
+#sub-container-weather.cloudy-day ul.buttons li:hover {
+	background: #d4dce4;
+}
+
+#sub-container-weather.cloudy-evening ul.buttons li{
+    color: #fff;
+	background: #d0cdca;
+}
+
+#sub-container-weather.cloudy-evening ul.buttons li:hover {
+	background: #d9d6d4;
 }
 
 #sub-container-weather.cloudy-night ul.buttons li {
-	background: #a3adb9;
-	color: #6585a9;
-}
-
-#sub-container-weather.rain ul.buttons li {
-	background: #d6dee5;
-	color: #8092a0;
-}
-
-#sub-container-weather.snow ul.buttons li {
-	background: #d6dee5;
-	color: #8092a0;
-}
-
-#sub-container-weather.sunny ul.buttons li:hover {
-	background: #ece7cc;
-}
-
-#sub-container-weather.cloudy ul.buttons li:hover {
-	background: #dee5ea;
-	color: #697e8e;
-}
-
-#sub-container-weather.night ul.buttons li:hover {
-	background: #b4bdc6;
-	color: #7294b9;
+    color: #fff;
+	background: #b6babe;
 }
 
 #sub-container-weather.cloudy-night ul.buttons li:hover {
-	background: #b4bdc6;
-	color: #7294b9;
+	background: #c3c6ca;
 }
 
-#sub-container-weather.rain ul.buttons li:hover {
-	background: #dee5ea;
-	color: #697e8e;
+#sub-container-weather.rainy-morning ul.buttons li {
+    color: #fff;
+	background: #cfcfda;
 }
 
-#sub-container-weather.snow ul.buttons li:hover {
-	background: #dee5ea;
-	color: #697e8e;
+#sub-container-weather.rainy-morning ul.buttons li:hover {
+	background: #d7d7e0;
+}
+
+#sub-container-weather.rainy-day ul.buttons li {
+    color: #fff;
+	background: #cad4dd;
+}
+
+#sub-container-weather.rainy-day ul.buttonsn li:hover {
+	background: #d4dce4;
+}
+
+#sub-container-weather.rainy-evening ul.buttons li {
+    color: #fff;
+	background: #d0cdca;
+}
+
+#sub-container-weather.rainy-evening ul.buttons li:hover {
+	background: #d9d6d5;
+}
+
+#sub-container-weather.rainy-night ul.buttons li {
+    color: #fff;
+	background: #b5b9be;
+}
+
+#sub-container-weather.rainy-night ul.buttons li:hover {
+	background: #c3c6ca;
 }
 
 .settings {

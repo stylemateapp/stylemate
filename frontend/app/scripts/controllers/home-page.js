@@ -6,9 +6,9 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
     $scope.currentKey = 'default';
 
 	$scope.location = userLocations.default;
-	$scope.location.temperature = '40';
+	$scope.location.temperature = '60';
 	$scope.location.cloudyClass = '';
-	$scope.location.cloudyPhrase = 'Partly Cloudy';
+	$scope.location.cloudyPhrase = 'Clear';
 
     changeLocation(userLocations.default);
 
@@ -113,41 +113,24 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
             $scope.location.temperature = Math.round(conditions.getTemperature());
 
             var icon = conditions.getIcon();
+            var timeOfDay = conditions.getTimeOfDay();
 
-            if (icon == "clear-day") {
+            if (icon == 'clear-day' || icon == 'clear-night' || icon == 'wind') {
 
-                $scope.location.cloudyClass = 'sunny';
-                $scope.location.cloudyPhrase = 'Mostly Sunny';
+                $scope.location.cloudyPhrase = 'Clear';
+                $scope.location.cloudyClass = 'clear' + '-' + timeOfDay;
             }
-            else if (icon == "partly-cloudy-day") {
 
-                $scope.location.cloudyClass = 'partially-cloudy';
-                $scope.location.cloudyPhrase = 'Partly Cloudy';
-            }
-            else if (icon == "cloudy") {
+            if (icon == 'partly-cloudy-day' || icon == 'cloudy' || icon == 'partly-cloudy-night') {
 
-                $scope.location.cloudyClass = 'cloudy';
                 $scope.location.cloudyPhrase = 'Cloudy';
+                $scope.location.cloudyClass = 'cloudy' + '-' + timeOfDay;
             }
-            else if (icon == "clear-night") {
 
-                $scope.location.cloudyClass = 'night';
-                $scope.location.cloudyPhrase = 'Clear Night';
-            }
-            else if (icon == "partly-cloudy-night") {
+            if (icon == 'rain' || icon == 'snow') {
 
-                $scope.location.cloudyClass = 'cloudy-night';
-                $scope.location.cloudyPhrase = 'Cloudy Night';
-            }
-            else if (icon == "rain") {
-
-                $scope.location.cloudyClass = 'rain';
-                $scope.location.cloudyPhrase = 'Rain';
-            }
-            else if (icon == "snow") {
-
-                $scope.location.cloudyClass = 'snow';
-                $scope.location.cloudyPhrase = 'Snow';
+                $scope.location.cloudyPhrase = 'Rainy';
+                $scope.location.cloudyClass = 'rainy' + '-' + timeOfDay;
             }
         }
     }

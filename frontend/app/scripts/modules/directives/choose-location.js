@@ -64,6 +64,7 @@ angular.module('stylemate.directives')
                                 .success(function (data) {
 
                                     $scope.errorMessage = '';
+                                    $scope.search_city = '';
                                     $scope.locations = data.locations;
                                 });
                         }
