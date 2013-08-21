@@ -1096,6 +1096,20 @@ ul.settings-submenu li a {
     -moz-transition: left .8s ease;
 }
 
+#gallery-copyrights {
+    position: absolute;
+    bottom: 90px;
+    z-index: 99;
+    font-size: 14px;
+    margin: 4px;
+}
+
+#gallery-copyrights a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
 #gallery-next {
     position: absolute;
     top: 277px;

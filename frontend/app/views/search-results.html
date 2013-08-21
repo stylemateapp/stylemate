@@ -14,6 +14,11 @@
             <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}
             </div>
             <div class="gallery-window">
+                <div id="gallery-copyrights" ng-show="selected.title">
+                    <a href="#" onclick="var ref = window.open('{{selected.url}}', '_blank', 'location=yes'); return false;">
+                        {{selected.title}}
+                    </a>
+                </div>
                 <ul class="gallery-list" ng-style="listPosition">
                     <li ng-repeat="image in images">
                         <img ng-src="{{imagePath + image.name}}">
@@ -36,7 +41,7 @@
         <section id="gallery-items" ng-show="showItems">
             <ul>
                 <li ng-repeat="item in items">
-                    <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes');return false;">
+                    <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
                         <img ng-src="{{item.reference_image}}">
                     </a>
                 </li>
