@@ -51,6 +51,38 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
                 $scope.errorMessage = 'Error logging in using newly created user';
             });
     };
+
+    $scope.facebookLogin = function() {
+
+        FB.login(function (response) {
+
+                if (response.authResponse) {
+
+                    FB.api('/me', function (response) {
+
+                        $scope.$apply(function () {
+
+                            if (response.email) {
+
+                                $scope.email = response.email;
+                            }
+
+                            if (response.name) {
+
+                                $scope.name = response.name;
+                            }
+                        });
+                    });
+
+                }
+                else {
+
+                }
+            },
+            {
+                scope: 'email'
+            });
+    };
 }
 
 SignUpController.$inject = ['$scope', '$http', '$rootScope', '$state', 'serverUrl'];

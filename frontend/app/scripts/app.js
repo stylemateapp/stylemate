@@ -27,8 +27,38 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
     }])
 
     .run([
-        '$rootScope', '$http', '$state', '$stateParams', 'serverUrl',
-        function ($rootScope, $http, $state, $stateParams, serverUrl) {
+        '$rootScope', '$http', '$window', '$state', '$stateParams', 'serverUrl',
+        function ($rootScope, $http, $window, $state, $stateParams, serverUrl) {
+
+            $window.fbAsyncInit = function () {
+
+                FB.init({
+                    appId: '1410312039183601',
+                    channelUrl: '//channel.html',
+                    status: true,
+                    cookie: true,
+                    xfbml: true
+                });
+            };
+
+            (function (d) {
+
+                var js,
+                    id = 'facebook-jssdk',
+                    ref = d.getElementsByTagName('script')[0];
+
+                if (d.getElementById(id)) {
+                    return;
+                }
+
+                js = d.createElement('script');
+                js.id = id;
+                js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+
+                ref.parentNode.insertBefore(js, ref);
+
+            }(document));
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
@@ -51,6 +81,11 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
 
                         $state.transitionTo('login');
                     });
+
+                if (FB) {
+
+                    FB.logout();
+                }
             };
 
             $rootScope.goToHomepage = function () {
