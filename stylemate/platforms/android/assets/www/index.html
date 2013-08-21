@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="stylemate">
+<head>
+    <meta charset="utf-8">
+    <title>Stylemate</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div id="container" ng-cloak ui-view ng-animate="{enter: 'main-view-enter', leave: 'main-view-leave'}">
+
+</div>
+
+<script src="phonegap.js"></script>
+<script src="components/angular/angular.min.js"></script>
+<script src="components/angular-mobile/angular-mobile.min.js"></script>
+<script src="components/angular-ui-router/angular-ui-router.min.js"></script>
+
+<script src="app/scripts/app.js"></script>
+<script src="app/scripts/modules/states/states.js"></script>
+<script src="app/scripts/modules/authorization/login.js"></script>
+<script src="app/scripts/modules/directives/focus-element.js"></script>
+<script src="app/scripts/modules/directives/choose-location.js"></script>
+
+<script src="app/scripts/controllers/login.js"></script>
+<script src="app/scripts/controllers/sign-up.js"></script>
+<script src="app/scripts/controllers/home-page.js"></script>
+<script src="app/scripts/controllers/set-location.js"></script>
+<script src="app/scripts/controllers/choose-styles.js"></script>
+<script src="app/scripts/controllers/choose-occasion.js"></script>
+<script src="app/scripts/controllers/search-results.js"></script>
+<script src="app/scripts/controllers/dress-for-future-date.js"></script>
+
+<script src="app/scripts/services/user.js"></script>
+<script src="app/scripts/services/weather.js"></script>
+<script src="app/scripts/services/search.js"></script>
+<script src="app/scripts/services/phonegap-ready.js"></script>
+
+</body>
+</html>

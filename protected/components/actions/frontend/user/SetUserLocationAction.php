@@ -21,10 +21,10 @@ class SetUserLocationAction extends Action
 
         $user = User::model()->findByPk(Yii::app()->user->id);
 
-        if (sizeof($user->locations) >= 5) {
+        /*if (sizeof($user->locations) >= 5) {
 
             $addingNewLocationAllowed = false;
-        }
+        }*/
 
         if ($addingNewLocationAllowed) {
 

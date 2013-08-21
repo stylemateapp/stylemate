@@ -1,0 +1,32 @@
+<header class="wizard">
+    <div class="left">
+
+        <div class="back" ng-click="goTo('set-location')">
+
+        </div>
+        <div class="logo" ng-click="goToHomepage()">
+
+        </div>
+    </div>
+    <div class="done" ng-click="goToHomepage()">
+
+    </div>
+</header>
+
+<section class="main" id="choose-styles">
+
+    <div class="validation-message" ng-show="errorMessage">{{errorMessage}}</div>
+
+    <div id="select-styles">
+        SELECT YOUR STYLE(S)
+    </div>
+
+    <form class="form" action="">
+        <ul class="choose-style">
+            <li ng-repeat="style in styles | orderBy:style.name" ng-class="style.selected"
+                ng-click="toggleStyle(style.id)" id="user-style-{{style.id}}">{{style.name}}
+            </li>
+        </ul>
+    </form>
+
+</section>

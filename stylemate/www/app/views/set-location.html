@@ -1,0 +1,39 @@
+<header class="wizard">
+    <div class="left">
+
+        <div class="back" ng-click="goTo('sign-up')">
+
+        </div>
+        <div class="logo" ng-click="goToHomepage()">
+
+        </div>
+    </div>
+    <div class="{{className}}" ng-click="goToNextState()">
+
+    </div>
+</header>
+
+<section class="main" id="location-main-block">
+
+    <div class="validation-message" ng-show="errorMessage">{{errorMessage}}</div>
+
+    <div class="default-location">
+        <div ng-show="locations.default.name">
+            YOUR LOCATION IS SET FOR
+            <div class="default-location-name">{{locations.default.name}}</div>
+        </div>
+        <div ng-show="!locations.default.name" class="bigger-font">
+            YOU HAVE NOT SELECTED
+            <div>A LOCATION YET</div>
+        </div>
+    </div>
+
+    <div id="select-location">
+        SELECT UP TO 5 LOCATION(S)
+    </div>
+
+    <form class="form" name="setLocationForm">
+        <choose-location top-locations="topLocations"></choose-location>
+    </form>
+
+</section>

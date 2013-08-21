@@ -27,6 +27,7 @@ class ResponseHelper
     {
         $status_header = 'HTTP/1.1 ' . $status . ' ' . self::getStatusCodeMessage($status);
 
+        header("Access-Control-Allow-Origin: *");
         header($status_header);
         header('Content-type: ' . $content_type);
 

@@ -77,7 +77,7 @@ class SetUserDefaultLocationAction extends Action
 
             ResponseHelper::sendResponse(
                 400,
-                array('success' => false, 'errorMessage' => ResponseHelper::returnValidationErrorsString($user->errors))
+                array('success' => false, 'errorMessage' => "Cant find location with specified latitude longitude")
             );
         }
     }
