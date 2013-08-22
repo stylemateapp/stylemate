@@ -1,0 +1,53 @@
+<div id="sub-container-search-results">
+    <header class="header">
+        <div class="back" ng-click="goBack()">
+
+        </div>
+        <div class="logo-long-results" ng-click="goToHomepage()">
+
+        </div>
+    </header>
+
+    <section class="main">
+
+        <div class="gallery">
+            <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}
+            </div>
+            <div class="gallery-window">
+                <div id="gallery-copyrights" ng-show="selected.title">
+                    <a href="#" onclick="var ref = window.open('{{selected.url}}', '_blank', 'location=yes'); return false;">
+                        {{selected.title}}
+                    </a>
+                </div>
+                <ul class="gallery-list" ng-style="listPosition">
+                    <li ng-repeat="image in images">
+                        <img ng-src="{{imagePath + image.name}}">
+                    </li>
+                </ul>
+                <div id="gallery-next" ng-click="goNext()"
+                     ng-show="querySuccess && selectedIndex != imageKeys[imageKeys.length - 1]"></div>
+                <div id="gallery-previous" ng-click="goPrevious()"
+                     ng-show="querySuccess && selectedIndex != imageKeys[0]"></div>
+            </div>
+        </div>
+
+        <section class="shop-look" ng-show="querySuccess" ng-animate="'fade'">
+            <div>Shop this look</div>
+            <ul class="clothing-items">
+                <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)">{{name}}</li>
+            </ul>
+        </section>
+
+        <section id="gallery-items" ng-show="showItems">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
+                        <img ng-src="{{item.reference_image}}">
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </section>
+
+</div>

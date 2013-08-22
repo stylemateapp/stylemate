@@ -1,0 +1,39 @@
+<div>
+    <div id="sub-container-weather" class="{{location.cloudyClass}}">
+
+        <header class="header" ng-show="loggedIn">
+            <div class="logo-long">
+
+            </div>
+            <div ng-include src="'app/views/settings.html'"></div>
+        </header>
+
+        <section class="main" id="main-home-page" ng-show="loggedIn">
+            <div id="homepage-location-block">
+                <div id="location-next" ng-click="goNext()" ng-show="isNext()"></div>
+                <div id="location-previous" ng-click="goPrevious()" ng-show="isPrevious()"></div>
+                <div id="city">
+                    {{location.name}}
+                </div>
+                <div id="weather-conditions">
+                    {{location.cloudyPhrase}}
+                </div>
+                <div id="degree">
+                    {{location.temperature}}
+                </div>
+                <div class="weather-image">
+                    <div id="cloudCover" class="{{location.cloudyClass}}">
+
+                    </div>
+                </div>
+            </div>
+
+            <ul class="buttons">
+                <li ng-click="goToDressForToday()">DRESS FOR TODAY</li>
+                <li ng-click="goToDressForFuture()">DRESS FOR FUTURE</li>
+            </ul>
+
+
+        </section>
+    </div>
+</div>

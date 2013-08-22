@@ -1,0 +1,38 @@
+<header class="wizard">
+    <div class="left">
+
+        <div class="back" ng-click="goTo('login')">
+
+        </div>
+        <div class="logo" ng-click="goToHomepage()">
+
+        </div>
+    </div>
+    <div class="next" ng-click="goToSetLocation()">
+
+    </div>
+</header>
+
+<section class="main">
+
+    <div id="account">
+        ACCOUNT
+    </div>
+
+    <div class="validation-message">{{errorMessage}}</div>
+
+    <form class="form" name="signUpForm">
+        <input type="text" class="text-field username" placeholder="username" ng-model="username" required focus-element>
+        <input type="password" class="text-field password" placeholder="password" ng-model="password" required>
+
+        <div id="profile">
+            PROFILE
+        </div>
+
+        <div id="facebook" ng-click="facebookLogin()">
+        </div>
+        <input type="email" class="text-field email" placeholder="email" ng-model="email" required>
+        <input type="text" class="text-field name" placeholder="name" ng-model="name">
+    </form>
+
+</section>
