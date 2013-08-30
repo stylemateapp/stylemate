@@ -2,8 +2,8 @@
 
 angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
 
-    .constant('serverUrl', 'http://lastdayz.ru/stylemate')
-    .constant('imagePath', 'http://lastdayz.ru/stylemate/uploads/')
+    .constant('serverUrl', 'http://stylemateapp.com.s172075.gridserver.com')
+    .constant('imagePath', 'http://stylemateapp.com.s172075.gridserver.com/uploads/')
     .constant('imageWidth', '640')
 
     .constant('topLocations',

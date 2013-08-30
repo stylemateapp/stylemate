@@ -2,10 +2,10 @@
     return array(
         'components' => array(
             'db' => array(
-                'connectionString' => 'mysql:host=localhost;dbname=lastday_stylemate',
+                'connectionString' => 'mysql:host=internal-db.s172075.gridserver.com;dbname=db172075_stylemate',
                 'emulatePrepare'   => true,
-                'username'         => 'lastday',
-                'password'         => '185_believe',
+                'username'         => 'db172075',
+                'password'         => 'OyTXB5q6pY_',
                 'charset'          => 'utf8',
                 /*'enableProfiling'    => true,
                 'enableParamLogging' => true,*/
