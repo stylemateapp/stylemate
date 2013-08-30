@@ -34,7 +34,16 @@
                 '?units=us&extend=hourly&' .
                 ($exclusions ? '&exclude=' . $exclusions : '&exclude=currently,minutely,daily,alerts');
 
-            $content = file_get_contents($request_url);
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_URL, $request_url);
+
+            $content = curl_exec($ch);
+
+            curl_close($ch);
 
             if (!empty($content)) {
 
