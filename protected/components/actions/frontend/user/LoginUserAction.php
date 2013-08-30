@@ -28,6 +28,10 @@ class LoginUserAction extends Action
         if ($model->validate() && $model->login()) {
 
             ResponseHelper::sendResponse(200, array('success' => true));
+
+        } else {
+
+            ResponseHelper::sendResponse(400, array('success' => false));
         }
     }
 }

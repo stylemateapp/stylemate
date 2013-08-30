@@ -25,9 +25,24 @@ class ResponseHelper
 
     public static function sendResponse($status = 200, $message = '', $content_type = 'application/json')
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+
+            if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']) && ($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'] == 'POST' || $_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'] == 'GET')) {
+
+                header('Access-Control-Allow-Origin: http://stylemateapp.com.s172075.gridserver.com http://stylemateapp.com http://www.stylemateapp.com');
+                header('Access-Control-Allow-Credentials: true');
+                header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+                header('Access-Control-Allow-Headers: Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With');
+            }
+
+            exit;
+        }
+
         $status_header = 'HTTP/1.1 ' . $status . ' ' . self::getStatusCodeMessage($status);
 
-        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: http://stylemateapp.com.s172075.gridserver.com http://stylemateapp.com http://www.stylemateapp.com");
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
         header($status_header);
         header('Content-type: ' . $content_type);
 

@@ -2,8 +2,8 @@
 
 angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
 
-    .constant('serverUrl', 'http://stylemateapp.com.s172075.gridserver.com')
-    .constant('imagePath', 'http://stylemateapp.com.s172075.gridserver.com/uploads/')
+    .constant('serverUrl', 'http://stylemateapp.com')
+    .constant('imagePath', 'http://stylemateapp.com/uploads/')
     .constant('imageWidth', '640')
 
     .constant('topLocations',
@@ -23,7 +23,9 @@ angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylem
         $urlRouterProvider.otherwise('homepage');
 
         $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        $httpProvider.defaults.withCredentials = true;
+        /*delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        delete $httpProvider.defaults.headers.post;*/
     }])
 
     .run([
