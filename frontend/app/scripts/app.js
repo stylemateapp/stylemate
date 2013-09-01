@@ -24,8 +24,6 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
 
         $httpProvider.defaults.useXDomain = true;
         $httpProvider.defaults.withCredentials = true;
-        /*delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        delete $httpProvider.defaults.headers.post;*/
     }])
 
     .run([

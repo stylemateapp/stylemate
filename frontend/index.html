@@ -15,6 +15,7 @@
 
 </div>
 
+<script src="components/fastclick/fastclick.js"></script>
 <script src="components/angular/angular.min.js"></script>
 <script src="components/angular-mobile/angular-mobile.min.js"></script>
 <script src="components/angular-ui-router/angular-ui-router.min.js"></script>
@@ -36,6 +37,12 @@
 <script src="app/scripts/services/user.js"></script>
 <script src="app/scripts/services/weather.js"></script>
 <script src="app/scripts/services/search.js"></script>
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
 
 </body>
 </html>

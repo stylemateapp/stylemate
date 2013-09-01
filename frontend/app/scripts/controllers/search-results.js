@@ -18,8 +18,6 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     }
     else {
 
-        // @TODO: This should be directive..
-
         $http.get(serverUrl + '/user/getImages?occasion=' + Search.getParam('occasion') + '&temperature=' + Search.getParam('temperature') + '&date=' + Search.getParam('date'))
 
             .success(function (data) {
