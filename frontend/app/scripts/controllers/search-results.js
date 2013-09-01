@@ -46,30 +46,46 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
                 $scope.errorMessage = 'No results for your query :( Try other parameters please.';
             });
 
+        $scope.isNext = function() {
+
+            return $scope.querySuccess && $scope.selectedIndex != $scope.imageKeys[$scope.imageKeys.length - 1];
+        };
+
         $scope.goNext = function () {
 
-            $scope.selectedIndex = $scope.selectedIndex + 1;
-            $scope.arrayIndex++;
+            if ($scope.isNext()) {
 
-            var key = $scope.imageKeys[$scope.arrayIndex];
+                $scope.selectedIndex = $scope.selectedIndex + 1;
+                $scope.arrayIndex++;
 
-            $scope.selected = $scope.images[key];
-            $scope.selectedIndex = key;
+                var key = $scope.imageKeys[$scope.arrayIndex];
 
-            $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+                $scope.selected = $scope.images[key];
+                $scope.selectedIndex = key;
+
+                $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+            }
+        };
+
+        $scope.isPrevious = function () {
+
+            return $scope.querySuccess && $scope.selectedIndex != $scope.imageKeys[0];
         };
 
         $scope.goPrevious = function () {
 
-            $scope.selectedIndex = $scope.selectedIndex - 1;
-            $scope.arrayIndex--;
+            if($scope.isPrevious()) {
 
-            var key = $scope.imageKeys[$scope.arrayIndex];
+                $scope.selectedIndex = $scope.selectedIndex - 1;
+                $scope.arrayIndex--;
 
-            $scope.selected = $scope.images[key];
-            $scope.selectedIndex = key;
+                var key = $scope.imageKeys[$scope.arrayIndex];
 
-            $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+                $scope.selected = $scope.images[key];
+                $scope.selectedIndex = key;
+
+                $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+            }
         };
 
         $scope.showItemsBlock = function(item) {

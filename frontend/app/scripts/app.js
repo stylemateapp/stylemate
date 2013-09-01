@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
+angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
 
     .constant('serverUrl', 'http://stylemateapp.com')
     .constant('imagePath', 'http://stylemateapp.com/uploads/')
