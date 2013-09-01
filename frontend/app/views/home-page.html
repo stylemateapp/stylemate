@@ -9,7 +9,7 @@
         </header>
 
         <section class="main" id="main-home-page" ng-show="loggedIn">
-            <div id="homepage-location-block">
+            <div id="homepage-location-block" ng-swipe-left="goNext()" ng-swipe-right="goPrevious()">
                 <div id="location-next" ng-click="goNext()" ng-show="isNext()"></div>
                 <div id="location-previous" ng-click="goPrevious()" ng-show="isPrevious()"></div>
                 <div id="city">
