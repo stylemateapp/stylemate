@@ -88,6 +88,10 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             else {
 
                 $scope.showItems = false;
+
+                // This workaround is for preserve focus on popup menu with referenced items
+
+                document.getElementById('shop-look').focus();
             }
         };
     }

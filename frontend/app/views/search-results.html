@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <section class="shop-look needsclick" ng-show="querySuccess && selected.items" ng-animate="'fade'" tabindex="1">
+        <section class="shop-look needsclick" id="shop-look" ng-show="querySuccess && selected.items" ng-animate="'fade'" tabindex="1">
             <div class="needsclick">Shop this look</div>
             <ul class="clothing-items needsclick">
                 <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)" class="needsclick">{{name}}</li>
