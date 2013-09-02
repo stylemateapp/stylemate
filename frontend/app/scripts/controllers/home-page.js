@@ -10,7 +10,49 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
 	$scope.location.cloudyClass = '';
 	$scope.location.cloudyPhrase = 'Clear';
 
+    userLocations.default.weatherConditions = WeatherService.getCurrentConditions(userLocations.default.latitude, userLocations.default.longitude);
+
+    for (var key in userLocations.otherLocations) {
+
+        if (userLocations.otherLocations.hasOwnProperty(key)) {
+
+            userLocations.otherLocations[key].weatherConditions = WeatherService.getCurrentConditions(userLocations.otherLocations[key].latitude, userLocations.otherLocations[key].longitude);
+        }
+    }
+
     changeLocation(userLocations.default);
+
+    function changeLocation(location) {
+
+        var conditions = location.weatherConditions;
+
+        if (conditions) {
+
+            $scope.location = location;
+            $scope.location.temperature = Math.round(conditions.getTemperature());
+
+            var icon = conditions.getIcon();
+            var timeOfDay = conditions.getTimeOfDay();
+
+            if (icon == 'clear-day' || icon == 'clear-night' || icon == 'wind') {
+
+                $scope.location.cloudyPhrase = 'Clear';
+                $scope.location.cloudyClass = 'clear' + '-' + timeOfDay;
+            }
+
+            if (icon == 'partly-cloudy-day' || icon == 'cloudy' || icon == 'partly-cloudy-night') {
+
+                $scope.location.cloudyPhrase = 'Cloudy';
+                $scope.location.cloudyClass = 'cloudy' + '-' + timeOfDay;
+            }
+
+            if (icon == 'rain' || icon == 'snow') {
+
+                $scope.location.cloudyPhrase = 'Rainy';
+                $scope.location.cloudyClass = 'rainy' + '-' + timeOfDay;
+            }
+        }
+    }
 
 	$scope.goToDressForToday = function () {
 
@@ -102,38 +144,6 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
             }
         }
     };
-
-    function changeLocation(location) {
-
-        var conditions = WeatherService.getCurrentConditions(location.latitude, location.longitude);
-
-        if (conditions) {
-
-            $scope.location = location;
-            $scope.location.temperature = Math.round(conditions.getTemperature());
-
-            var icon = conditions.getIcon();
-            var timeOfDay = conditions.getTimeOfDay();
-
-            if (icon == 'clear-day' || icon == 'clear-night' || icon == 'wind') {
-
-                $scope.location.cloudyPhrase = 'Clear';
-                $scope.location.cloudyClass = 'clear' + '-' + timeOfDay;
-            }
-
-            if (icon == 'partly-cloudy-day' || icon == 'cloudy' || icon == 'partly-cloudy-night') {
-
-                $scope.location.cloudyPhrase = 'Cloudy';
-                $scope.location.cloudyClass = 'cloudy' + '-' + timeOfDay;
-            }
-
-            if (icon == 'rain' || icon == 'snow') {
-
-                $scope.location.cloudyPhrase = 'Rainy';
-                $scope.location.cloudyClass = 'rainy' + '-' + timeOfDay;
-            }
-        }
-    }
 }
 
 HomePageController.$inject = ['$scope', '$rootScope', '$state', 'WeatherService', 'Search', 'userLocations', 'userStyles'];
