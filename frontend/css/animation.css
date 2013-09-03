@@ -45,15 +45,24 @@
     opacity: 1;
 }
 
-#ajax-loader
-{
-	display: none;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	left: 50%;
-	top: 15%;
-	margin: 0 0 0 -15px;
+#ajax-loader-block {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 640px;
+    height: 1094px;
+    z-index: 10000;
+}
+
+#ajax-loader-block.show {
+    display: block;
+}
+
+#ajax-loader {
+	width: 60px;
+	height: 60px;
+	margin: 400px 0 0 290px;
 	border: 8px solid #fff;
 	border-right-color: transparent;
 	border-radius: 50%;

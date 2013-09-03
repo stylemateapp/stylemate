@@ -1,5 +1,5 @@
 * {
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 }
 
@@ -384,10 +384,10 @@ and (max-device-width : 480px) {
 }
 
 #facebook {
+    margin: 19px 0 0 87px;
 	background: url("../images/facebook.png") no-repeat;
 	width: 466px;
 	height: 91px;
-	margin-top: 19px;
 	cursor: pointer;
 }
 
@@ -414,7 +414,7 @@ and (max-device-width : 480px) {
 ul.choose-location {
 	overflow: auto;
 	height: 300px;
-	margin-top: 21px;
+    margin: 21px 0 0 87px;
 	width: 467px;
 }
 
@@ -476,6 +476,7 @@ ul.other-locations {
 	overflow: hidden;
 	margin-top: 21px;
 	width: 467px;
+    margin-left: 87px;
 }
 
 ul.other-locations li {
@@ -510,6 +511,7 @@ ul.choose-style {
 	overflow: hidden;
 	height: 825px;
 	width: 481px;
+    margin-left: 87px;
 }
 
 ul.choose-style li {
@@ -749,7 +751,6 @@ ul.choose-occasion li.selected {
 }
 
 #city {
-    width: 400px;
 	font-size: 30px;
 	text-align: center;
 	margin-bottom: 23px;
@@ -771,6 +772,7 @@ ul.choose-occasion li.selected {
 }
 
 .weather-image {
+    margin: 0 auto;
 	width: 440px;
 	height: 440px;
 }

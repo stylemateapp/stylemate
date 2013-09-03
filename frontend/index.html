@@ -11,6 +11,10 @@
 </head>
 <body>
 
+<div ajax-loader id="ajax-loader-block">
+    <div id="ajax-loader"></div>
+</div>
+
 <div id="container" ng-cloak ui-view ng-animate="{enter: 'main-view-enter', leave: 'main-view-leave'}">
 
 </div>
@@ -23,7 +27,9 @@
 <script src="app/scripts/app.js"></script>
 <script src="app/scripts/modules/states/states.js"></script>
 <script src="app/scripts/modules/authorization/login.js"></script>
+<script src="app/scripts/modules/misc/loading.js"></script>
 <script src="app/scripts/modules/directives/choose-location.js"></script>
+<script src="app/scripts/modules/directives/ajax-loader.js"></script>
 
 <script src="app/scripts/controllers/login.js"></script>
 <script src="app/scripts/controllers/sign-up.js"></script>

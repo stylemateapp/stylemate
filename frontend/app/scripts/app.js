@@ -18,6 +18,9 @@ angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylem
         'Sydney'
     ])
 
+    .constant('eventStartRequest', 'event:startRequest')
+    .constant('eventEndRequest', 'event:endRequest')
+
     .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
         $urlRouterProvider.otherwise('homepage');
