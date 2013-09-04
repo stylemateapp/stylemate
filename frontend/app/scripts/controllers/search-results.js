@@ -12,6 +12,23 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     $scope.querySuccess = false;
     $scope.showItems = false;
 
+    function preload(images, callback) {
+
+        var imageElements = [],
+            counter = images.length,
+            lfunc = function () {
+                if (--counter === 0 && callback) callback(imageElements);
+            };
+
+        for (var i = 0, len = images.length; i < len; i++) {
+
+            var img = new Image();
+            imageElements.push(img);
+            img.onload = lfunc;
+            img.src = images[i];
+        }
+    }
+
     if (!Search.isValid()) {
 
         $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
@@ -24,16 +41,39 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
                 if (data.success === true) {
 
-                    $scope.querySuccess = true;
+                    var imagesArray = [];
 
-                    $scope.images = data.images;
-                    $scope.imageKeys = Object.keys(data.images);
-                    $scope.arrayIndex = 0;
+                    for (var k in data.images) {
 
-                    var key = $scope.imageKeys[$scope.arrayIndex];
+                        if (data.images[k].name) {
 
-                    $scope.selected = data.images[key];
-                    $scope.selectedIndex = key;
+                            imagesArray.push(imagePath + data.images[k].name);
+                        }
+                    }
+
+                    // Not true angularJS way, but deadlines, deadlines...
+
+                    angular.element(document.getElementById('loading-images-block')).addClass('show');
+
+                    preload(imagesArray, function (preloadedImages) {
+
+                        $scope.querySuccess = true;
+
+                        $scope.images = data.images;
+                        $scope.imageKeys = Object.keys(data.images);
+                        $scope.arrayIndex = 0;
+
+                        var key = $scope.imageKeys[$scope.arrayIndex];
+
+                        $scope.selected = data.images[key];
+                        $scope.selectedIndex = key;
+
+                        $scope.$apply();
+
+                        // Not true angularJS way, but deadlines, deadlines...
+
+                        angular.element(document.getElementById('loading-images-block')).removeClass('show');
+                    });
                 }
                 else {
 
