@@ -16,6 +16,11 @@ body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+body:after{
+    content:url(../images/loader.gif) url(../images/background.jpg) url(../images/background-clear-morning.jpg) url(../images/background-clear-evening.jpg) url(../images/background-night.png) url(../images/background-cloudy-morning.jpg) url(../images/background-cloudy-day.jpg) url(../images/background-cloudy-evening.jpg) url(../images/background-cloudy-night.jpg) url(../images/background-rainy-morning.jpg) url(../images/background-rainy-morning.jpg) url(../images/background-rainy-day.jpg) url(../images/background-rainy-night.jpg) url("../images/form-username.png") url("../images/form-username.png") url("../images/form-password.png") url("../images/submit.png")url("../images/arrow.png") url("../images/back.png") url("../images/back-results.png") url("../images/logo.png") url("../images/next.png") url("../images/done.png") url("../images/facebook.png") url("../images/form-name.png") url("../images/form-email.png") url("../images/search-location.png") url('../images/ajax-dropdown.png') url('../images/location-delete.png') url("../images/logo-long.png") url("../images/logo-new.png") url('../images/location-next.png') url('../images/location-previous.png') url("../images/degrees.png") url("../images/partially-cloudy.png") url("../images/sunny.png") url("../images/night.png") url("../images/cloudy.png") url("../images/rain1.png") url("../images/rain2.png") url("../images/settings.png") url("../images/logo-long-result.png") url('../images/shop-look.png') url('../images/gallery-next.png') url('../images/gallery-previous.png');
+    display:none;
+}
+
 ::-webkit-input-placeholder {
 	color: #7294b9;
 }
