@@ -4,56 +4,33 @@ var app = angular.module('stylemate.services', []);
 
 app.factory('UserService', ['$rootScope', '$http', '$q', '$state', 'serverUrl', function ($rootScope, $http, $q, $state, serverUrl) {
 
-        function UserService() {
+    function UserService() {
 
-        }
+    }
 
-        UserService.prototype.getLocations = function() {
+    UserService.prototype.getInfo = function () {
 
-            var deferred = $q.defer();
+        var userInfo = $q.defer();
 
-            $http.get(serverUrl + '/user/getLocations/')
+        $http.get(serverUrl + '/user/getUserInfo/').success(function (data) {
 
-                .success(function (data) {
+            if(!data.locations.default.name) {
 
-                    deferred.resolve(data.locations);
-                })
+                $state.transitionTo('set-location');
+            }
+            else if(!data.selectedStyles.length) {
 
-                .error(function () {
+                $state.transitionTo('choose-styles');
+            }
+            else {
 
-                    $state.transitionTo('set-location');
-                });
+                $rootScope.loggedIn = true;
+                userInfo.resolve(data);
+            }
+        });
 
-            return deferred.promise;
-        };
+        return userInfo.promise;
+    };
 
-        UserService.prototype.getStyles = function () {
-
-            var deferred = $q.defer();
-
-            $http.get(serverUrl + '/user/getStyles/')
-
-                .success(function (data) {
-
-                    if (!data.selectedStyles.length) {
-
-                        $state.transitionTo('choose-styles');
-                    }
-                    else {
-
-                        $rootScope.loggedIn = true;
-                    }
-
-                    deferred.resolve(data);
-                })
-
-                .error(function () {
-
-                    $state.transitionTo('choose-styles');
-                });
-
-            return deferred.promise;
-        };
-
-        return new UserService();
-    }]);
+    return new UserService();
+}]);

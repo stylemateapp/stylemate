@@ -31,6 +31,8 @@
                 'getWeather'         => 'application.components.actions.frontend.user.GetWeatherAction',
                 'getOccasions'       => 'application.components.actions.frontend.user.GetOccasionsAction',
                 'getImages'          => 'application.components.actions.frontend.user.GetImagesAction',
+                'getUserInfo'        => 'application.components.actions.frontend.user.GetUserInfoAction',
+                'ping'               => 'application.components.actions.frontend.user.PingAction',
             );
         }
 

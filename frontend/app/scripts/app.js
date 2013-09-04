@@ -20,6 +20,8 @@ angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylem
 
     .constant('eventStartRequest', 'event:startRequest')
     .constant('eventEndRequest', 'event:endRequest')
+    .constant('eventStartLoadingData', 'event:startLoadingData')
+    .constant('eventEndLoadingData', 'event:endLoadingData')
 
     .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
 

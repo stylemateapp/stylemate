@@ -1,6 +1,6 @@
 'use strict';
 
-function DressForFutureDateController($scope, $http, $state, Search) {
+function DressForFutureDateController($scope, $state, Search) {
 
     $scope.errorMessage = '';
     $scope.dates = [
@@ -20,4 +20,4 @@ function DressForFutureDateController($scope, $http, $state, Search) {
     }
 }
 
-DressForFutureDateController.$inject = ['$scope', '$http', '$state', 'Search'];
+DressForFutureDateController.$inject = ['$scope', '$state', 'Search'];

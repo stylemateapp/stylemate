@@ -1,6 +1,6 @@
 'use strict';
 
-function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
+function ChooseOccasionController($scope,  $state, Search, userInfo) {
 
     $scope.errorMessage = '';
     $scope.cloudyClass = Search.getParam('cloudyClass');
@@ -13,24 +13,7 @@ function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
     }
     else {
 
-        $http.get(serverUrl + '/user/getOccasions')
-
-            .success(function (data, status, error, config) {
-
-                if (data.success === true) {
-
-                    $scope.occasions = data.occasions;
-                }
-                else {
-
-                    $scope.errorMessage = 'Error retrieving occasions';
-                }
-            })
-
-            .error(function (data, status, error, config) {
-
-                $scope.errorMessage = 'Error retrieving occasions';
-            });
+        $scope.occasions = userInfo.occasions;
 
         $scope.toggleOccasion = function (id) {
 
@@ -42,4 +25,4 @@ function ChooseOccasionController($scope, $http,  $state, Search, serverUrl) {
     }
 }
 
-ChooseOccasionController.$inject = ['$scope', '$http', '$state', 'Search', 'serverUrl'];
+ChooseOccasionController.$inject = ['$scope', '$state', 'Search', 'userInfo'];
