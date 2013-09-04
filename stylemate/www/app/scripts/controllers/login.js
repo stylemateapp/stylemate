@@ -26,7 +26,7 @@ function LoginController($scope, $http, $rootScope, $state, serverUrl) {
 
                 .error(function () {
 
-                    $scope.errorMessage = 'Error logging in';
+                    $scope.errorMessage = 'User with provided username and password was not found';
                 });
         }
         else {

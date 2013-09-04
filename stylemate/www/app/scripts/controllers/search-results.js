@@ -12,13 +12,28 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     $scope.querySuccess = false;
     $scope.showItems = false;
 
+    function preload(images, callback) {
+
+        var imageElements = [],
+            counter = images.length,
+            lfunc = function () {
+                if (--counter === 0 && callback) callback(imageElements);
+            };
+
+        for (var i = 0, len = images.length; i < len; i++) {
+
+            var img = new Image();
+            imageElements.push(img);
+            img.onload = lfunc;
+            img.src = images[i];
+        }
+    }
+
     if (!Search.isValid()) {
 
         $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
     }
     else {
-
-        // @TODO: This should be directive..
 
         $http.get(serverUrl + '/user/getImages?occasion=' + Search.getParam('occasion') + '&temperature=' + Search.getParam('temperature') + '&date=' + Search.getParam('date'))
 
@@ -26,16 +41,39 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
                 if (data.success === true) {
 
-                    $scope.querySuccess = true;
+                    var imagesArray = [];
 
-                    $scope.images = data.images;
-                    $scope.imageKeys = Object.keys(data.images);
-                    $scope.arrayIndex = 0;
+                    for (var k in data.images) {
 
-                    var key = $scope.imageKeys[$scope.arrayIndex];
+                        if (data.images[k].name) {
 
-                    $scope.selected = data.images[key];
-                    $scope.selectedIndex = key;
+                            imagesArray.push(imagePath + data.images[k].name);
+                        }
+                    }
+
+                    // Not true angularJS way, but deadlines, deadlines...
+
+                    angular.element(document.getElementById('loading-images-block')).addClass('show');
+
+                    preload(imagesArray, function (preloadedImages) {
+
+                        $scope.querySuccess = true;
+
+                        $scope.images = data.images;
+                        $scope.imageKeys = Object.keys(data.images);
+                        $scope.arrayIndex = 0;
+
+                        var key = $scope.imageKeys[$scope.arrayIndex];
+
+                        $scope.selected = data.images[key];
+                        $scope.selectedIndex = key;
+
+                        $scope.$apply();
+
+                        // Not true angularJS way, but deadlines, deadlines...
+
+                        angular.element(document.getElementById('loading-images-block')).removeClass('show');
+                    });
                 }
                 else {
 
@@ -48,30 +86,46 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
                 $scope.errorMessage = 'No results for your query :( Try other parameters please.';
             });
 
+        $scope.isNext = function() {
+
+            return $scope.querySuccess && $scope.selectedIndex != $scope.imageKeys[$scope.imageKeys.length - 1];
+        };
+
         $scope.goNext = function () {
 
-            $scope.selectedIndex = $scope.selectedIndex + 1;
-            $scope.arrayIndex++;
+            if ($scope.isNext()) {
 
-            var key = $scope.imageKeys[$scope.arrayIndex];
+                $scope.selectedIndex = $scope.selectedIndex + 1;
+                $scope.arrayIndex++;
 
-            $scope.selected = $scope.images[key];
-            $scope.selectedIndex = key;
+                var key = $scope.imageKeys[$scope.arrayIndex];
 
-            $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+                $scope.selected = $scope.images[key];
+                $scope.selectedIndex = key;
+
+                $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+            }
+        };
+
+        $scope.isPrevious = function () {
+
+            return $scope.querySuccess && $scope.selectedIndex != $scope.imageKeys[0];
         };
 
         $scope.goPrevious = function () {
 
-            $scope.selectedIndex = $scope.selectedIndex - 1;
-            $scope.arrayIndex--;
+            if($scope.isPrevious()) {
 
-            var key = $scope.imageKeys[$scope.arrayIndex];
+                $scope.selectedIndex = $scope.selectedIndex - 1;
+                $scope.arrayIndex--;
 
-            $scope.selected = $scope.images[key];
-            $scope.selectedIndex = key;
+                var key = $scope.imageKeys[$scope.arrayIndex];
 
-            $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+                $scope.selected = $scope.images[key];
+                $scope.selectedIndex = key;
+
+                $scope.listPosition = {left: ($scope.imageWidth * $scope.arrayIndex * -1) + "px"};
+            }
         };
 
         $scope.showItemsBlock = function(item) {
@@ -90,6 +144,10 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             else {
 
                 $scope.showItems = false;
+
+                // This workaround is for preserve focus on popup menu with referenced items
+
+                document.getElementById('shop-look').focus();
             }
         };
     }

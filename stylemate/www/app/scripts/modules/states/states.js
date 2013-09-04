@@ -4,15 +4,11 @@ angular.module('stylemate.states', ['ui.state'])
 
     .config(['$stateProvider', function($stateProvider) {
 
-        var resolveLocationAndStyle = {
+        var resolveUser = {
 
-            userLocations: ['UserService', function (UserService) {
+            userInfo: ['UserService', function (UserService) {
 
-                return UserService.getLocations();
-            }],
-            userStyles: ['UserService', function (UserService) {
-
-                return UserService.getStyles();
+                return UserService.getInfo();
             }]
         };
 
@@ -20,7 +16,7 @@ angular.module('stylemate.states', ['ui.state'])
             name: 'homepage',
             url: '/homepage',
             templateUrl: 'app/views/home-page.html',
-            resolve: resolveLocationAndStyle,
+            resolve: resolveUser,
             controller: HomePageController
         };
 
@@ -66,7 +62,7 @@ angular.module('stylemate.states', ['ui.state'])
             name: 'choose-occasion',
             url: '/choose-occasion',
             templateUrl: 'app/views/choose-occasion.html',
-            resolve: resolveLocationAndStyle,
+            resolve: resolveUser,
             controller: ChooseOccasionController
         };
 
@@ -76,7 +72,7 @@ angular.module('stylemate.states', ['ui.state'])
             name: 'search-results',
             url: '/search-results',
             templateUrl: 'app/views/search-results.html',
-            resolve: resolveLocationAndStyle,
+            resolve: resolveUser,
             controller: SearchResultsController
         };
 
@@ -86,7 +82,7 @@ angular.module('stylemate.states', ['ui.state'])
             name: 'dress-for-future-date',
             url: '/dress-for-future-date',
             templateUrl: 'app/views/dress-for-future-date.html',
-            resolve: resolveLocationAndStyle,
+            resolve: resolveUser,
             controller: DressForFutureDateController
         };
 

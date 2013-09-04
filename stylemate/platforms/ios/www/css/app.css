@@ -1,11 +1,24 @@
 * {
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 }
 
 html {
 	-webkit-text-size-adjust: none;
 	background: #fff;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-highlight: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body:after{
+    content:url(../images/loader.gif) url("../images/form-username.png") url("../images/form-password.png") url("../images/submit.png") url('../images/header.png') url('../images/woman.jpg') url(../images/background.jpg) url(../images/background-clear-morning.jpg) url(../images/background-clear-evening.jpg) url(../images/background-night.png) url(../images/background-cloudy-morning.jpg) url(../images/background-cloudy-day.jpg) url(../images/background-cloudy-evening.jpg) url(../images/background-cloudy-night.jpg) url(../images/background-rainy-morning.jpg) url(../images/background-rainy-morning.jpg) url(../images/background-rainy-day.jpg) url(../images/background-rainy-night.jpg) url("../images/form-username.png") url("../images/arrow.png") url("../images/back.png") url("../images/back-results.png") url("../images/logo.png") url("../images/next.png") url("../images/done.png") url("../images/facebook.png") url("../images/form-name.png") url("../images/form-email.png") url("../images/search-location.png") url('../images/ajax-dropdown.png') url('../images/location-delete.png') url("../images/logo-long.png") url("../images/logo-new.png") url('../images/location-next.png') url('../images/location-previous.png') url("../images/degrees.png") url("../images/partially-cloudy.png") url("../images/sunny.png") url("../images/night.png") url("../images/cloudy.png") url("../images/rain1.png") url("../images/rain2.png") url("../images/settings.png") url("../images/logo-long-result.png") url('../images/shop-look.png') url('../images/gallery-next.png') url('../images/gallery-previous.png');
+    display:none;
 }
 
 ::-webkit-input-placeholder {
@@ -376,10 +389,10 @@ and (max-device-width : 480px) {
 }
 
 #facebook {
+    margin: 19px 0 0 87px;
 	background: url("../images/facebook.png") no-repeat;
 	width: 466px;
 	height: 91px;
-	margin-top: 19px;
 	cursor: pointer;
 }
 
@@ -406,7 +419,7 @@ and (max-device-width : 480px) {
 ul.choose-location {
 	overflow: auto;
 	height: 300px;
-	margin-top: 21px;
+    margin: 21px 0 0 87px;
 	width: 467px;
 }
 
@@ -468,6 +481,7 @@ ul.other-locations {
 	overflow: hidden;
 	margin-top: 21px;
 	width: 467px;
+    margin-left: 87px;
 }
 
 ul.other-locations li {
@@ -502,6 +516,7 @@ ul.choose-style {
 	overflow: hidden;
 	height: 825px;
 	width: 481px;
+    margin-left: 87px;
 }
 
 ul.choose-style li {
@@ -741,7 +756,6 @@ ul.choose-occasion li.selected {
 }
 
 #city {
-    width: 400px;
 	font-size: 30px;
 	text-align: center;
 	margin-bottom: 23px;
@@ -763,6 +777,7 @@ ul.choose-occasion li.selected {
 }
 
 .weather-image {
+    margin: 0 auto;
 	width: 440px;
 	height: 440px;
 }
@@ -936,14 +951,15 @@ ul.buttons li:hover {
 	cursor: pointer;
 	margin: 0;
 	float: right;
+    outline: none;
 }
 
 .settings:hover {
 	background-position: 0 -86px;
 }
 
-.settings:hover ul.settings-submenu {
-	height: 344px;
+.settings:focus ul.settings-submenu {
+    height: 256px;
 }
 
 ul.settings-submenu {
@@ -1022,7 +1038,7 @@ ul.settings-submenu li a {
     color: #333;
 }
 
-.shop-look:hover .clothing-items {
+.shop-look:focus .clothing-items {
 	max-height: 700px;
 }
 

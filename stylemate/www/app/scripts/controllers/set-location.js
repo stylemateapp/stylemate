@@ -1,6 +1,6 @@
 'use strict';
 
-function SetLocationController($scope, $rootScope, $http, $state, serverUrl, topLocations) {
+function SetLocationController($scope, $rootScope, $state, topLocations) {
 
     $scope.topLocations = topLocations;
     $scope.errorMessage = '';
@@ -22,7 +22,7 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
 
         var defaultLocation = $scope.locations.default;
 
-        if (defaultLocation) {
+        if (defaultLocation.length != 0) {
 
             if ($scope.previousStateName === 'sign-up') {
 
@@ -40,4 +40,4 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
     };
 }
 
-SetLocationController.$inject = ['$scope', '$rootScope', '$http', '$state', 'serverUrl', 'topLocations'];
+SetLocationController.$inject = ['$scope', '$rootScope', '$state', 'topLocations'];
