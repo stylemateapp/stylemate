@@ -37,6 +37,7 @@ body {
 	color: #fff;
 	font-family: 'karlaregular', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size: 12px;
+    overflow: hidden;
 }
 
 body:after {
@@ -159,67 +160,67 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 #sub-container-weather.clear-morning {
 	background: url(../images/background-clear-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.clear-evening {
 	background: url(../images/background-clear-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.clear-night {
 	background: url(../images/background-night.png) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-morning {
 	background: url(../images/background-cloudy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-day {
 	background: url(../images/background-cloudy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-evening {
 	background: url(../images/background-cloudy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-night {
 	background: url(../images/background-cloudy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-morning {
 	background: url(../images/background-rainy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-day {
 	background: url(../images/background-rainy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-evening {
 	background: url(../images/background-rainy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-night {
 	background: url(../images/background-rainy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 header.main {
