@@ -1,83 +1,53 @@
 'use strict';
 
-angular.module('stylemate.services', []).
+angular.module('stylemate.services').
 
-    factory('GeoLocationService', ['$http', 'serverUrl', function ($http, serverUrl) {
+    factory('GeoLocationService', ['$rootScope', function ($rootScope) {
 
-        return new GeoLocationService($http, serverUrl);
-    }]);
+        // from http://stackoverflow.com/questions/8068052/phonegap-detect-if-running-on-desktop-browser
 
-var GeoLocationService = (function () {
+        var isPhoneGap = function () {
 
-    var geoCoder;
+            // will fail on localhost - but in case of using remote server for development it's ok
 
-    function GeoLocationService($http, serverUrl) {
+            return /^file:\/{3}[^\/]/i.test(window.location.href)
+                && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent);
+        };
 
-        this.$http = $http;
-        this.serverUrl = serverUrl;
-    }
+        var geoFunction = function () {
 
-    GeoLocationService.initializeGeoLocation = function() {
+            if (navigator.geolocation) {
 
-        geoCoder = new google.maps.Geocoder();
+                navigator.geolocation.getCurrentPosition(
 
-        if (navigator.geolocation) {
+                    function (position) {
 
-            setTimeout(function() {navigator.geolocation.getCurrentPosition(successFunction, errorFunction);}, 2000);
-        }
+                        $rootScope.geoLocation.enabled = true;
+                        $rootScope.geoLocation.position = position;
+                    });
+            }
+        };
 
-        function codeLatLng(lat, lng) {
+        function run() {
 
-            var latlng = new google.maps.LatLng(lat, lng);
+            $rootScope.geoLocation = {enabled: false};
 
-            geoCoder.geocode({'latLng': latlng}, function (results, status) {
+            $rootScope.$apply(function () {
 
-                if (status == google.maps.GeocoderStatus.OK) {
+                if (isPhoneGap()) {
 
-                    if (results[1]) {
+                    document.addEventListener('deviceready', function () {
 
-                        for (var i = 0; i < results[0].address_components.length; i++) {
+                        geoFunction();
 
-                            for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+                    }, false);
+                }
+                else {
 
-                                if (results[0].address_components[i].types[b] == "locality") {
-
-                                    var city = results[0].address_components[i];
-                                    break;
-                                }
-                            }
-                        }
-
-                        // @TODO: fix this with using of Deferred API
-
-                        if(city.long_name !== '') {
-
-                            var scope = angular.element(document.getElementById('location')).scope();
-
-                            if(scope) {
-
-                                scope.location = city.long_name;
-                                scope.$apply();
-                            }
-                        }
-                    }
+                    geoFunction();
                 }
             });
         }
 
-        function successFunction(position) {
-
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
-            codeLatLng(lat, lng);
-        }
-
-        function errorFunction() {
-        }
-    };
-
-    return GeoLocationService;
-})();
-
-
-//google.maps.event.addDomListener(window, 'load', GeoLocationService.initializeGeoLocation);
+        return run();
+    }]);

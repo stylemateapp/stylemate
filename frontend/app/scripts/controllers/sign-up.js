@@ -4,7 +4,7 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
 
     $scope.errorMessage = '';
 
-    $scope.goToSetLocation = function() {
+    $scope.goNext = function() {
 
         $http.post(serverUrl + '/user/signUp', {username: $scope.username, name: $scope.name, email: $scope.email, password: $scope.password})
 
@@ -37,8 +37,26 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
                 if (data.success === true) {
 
                     $rootScope.$broadcast('event:loginSuccess');
-                    $state.transitionTo('set-location');
 
+                    if($rootScope.geoLocation.enabled) {
+
+                        console.log($rootScope.geoLocation);
+
+                        $http.post(
+                            serverUrl + '/user/setDefaultLocation/', {
+                                latitude: $rootScope.geoLocation.position.coords.latitude,
+                                longitude: $rootScope.geoLocation.position.coords.longitude
+                            })
+
+                            .then(function () {
+
+                                $state.transitionTo('choose-styles');
+                            });
+                    }
+                    else {
+
+                        $state.transitionTo('set-location');
+                    }
                 }
                 else {
 
@@ -51,6 +69,8 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
                 $scope.errorMessage = 'Error logging in using newly created user';
             });
     };
+
+    // @TODO Refactor this hell excluding it to separate service
 
     $scope.facebookLogin = function() {
 
