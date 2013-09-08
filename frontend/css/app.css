@@ -93,15 +93,12 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 }
 
 .validation-message {
-	-webkit-transition: opacity .5s linear;
-	-moz-transition: opacity .5s linear;
-	-o-transition: opacity .5s linear;
-	transition: opacity .5s linear;
 	margin: 0 0 7px 82px;
-	font-size: 18px;
+	font-size: 22px;
 	opacity: 0;
-	min-height: 22px;
+	min-height: 25px;
 	color: #b64747;
+    -webkit-transform: translate3d(0px,0px,0px);
 }
 
 .validation-message:not(:empty) {
@@ -223,6 +220,23 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 	height: 1136px;
 }
 
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #container, #sub-container-weather.rainy-night, #sub-container-weather.rainy-evening {
+        height: 960px;
+    }
+
+    #sub-container-weather.rainy-day, #sub-container-weather.rainy-morning, #sub-container-weather.cloudy-night {
+        height: 960px;
+    }
+
+    #sub-container-weather.cloudy-evening, #sub-container-weather.cloudy-day, #sub-container-weather.cloudy-morning {
+        height: 960px;
+    }
+}
+
 header.main {
 	padding-top: 98px;
 	text-align: center;
@@ -233,7 +247,7 @@ header.main {
 	background: url("../images/form-username.png") no-repeat;
 	width: 388px;
 	height: 91px;
-	margin: 0 83px 20px 83px;
+    margin: 0 82px 20px 82px;
 	font-size: 28px;
 	color: #98b6d6;
 	padding-left: 86px;
@@ -241,25 +255,24 @@ header.main {
 }
 
 .text-field:focus {
-	color: #7294b9;
+    color: #7294b9;
+    background-position: 0 -91px !important;
 }
 
 .text-field.username {
 	background: url("../images/form-username.png") no-repeat;
-	margin: 0 82px 20px 82px;
-}
-
-.text-field.username:focus {
-	background-position: 0 -91px;
 }
 
 .text-field.password {
 	background: url("../images/form-password.png") no-repeat;
-	margin: 0 82px 20px 82px;
 }
 
-.text-field.password:focus {
-	background-position: 0 -91px;
+.text-field.email {
+	background: url("../images/form-email.png") no-repeat;
+}
+
+.text-field.name {
+	background: url("../images/form-name.png") no-repeat;
 }
 
 #forgot a{
@@ -268,6 +281,32 @@ header.main {
 	margin-left: 213px;
 	margin-bottom: 53px;
 	color: #c6d6e7;
+}
+
+.submit-data {
+    background: url("../images/submit.png") no-repeat;
+    width: 474px;
+    height: 95px;
+    font-size: 26px;
+    margin: 0 83px;
+    color: #7b9fc4;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 1px;
+}
+
+#sign-up-submit {
+    margin-top: 30px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    #sign-up-submit {
+        margin-top: 0;
+    }
 }
 
 .sign-in {
@@ -311,16 +350,15 @@ header.main {
 }
 
 .back {
-	background: url("../images/back.png") no-repeat;
+	background: url("../images/logo.png") no-repeat;
 	width: 87px;
-	height: 86px;
+	height: 88px;
 	cursor: pointer;
-	margin: 0;
 	float: left;
 }
 
 .back:hover {
-	background-position: 0 -86px;
+	background-position: 0 -176px;
 }
 
 #sub-container-search-results .back {
@@ -333,19 +371,18 @@ header.main {
 
 .logo {
 	cursor: pointer;
-	background: url("../images/logo.png") no-repeat;
-	width: 392px;
-	height: 86px;
-	margin: 0 0 0 87px;
+	width: 553px;
+    height: 88px;
+    background: url("../images/logo.png") no-repeat -87px 0;
+}
+
+.logo:hover {
+	background-position: -87px -88px;
 }
 
 .logo.choose-occasion {
 	background: url("../images/logo.png") !important;
 	width: 431px !important;
-}
-
-.logo:hover {
-	background-position: 0 -86px;
 }
 
 .next {
@@ -374,13 +411,24 @@ header.main {
 
 .wizard {
 	width: 640px;
-	height: 86px;
-	margin-bottom: 84px;
+	height: 88px;
 }
 
 #account {
-	margin: 0 0 19px 86px;
-	font-size: 24px;
+	margin: 73px 0 19px 86px;
+	font-size: 30px;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 2px;
+    -webkit-transform: translate3d(0px,0px,0px);
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #account {
+        margin: 35px 0 19px 86px;
+    }
 }
 
 #select-styles {
@@ -408,27 +456,19 @@ and (max-device-width : 480px) {
 }
 
 #profile {
-	font-size: 24px;
-	margin-left: 86px;
-	margin-top: 9px;
+	margin: 9px 0 0 86px;
+	font-size: 30px;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 2px;
+    -webkit-transform: translate3d(0px,0px,0px);
 }
 
 #facebook {
-	margin: 19px 0 0 87px;
+	margin: 14px 0 18px 82px;
 	background: url("../images/facebook.png") no-repeat;
-	width: 466px;
-	height: 91px;
+	width: 475px;
+	height: 93px;
 	cursor: pointer;
-}
-
-.text-field.name {
-	background: url("../images/form-name.png") no-repeat;
-	margin: 0 82px 40px 86px;
-}
-
-.text-field.email {
-	background: url("../images/form-email.png") no-repeat;
-	margin: 0 82px 20px 86px;
 }
 
 .text-field.search-location {

@@ -1,14 +1,8 @@
 <header class="wizard">
-    <div class="left">
+    <div class="back left" ng-click="goTo('login')">
 
-        <div class="back" ng-click="goTo('login')">
-
-        </div>
-        <div class="logo" ng-click="goToHomepage()">
-
-        </div>
     </div>
-    <div class="next" ng-click="goToSetLocation()">
+    <div class="logo left" ng-click="goToHomepage()">
 
     </div>
 </header>
@@ -33,6 +27,7 @@
         </div>
         <input type="email" class="text-field email" placeholder="email" ng-model="email" required>
         <input type="text" class="text-field name" placeholder="name" ng-model="name">
+        <input type="button" id="sign-up-submit" class="submit-data" ng-click="goToSetLocation()" value="REGISTER">
     </form>
 
 </section>
