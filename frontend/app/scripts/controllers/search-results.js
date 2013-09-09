@@ -31,7 +31,8 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
     if (!Search.isValid()) {
 
-        $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
+        $scope.errorMessage = 'Not all required params are set. Going back to homepage, please wait...';
+        $scope.goToHomepage();
     }
     else {
 
@@ -139,7 +140,6 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             if(!$scope.showItems) {
 
                 $scope.goTo('choose-occasion');
-
             }
             else {
 
