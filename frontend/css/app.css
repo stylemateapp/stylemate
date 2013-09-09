@@ -476,6 +476,10 @@ and (max-device-width : 480px) {
     margin: 50px 0 0 82px;
 }
 
+#occasion {
+    margin: 43px 0 0 161px;
+}
+
 .sub-header {
 	margin: 19px 0 19px 86px;
 	font-size: 24px;
@@ -634,8 +638,17 @@ ul.choose-style li.selected {
 	float: left;
 }
 
+.logo-long.short {
+    width: 431px;
+    background-position: -87px 0;
+}
+
 .logo-long:hover {
 	background-position: 0 -88px;
+}
+
+.logo-long.short:hover {
+    background-position: -87px -88px;
 }
 
 .logo-new {
@@ -650,141 +663,31 @@ ul.choose-style li.selected {
 	background-position: 0 -86px;
 }
 
-#occasion {
-	font-size: 24px;
-	text-align: center;
-	margin-bottom: 19px;
+ul.choose-occasion {
+	overflow: hidden;
+	margin-left: 82px;
 }
 
 ul.choose-occasion li {
-	background: #cedbe8;
-	width: 441px;
-	height: 48px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+	width: 474px;
+	height: 97px;
+    margin: 16px 18px 0 0;
+    padding-top: 30px;
+    background: url('../images/occassion.png') no-repeat;
 	list-style: none;
-	font-size: 22px;
+	font-size: 28px;
 	color: #7294b9;
-	margin: 0 0 10px 87px;
-	padding: 25px 0 0 22px;
 	cursor: pointer;
-	text-align: center;
-}
-
-ul.choose-occasion li:hover {
-	background: #dae4ee;
-	font-weight: bold;
+	text-transform: lowercase;
 }
 
 ul.choose-occasion li.selected {
-	background: #dae4ee;
-	font-weight: bold;
-}
-
-#sub-container-weather.clear-morning ul.choose-occasion li {
-	background: #c1c1d4;
-	color: #fff;
-}
-
-#sub-container-weather.clear-morning ul.choose-occasion li:hover {
-	background: #cacbdb;
-}
-
-#sub-container-weather.clear-day ul.choose-occasion li {
-	background: #b8cadb;
-	color: #fff;
-}
-
-#sub-container-weather.clear-day ul.choose-occasion li:hover {
-	background: #c6d4e3;
-}
-
-#sub-container-weather.clear-evening ul.choose-occasion li {
-	background: #dcd0c7;
-	color: #fff;
-}
-
-#sub-container-weather.clear-evening ul.choose-occasion li:hover {
-	background: #e1d9d3;
-}
-
-#sub-container-weather.clear-night ul.choose-occasion li {
-	background: #a3adb9;
-	color: #fff;
-}
-
-#sub-container-weather.clear-night ul.choose-occasion li:hover {
-	background: #b4bdc6;
-}
-
-#sub-container-weather.cloudy-morning ul.choose-occasion li {
-	color: #fff;
-	background: #cfcfda;
-}
-
-#sub-container-weather.cloudy-morning ul.choose-occasion li:hover {
-	background: #d7d7e0;
-}
-
-#sub-container-weather.cloudy-day ul.choose-occasion li {
-	color: #fff;
-	background: #cad4dd;
-}
-
-#sub-container-weather.cloudy-day ul.choose-occasion li:hover {
-	background: #d4dce4;
-}
-
-#sub-container-weather.cloudy-evening ul.choose-occasion li {
-	color: #fff;
-	background: #d0cdca;
-}
-
-#sub-container-weather.cloudy-evening ul.choose-occasion li:hover {
-	background: #d9d6d4;
-}
-
-#sub-container-weather.cloudy-night ul.choose-occasion li {
-	color: #fff;
-	background: #b6babe;
-}
-
-#sub-container-weather.cloudy-night ul.choose-occasion li:hover {
-	background: #c3c6ca;
-}
-
-#sub-container-weather.rainy-morning ul.choose-occasion li {
-	color: #fff;
-	background: #cfcfda;
-}
-
-#sub-container-weather.rainy-morning ul.choose-occasion li:hover {
-	background: #d7d7e0;
-}
-
-#sub-container-weather.rainy-day ul.choose-occasion li {
-	color: #fff;
-	background: #cad4dd;
-}
-
-#sub-container-weather.rainy-day ul.choose-occasion li:hover {
-	background: #d4dce4;
-}
-
-#sub-container-weather.rainy-evening ul.choose-occasion li {
-	color: #fff;
-	background: #d0cdca;
-}
-
-#sub-container-weather.rainy-evening ul.choose-occasion li:hover {
-	background: #d9d6d5;
-}
-
-#sub-container-weather.rainy-night ul.choose-occasion li {
-	color: #fff;
-	background: #b5b9be;
-}
-
-#sub-container-weather.rainy-night ul.choose-occasion li:hover {
-	background: #c3c6ca;
+    background-position: 0 -96px;
+    color: #429d91;
 }
 
 .header {

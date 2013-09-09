@@ -10,6 +10,7 @@ function ChooseOccasionController($scope,  $state, Search, userInfo) {
     if(!Search.isValidForOccasionPage()) {
 
         $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
+        alert('Not all required params are set. Try to go to homepage.');
     }
     else {
 
