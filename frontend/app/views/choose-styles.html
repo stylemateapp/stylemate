@@ -1,23 +1,15 @@
 <header class="wizard">
-    <div class="left">
+    <div class="back left" ng-click="goTo('set-location')">
 
-        <div class="back" ng-click="goTo('set-location')">
-
-        </div>
-        <div class="logo" ng-click="goToHomepage()">
-
-        </div>
     </div>
-    <div class="done" ng-click="goToHomepage()">
+    <div class="logo left" ng-click="goToHomepage()">
 
     </div>
 </header>
 
 <section class="main" id="choose-styles">
 
-    <div class="validation-message" ng-show="errorMessage">{{errorMessage}}</div>
-
-    <div id="select-styles">
+    <div id="select-styles" class="typical-header">
         SELECT YOUR STYLE(S)
     </div>
 
@@ -28,5 +20,7 @@
             </li>
         </ul>
     </form>
+
+    <input type="button" id="choose-styles-submit" class="submit-data" ng-disabled="!selectedStyles.length" ng-click="goToHomepage()" value="DONE">
 
 </section>

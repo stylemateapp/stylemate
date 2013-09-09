@@ -1,9 +1,17 @@
 'use strict';
 
-function ChooseStylesController($scope, $http,  $state, serverUrl) {
+function ChooseStylesController($scope, $http, $state, serverUrl) {
 
     $scope.selectedStyles = [];
     $scope.errorMessage = '';
+
+    $scope.$watch('errorMessage', function() {
+
+        if($scope.errorMessage != '') {
+
+            alert($scope.errorMessage);
+        }
+    });
 
     $http.get(serverUrl + '/user/getStyles')
 
