@@ -864,7 +864,7 @@ and (max-device-width : 480px) {
 }
 
 .weather-image {
-	margin: 0 auto;
+	margin: 0 auto 20px auto;
 	width: 440px;
 	height: 440px;
 }
@@ -874,6 +874,7 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
 
     .weather-image {
+        margin: 0 auto;
         -webkit-transform: scale(0.7, 0.7);
         -moz-transform: scale(0.7, 0.7);
         transform: scale(0.7, 0.7);
