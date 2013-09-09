@@ -20,7 +20,17 @@
          url('fonts/novecentowide-normal-webfont.svg#novecento_widenormal') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'latolight';
+    src: url('fonts/lato-lig-webfont.eot');
+    src: url('fonts/lato-lig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-lig-webfont.woff') format('woff'),
+         url('fonts/lato-lig-webfont.ttf') format('truetype'),
+         url('fonts/lato-lig-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html {
@@ -620,12 +630,12 @@ ul.choose-style li.selected {
 	cursor: pointer;
 	background: url("../images/logo-long.png") no-repeat;
 	width: 518px;
-	height: 86px;
+	height: 88px;
 	float: left;
 }
 
 .logo-long:hover {
-	background-position: 0 -86px;
+	background-position: 0 -88px;
 }
 
 .logo-new {
@@ -780,8 +790,7 @@ ul.choose-occasion li.selected {
 .header {
 	position: relative;
 	width: 640px;
-	height: 45px;
-	margin-bottom: 84px;
+	height: 88px;
 }
 
 #sub-container-search-results .header {
@@ -791,15 +800,26 @@ ul.choose-occasion li.selected {
 
 #main-home-page {
 	position: relative;
+    margin-top: 75px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #main-home-page {
+    	position: relative;
+        margin-top: 20px;
+    }
 }
 
 #homepage-location-block {
-	height: 720px;
+
 }
 
 #location-next {
 	position: absolute;
-	top: 3px;
+	top: 8px;
 	left: 550px;
 	width: 25px;
 	height: 25px;
@@ -809,7 +829,7 @@ ul.choose-occasion li.selected {
 
 #location-previous {
 	position: absolute;
-	top: 3px;
+	top: 8px;
 	left: 65px;
 	width: 25px;
 	height: 25px;
@@ -818,23 +838,28 @@ ul.choose-occasion li.selected {
 }
 
 #city {
-	font-size: 30px;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 40px;
 	text-align: center;
-	margin-bottom: 23px;
+    width: 454px;
+    height: 96px;
+    margin: 0 0 10px 92px;
 	text-transform: uppercase;
 }
 
 #weather-conditions {
-	font-size: 20px;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 25px;
 	text-align: center;
-	margin-bottom: 24px;
+	margin-bottom: 15px;
 	text-transform: uppercase;
 }
 
 #degree {
-	font-size: 70px;
+    font-family: 'latolight', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 75px;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background: url("../images/degrees.png") no-repeat 360px 9px;
 }
 
@@ -842,6 +867,18 @@ ul.choose-occasion li.selected {
 	margin: 0 auto;
 	width: 440px;
 	height: 440px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    .weather-image {
+        -webkit-transform: scale(0.7, 0.7);
+        -moz-transform: scale(0.7, 0.7);
+        transform: scale(0.7, 0.7);
+        height: 380px;
+    }
 }
 
 #cloudCover {
@@ -880,144 +917,26 @@ ul.choose-occasion li.selected {
 	background: url("../images/rain2.png") no-repeat;
 }
 
-ul.buttons li {
-	background: #c7d4e0;
-	width: 441px;
-	height: 48px;
-	list-style: none;
-	font-size: 22px;
-	color: #7294b9;
-	margin: 0 87px 10px 87px;
-	cursor: pointer;
-	text-align: center;
-	padding: 25px 0 0 22px;
+#homepage-buttons {
+
 }
 
-ul.buttons li:hover {
-	background: #dae4ee;
-	font-weight: bold;
+#homepage-buttons input[type=button] {
+    margin-bottom: 15px;
 }
 
-#sub-container-weather.clear-morning ul.buttons li {
-	color: #fff;
-	background: #c1c1d4;
-}
-
-#sub-container-weather.clear-morning ul.buttons li:hover {
-	background: #cbcbdb;
-}
-
-#sub-container-weather.clear-day ul.buttons li {
-	color: #fff;
-	background: #b8cadb;
-}
-
-#sub-container-weather.clear-day ul.buttons li:hover {
-	background: #c6d4e3;
-}
-
-#sub-container-weather.clear-evening ul.buttons li {
-	color: #fff;
-	background: #dcd0c7;
-}
-
-#sub-container-weather.clear-evening ul.buttons li:hover {
-	background: #e1d9d3;
-}
-
-#sub-container-weather.clear-night ul.buttons li {
-	color: #fff;
-	background: #a3adb9;
-}
-
-#sub-container-weather.clear-night ul.buttons li:hover {
-	background: #b4bdc6;
-}
-
-#sub-container-weather.cloudy-morning ul.buttons li {
-	color: #fff;
-	background: #cfcfda;
-}
-
-#sub-container-weather.cloudy-morning ul.buttons li:hover {
-	background: #d7d7e0;
-}
-
-#sub-container-weather.cloudy-day ul.buttons li {
-	color: #fff;
-	background: #cad4dd;
-}
-
-#sub-container-weather.cloudy-day ul.buttons li:hover {
-	background: #d4dce4;
-}
-
-#sub-container-weather.cloudy-evening ul.buttons li {
-	color: #fff;
-	background: #d0cdca;
-}
-
-#sub-container-weather.cloudy-evening ul.buttons li:hover {
-	background: #d9d6d4;
-}
-
-#sub-container-weather.cloudy-night ul.buttons li {
-	color: #fff;
-	background: #b6babe;
-}
-
-#sub-container-weather.cloudy-night ul.buttons li:hover {
-	background: #c3c6ca;
-}
-
-#sub-container-weather.rainy-morning ul.buttons li {
-	color: #fff;
-	background: #cfcfda;
-}
-
-#sub-container-weather.rainy-morning ul.buttons li:hover {
-	background: #d7d7e0;
-}
-
-#sub-container-weather.rainy-day ul.buttons li {
-	color: #fff;
-	background: #cad4dd;
-}
-
-#sub-container-weather.rainy-day ul.buttonsn li:hover {
-	background: #d4dce4;
-}
-
-#sub-container-weather.rainy-evening ul.buttons li {
-	color: #fff;
-	background: #d0cdca;
-}
-
-#sub-container-weather.rainy-evening ul.buttons li:hover {
-	background: #d9d6d5;
-}
-
-#sub-container-weather.rainy-night ul.buttons li {
-	color: #fff;
-	background: #b5b9be;
-}
-
-#sub-container-weather.rainy-night ul.buttons li:hover {
-	background: #c3c6ca;
+#homepage-buttons #future-button {
+    background: url('../images/submit-disabled.png') no-repeat;
 }
 
 .settings {
 	background: url("../images/settings.png") no-repeat;
 	width: 122px;
-	height: 86px;
+	height: 88px;
 	cursor: pointer;
 	margin: 0;
 	float: right;
 	outline: none;
-}
-
-.settings:hover {
-	background-position: 0 -86px;
 }
 
 .settings:focus ul.settings-submenu {
