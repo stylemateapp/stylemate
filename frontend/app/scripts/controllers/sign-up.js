@@ -40,8 +40,6 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl) {
 
                     if($rootScope.geoLocation.enabled) {
 
-                        console.log($rootScope.geoLocation);
-
                         $http.post(
                             serverUrl + '/user/setDefaultLocation/', {
                                 latitude: $rootScope.geoLocation.position.coords.latitude,

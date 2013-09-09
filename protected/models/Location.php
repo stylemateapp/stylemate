@@ -70,8 +70,11 @@
         {
             if (is_null($this->user->defaultLocation)) {
 
-                $this->user->default_location = $this->id;
-                $this->user->save(false);
+                if(!is_null($this->id)) {
+
+                    $this->user->default_location = $this->id;
+                    $this->user->save(false);
+                }
             }
 
             parent::afterSave();

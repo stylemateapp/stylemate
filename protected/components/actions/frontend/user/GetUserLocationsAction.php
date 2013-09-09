@@ -60,6 +60,8 @@ class GetUserLocationsAction extends Action
             );
         } else {
 
+            $user->tryToSetDefaultLocation();
+
             ResponseHelper::sendResponse(
                 400,
                 array('success' => false, 'errorMessage' => 'User location is empty')

@@ -159,6 +159,23 @@
         }
 
         /**
+         *
+         */
+
+        public function tryToSetDefaultLocation()
+        {
+            if (empty($this->defaultLocation->name)) {
+
+                if (sizeof($this->locations) > 0) {
+
+                    $this->default_location = $this->locations[0]->id;
+                    $this->save(false);
+                    $this->refresh();
+                }
+            }
+        }
+
+        /**
          * @return bool
          */
 

@@ -31,6 +31,8 @@ class DeleteUserLocationAction extends Action
 
         if (!is_null($location) && $location->delete()) {
 
+            $user->tryToSetDefaultLocation();
+
             ResponseHelper::sendResponse(
                 200,
                 array(
