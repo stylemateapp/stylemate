@@ -178,7 +178,6 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 }
 
 #container {
-	overflow: hidden;
 	background: url(../images/background.jpg) no-repeat;
 	width: 640px;
 	height: 1136px;
@@ -956,6 +955,34 @@ ul.settings-submenu li a {
 	max-height: 700px;
 }
 
+.shop-look:focus + .social-buttons {
+    display: none;
+}
+
+.social-buttons {
+    position: absolute;
+    bottom: 7px;
+    z-index: 300;
+    width: 150px;
+    height: 60px;
+}
+
+.social-buttons #facebook-button {
+    float: left;
+    width: 75px;
+    height: 60px;
+    cursor: pointer;
+    background: url('../images/facebook-item.png') center top no-repeat;
+}
+
+.social-buttons #twitter-button {
+    float: left;
+    width: 75px;
+    height: 60px;
+    cursor: pointer;
+    background: url('../images/twitter-item.png') center top no-repeat;
+}
+
 .clothing-items {
 	position: absolute;
 	bottom: 108px;
@@ -997,6 +1024,14 @@ ul.settings-submenu li a {
 	height: 1048px;
 }
 
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    .gallery {
+    	height: 872px;
+    }
+}
+
 .gallery ul {
 	white-space: nowrap;
 	list-style: none;
@@ -1016,6 +1051,14 @@ ul.settings-submenu li a {
 	overflow: hidden;
 }
 
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    .gallery-window {
+    	height: 872px;
+    }
+}
+
 .gallery-list {
 	position: absolute;
 	top: 0;
@@ -1028,7 +1071,7 @@ ul.settings-submenu li a {
 
 #gallery-copyrights {
 	position: absolute;
-	bottom: 90px;
+	bottom: 115px;
 	z-index: 99;
 	font-size: 14px;
 	margin: 4px;
@@ -1093,6 +1136,14 @@ ul.settings-submenu li a {
 	top: 0;
 	left: 0;
 	background: #fff;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    #gallery-items {
+    	height: 872px;
+    }
 }
 
 #gallery-items li {
