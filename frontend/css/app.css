@@ -33,6 +33,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'latoregular';
+    src: url('fonts/lato-reg-webfont.eot');
+    src: url('fonts/lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-reg-webfont.woff') format('woff'),
+         url('fonts/lato-reg-webfont.ttf') format('truetype'),
+         url('fonts/lato-reg-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
 	-webkit-text-size-adjust: none;
 	background: #fff;
@@ -396,11 +408,11 @@ and (max-device-width : 480px) {
 }
 
 #sub-container-search-results .back {
-	background: url("../images/back-results.png");
+	background: #fff url("../images/logo-search.png") no-repeat;
 }
 
 #sub-container-search-results .back:hover {
-	background-position: 0 -86px;
+    background-position: 0 -88px;
 }
 
 .logo {
@@ -412,6 +424,15 @@ and (max-device-width : 480px) {
 
 .logo:hover {
 	background-position: -87px -88px;
+}
+
+#sub-container-search-results .logo {
+    cursor: default;
+    background: #fff url("../images/logo-search.png") no-repeat -87px 0;
+}
+
+#sub-container-search-results .logo:hover {
+	background-position: -87px 0;
 }
 
 .logo.choose-occasion {
@@ -700,11 +721,6 @@ ul.choose-occasion li.selected {
 	height: 88px;
 }
 
-#sub-container-search-results .header {
-	margin-bottom: 0;
-	height: 86px;
-}
-
 #main-home-page {
 	position: relative;
     margin-top: 75px;
@@ -969,7 +985,7 @@ ul.settings-submenu li a {
 
 .gallery {
 	background: #fff;
-	height: 1008px;
+	height: 1048px;
 }
 
 .gallery ul {
@@ -987,7 +1003,7 @@ ul.settings-submenu li a {
 .gallery-window {
 	position: relative;
 	width: 640px;
-	height: 1008px;
+	height: 1048px;
 	overflow: hidden;
 }
 
@@ -1063,7 +1079,7 @@ ul.settings-submenu li a {
 #gallery-items {
 	position: absolute;
 	width: 640px;
-	height: 1008px;
+	height: 1048px;
 	overflow: auto;
 	top: 0;
 	left: 0;
@@ -1085,4 +1101,68 @@ ul.settings-submenu li a {
 
 #gallery-items li:last-child, #gallery-items li:nth-last-child(2) {
 	border-bottom: 0;
+}
+
+#search-information {
+    list-style: none;
+    width: 553px;
+    height: 88px;
+}
+
+#search-information li {
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#search-information #search-location-name {
+    width: 372px;
+    height: 88px;
+    padding-top: 21px;
+    text-align: center;
+    font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 25px;
+    color: #87a1bb;
+}
+
+#search-information #search-location-temperature {
+    font-family: 'latoregular', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 25px;
+    width: 100px;
+    height: 88px;
+    padding-top: 21px;
+    color: #87a1bb;
+}
+
+#search-information #search-location-weather {
+    margin-top: 21px;
+    width: 30px;
+    height: 30px;
+}
+
+#search-information #search-location-weather.clear-day,
+#search-information #search-location-weather.clear-evening,
+#search-information #search-location-weather.clear-morning {
+	background: url("../images/sunny-small.png") no-repeat;
+}
+
+#search-information #search-location-weather.clear-night {
+	background: url("../images/night-small.png") no-repeat;
+}
+
+#search-information #search-location-weather.cloudy-day,
+#search-information #search-location-weather.cloudy-evening,
+#search-information #search-location-weather.cloudy-morning {
+	background: url("../images/cloudy-small.png") no-repeat;
+}
+
+#search-information #search-location-weather.rainy-night,
+#search-information #search-location-weather.rainy-morning,
+#search-information #search-location-weather.rainy-evening {
+	background: url("../images/rain1-small.png") no-repeat;
+}
+
+#search-information #search-location-weather.rainy-day {
+	background: url("../images/rain2-small.png") no-repeat;
 }

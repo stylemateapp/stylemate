@@ -36,6 +36,10 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     }
     else {
 
+        $scope.locationName = Search.getParam('locationName');
+        $scope.locationTemperature = Search.getParam('locationTemperature');
+        $scope.cloudyClass = Search.getParam('cloudyClass');
+
         $http.get(serverUrl + '/user/getImages?occasion=' + Search.getParam('occasion') + '&temperature=' + Search.getParam('temperature') + '&date=' + Search.getParam('date'))
 
             .success(function (data) {

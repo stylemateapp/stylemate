@@ -1,10 +1,14 @@
 <div id="sub-container-search-results">
-    <header class="header">
-        <div class="back" ng-click="goBack()">
+    <header class="wizard">
+        <div class="back left" ng-click="goBack()">
 
         </div>
-        <div class="logo-long-results" ng-click="goToHomepage()">
-
+        <div class="logo left">
+            <ul id="search-information">
+                <li id="search-location-name">{{locationName}}</li>
+                <li id="search-location-temperature">{{locationTemperature}} &deg;</li>
+                <li id="search-location-weather" class="{{cloudyClass}}"></li>
+            </ul>
         </div>
     </header>
 

@@ -18,6 +18,8 @@ app.factory('Search', [function () {
                     temperature: -1000,
                     occasion: -1,
                     location: '',
+                    locationName: '',
+                    locationTemperature: '',
                     date: 'today',
                     styles: {},
                     cloudyClass: ''
@@ -31,6 +33,8 @@ app.factory('Search', [function () {
                 temperature: -1000,
                 occasion: -1,
                 location: '',
+                locationName: '',
+                locationTemperature: '',
                 date: 'today',
                 styles: {},
                 cloudyClass: ''
