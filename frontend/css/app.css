@@ -480,6 +480,10 @@ and (max-device-width : 480px) {
     margin: 43px 0 0 161px;
 }
 
+#future-date {
+    margin: 43px 0 0 201px;
+}
+
 .sub-header {
 	margin: 19px 0 19px 86px;
 	font-size: 24px;
