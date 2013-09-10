@@ -45,6 +45,18 @@
 
 }
 
+@font-face {
+    font-family: 'novecento_widedemibold';
+    src: url('fonts/novecentowide-demibold-webfont.eot');
+    src: url('fonts/novecentowide-demibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/novecentowide-demibold-webfont.woff') format('woff'),
+         url('fonts/novecentowide-demibold-webfont.ttf') format('truetype'),
+         url('fonts/novecentowide-demibold-webfont.svg#novecento_widedemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
 	-webkit-text-size-adjust: none;
 	background: #fff;
@@ -923,11 +935,12 @@ ul.settings-submenu li a {
 .shop-look {
 	position: absolute;
 	width: 640px;
-	height: 86px;
+	height: 108px;
+    font-family: 'novecento_widedemibold', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size: 25px;
 	font-weight: bold;
 	color: #666666;
-	margin-top: -86px;
+	margin-top: -108px;
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
@@ -935,12 +948,8 @@ ul.settings-submenu li a {
 	background: url('../images/shop-look.png') no-repeat;
 }
 
-.shop-look div {
-	margin-top: 30px;
-}
-
-.shop-look:hover {
-	color: #333;
+.shop-look:focus {
+    background-position: 0 -108px;
 }
 
 .shop-look:focus .clothing-items {
@@ -949,7 +958,7 @@ ul.settings-submenu li a {
 
 .clothing-items {
 	position: absolute;
-	bottom: 86px;
+	bottom: 108px;
 	left: 0;
 	font-weight: normal;
 	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
@@ -964,9 +973,9 @@ ul.settings-submenu li a {
 .clothing-items li {
 	border-bottom: 1px solid #c8c7c8;
 	width: 640px;
-	height: 52px;
+	height: 56px;
 	text-align: center;
-	padding-top: 34px;
+	padding-top: 30px;
 	background: #ffffff;
 	-webkit-opacity: 0.75;
 	-moz-opacity: 0.75;
