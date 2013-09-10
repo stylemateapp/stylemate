@@ -1163,6 +1163,11 @@ and (max-device-width : 480px) {
 	border-bottom: 0;
 }
 
+#gallery-items ul.small-list li:last-child, #gallery-items  ul.small-list li:nth-last-child(2) {
+    border-bottom: 1px solid #d1cfcf;
+}
+
+
 #gallery-items .buy-now {
     display: block;
     cursor: pointer;

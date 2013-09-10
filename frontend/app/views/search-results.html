@@ -45,7 +45,7 @@
         </section>
 
         <section id="gallery-items" ng-show="showItems">
-            <ul>
+            <ul ng-class="{'small-list': isItemsListSmall()}">
                 <li ng-repeat="item in items">
                     <div class="image-container">
                         <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">

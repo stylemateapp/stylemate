@@ -139,6 +139,11 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
             $scope.items = item;
         };
 
+        $scope.isItemsListSmall = function() {
+
+            return $scope.items && $scope.items.length <= 2;
+        };
+
         $scope.goBack = function() {
 
             if(!$scope.showItems) {
