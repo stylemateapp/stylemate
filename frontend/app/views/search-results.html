@@ -39,7 +39,7 @@
             </ul>
         </section>
 
-        <section class="social-buttons" ng-show="selected.items">
+        <section class="social-buttons" ng-show="selected.items && !showItems">
             <div id="facebook-button" onclick="var ref = window.open('{{facebookLink()}}', '_blank', 'location=yes'); return false;"></div>
             <div id="twitter-button" onclick="var ref = window.open('{{twitterLink()}}', '_blank', 'location=yes'); return false;"></div>
         </section>
@@ -47,9 +47,12 @@
         <section id="gallery-items" ng-show="showItems">
             <ul>
                 <li ng-repeat="item in items">
-                    <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
-                        <img ng-src="{{item.reference_image}}">
-                    </a>
+                    <div class="image-container">
+                        <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
+                            <img ng-src="{{item.reference_image}}">
+                        </a>
+                    </div>
+                    <input type="button" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;" class="buy-now">
                 </li>
             </ul>
         </section>

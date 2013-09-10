@@ -1163,6 +1163,19 @@ and (max-device-width : 480px) {
 	border-bottom: 0;
 }
 
+#gallery-items .buy-now {
+    display: block;
+    cursor: pointer;
+    width: 270px;
+    height: 50px;
+    border: 0;
+    background: url('../images/buy-now.png') no-repeat top center;
+}
+
+#gallery-items .image-container {
+    min-height: 215px;
+}
+
 #search-information {
     list-style: none;
     width: 553px;
