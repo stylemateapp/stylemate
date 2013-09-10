@@ -1217,6 +1217,10 @@ and (max-device-width : 480px) {
 	background: url("../images/cloudy-small.png") no-repeat;
 }
 
+#search-information #search-location-weather.cloudy-night {
+	background: url("../images/cloudy-night-small.png") no-repeat;
+}
+
 #search-information #search-location-weather.rainy-night,
 #search-information #search-location-weather.rainy-morning,
 #search-information #search-location-weather.rainy-evening {
