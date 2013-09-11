@@ -115,7 +115,11 @@
                      'compareIpAddress'       => true,
                      'compareUserAgent'       => true,
                      'compareIpBlocks'        => 2,
-                 )
+                 ),
+                 'email' => array(
+                     'class'    => 'application.extensions.email.Email',
+                     'delivery' => 'php',
+                 ),
              ),
              // application-level parameters that can be accessed
              // using Yii::app()->params['paramName']

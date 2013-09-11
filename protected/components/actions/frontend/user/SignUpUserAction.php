@@ -26,9 +26,16 @@ class SignUpUserAction extends Action
 
         if ($user->save()) {
 
+            $email          = Yii::app()->email;
+            $email->to      = $user->email;
+            $email->subject = 'Stylemate registration';
+            $email->view    = 'signUp';
+            $email->viewVars = array();
+            $email->send();
+
             ResponseHelper::sendResponse(200, array('success' => true));
-        }
-        else {
+
+        } else {
 
             ResponseHelper::sendResponse(
                 400,
