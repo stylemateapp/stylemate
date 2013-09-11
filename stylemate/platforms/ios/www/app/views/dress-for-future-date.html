@@ -1,23 +1,15 @@
 <header class="wizard">
-    <div class="left">
+    <div class="back left" ng-click="goToHomepage()">
 
-        <div class="back" ng-click="goToHomepage()">
-
-        </div>
-        <div class="logo" ng-click="goToHomepage()">
-
-        </div>
     </div>
-    <div class="next" ng-click="goToSelectDay()">
+    <div class="logo left" ng-click="goToHomepage()">
 
     </div>
 </header>
 
 <section class="main" ng-show="loggedIn">
 
-    <div class="validation-message">{{errorMessage}}</div>
-
-    <div id="occasion" ng-show="errorMessage == ''">
+    <div id="future-date" class="typical-header" ng-show="errorMessage == ''">
         SELECT DATE
     </div>
 

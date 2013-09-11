@@ -1,16 +1,20 @@
 <div id="sub-container-search-results">
-    <header class="header">
-        <div class="back" ng-click="goBack()">
+    <header class="wizard">
+        <div class="back left" ng-click="goBack()">
 
         </div>
-        <div class="logo-long-results" ng-click="goToHomepage()">
-
+        <div class="logo left">
+            <ul id="search-information">
+                <li id="search-location-name">{{locationName}}</li>
+                <li id="search-location-temperature">{{locationTemperature}} &deg;</li>
+                <li id="search-location-weather" class="{{cloudyClass}}"></li>
+            </ul>
         </div>
     </header>
 
     <section class="main">
 
-        <div class="gallery" ng-swipe-left="goNext()" ng-swipe-right="goPrevious()">
+        <div class="gallery needsclick" ng-swipe-left="goNext()" ng-swipe-right="goPrevious()">
             <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}
             </div>
             <div class="gallery-window">
@@ -29,19 +33,26 @@
             </div>
         </div>
 
-        <section class="shop-look needsclick" id="shop-look" ng-animate="'fade'" tabindex="1">
-            <div class="needsclick">Shop this look</div>
-            <ul class="clothing-items needsclick">
-                <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)" class="needsclick">{{name}}</li>
+        <section class="shop-look needsclick" id="shop-look" tabindex="1" ng-show="selected.items" ng-click="clickShopThisLook()">
+            <ul class="clothing-items">
+                <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)">{{name}}</li>
             </ul>
         </section>
 
+        <section class="social-buttons" ng-show="selected.items && !showItems">
+            <div id="facebook-button" onclick="var ref = window.open('{{facebookLink()}}', '_blank', 'location=yes'); return false;"></div>
+            <div id="twitter-button" onclick="var ref = window.open('{{twitterLink()}}', '_blank', 'location=yes'); return false;"></div>
+        </section>
+
         <section id="gallery-items" ng-show="showItems">
-            <ul>
+            <ul ng-class="{'small-list': isItemsListSmall()}">
                 <li ng-repeat="item in items">
-                    <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
-                        <img ng-src="{{item.reference_image}}">
-                    </a>
+                    <div class="image-container">
+                        <a href="#" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;">
+                            <img ng-src="{{item.reference_image}}">
+                        </a>
+                    </div>
+                    <input type="button" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;" class="buy-now">
                 </li>
             </ul>
         </section>

@@ -74,13 +74,13 @@ var ngMobile = angular.module('ngMobile', []);
 function makeSwipeDirective(directiveName, direction) {
   ngMobile.directive(directiveName, ['$parse', function($parse) {
     // The maximum vertical delta for a swipe should be less than 75px.
-    var MAX_VERTICAL_DISTANCE = 75;
+    var MAX_VERTICAL_DISTANCE = 500;
     // Vertical distance should not be more than a fraction of the horizontal distance.
-    var MAX_VERTICAL_RATIO = 0.3;
+    var MAX_VERTICAL_RATIO = 5;
     // At least a 30px lateral motion is necessary for a swipe.
     var MIN_HORIZONTAL_DISTANCE = 1;
     // The total distance in any direction before we make the call on swipe vs. scroll.
-    var MOVE_BUFFER_RADIUS = 10;
+    var MOVE_BUFFER_RADIUS = 1;
 
     function getCoordinates(event) {
       var touches = event.touches && event.touches.length ? event.touches : [event];

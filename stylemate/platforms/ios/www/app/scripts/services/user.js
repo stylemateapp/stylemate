@@ -14,7 +14,7 @@ app.factory('UserService', ['$rootScope', '$http', '$q', '$state', 'serverUrl', 
 
         $http.get(serverUrl + '/user/getUserInfo/').success(function (data) {
 
-            if(!data.locations.default.name) {
+            if(!data.locations || !data.locations.default || !data.locations.default.name) {
 
                 $state.transitionTo('set-location');
             }
