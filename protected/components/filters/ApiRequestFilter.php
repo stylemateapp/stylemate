@@ -13,6 +13,7 @@
         protected $ignoredControllers = array(
             array('controller' => 'user', 'action' => 'login'),
             array('controller' => 'user', 'action' => 'signUp'),
+            array('controller' => 'user', 'action' => 'remindPassword'),
         );
 
         /**

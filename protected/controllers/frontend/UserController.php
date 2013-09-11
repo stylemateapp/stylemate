@@ -33,6 +33,7 @@
                 'getImages'          => 'application.components.actions.frontend.user.GetImagesAction',
                 'getUserInfo'        => 'application.components.actions.frontend.user.GetUserInfoAction',
                 'ping'               => 'application.components.actions.frontend.user.PingAction',
+                'remindPassword'     => 'application.components.actions.frontend.user.RemindUserPasswordAction',
             );
         }
 

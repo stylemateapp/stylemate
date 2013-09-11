@@ -500,6 +500,32 @@ and (max-device-width : 480px) {
     }
 }
 
+#forgot-password-how {
+    font-size: 30px;
+    margin: 33px 82px 19px 82px;
+}
+
+#forgot-password {
+	margin: 73px 0 19px 82px;
+}
+
+#forgot-password-facebook {
+    margin-top: 15px;
+}
+
+#forgot-password-part-two-how {
+    font-size: 30px;
+    margin: 33px 82px 19px 82px;
+}
+
+#forgot-password-part-two {
+	margin: 73px 0 19px 82px;
+}
+
+#forgot-password-send {
+    margin-top: 15px;
+}
+
 #select-location {
     margin: 60px 0 16px 82px;
 }

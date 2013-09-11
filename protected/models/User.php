@@ -11,6 +11,8 @@
      * @property integer    $default_location
      * @property integer    $is_facebook
      * @property string     $role
+     * @property string     $username
+     * @property string     $name
      *
      * The followings are the available model relations:
      * @property Category[] $userStyles
@@ -18,6 +20,7 @@
      * @property Location[] $otherLocations
      *
      * @method User findByPk
+     * @method User findByAttributes
      */
 
     class User extends BaseModel

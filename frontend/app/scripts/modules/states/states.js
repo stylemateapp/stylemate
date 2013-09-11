@@ -31,6 +31,24 @@ angular.module('stylemate.states', ['ui.state'])
 
         $stateProvider.state(login);
 
+        var forgotPassword = {
+            name: 'forgot-password',
+            url: '/forgot-password',
+            templateUrl: 'app/views/forgot-password.html',
+            controller: ForgotPasswordController
+        };
+
+        $stateProvider.state(forgotPassword);
+
+        var forgotPasswordPartTwo = {
+            name: 'forgot-password-part-two',
+            url: '/forgot-password-part-two',
+            templateUrl: 'app/views/forgot-password-part-two.html',
+            controller: ForgotPasswordPartTwoController
+        };
+
+        $stateProvider.state(forgotPasswordPartTwo);
+
         var signUp = {
             name: 'sign-up',
             url: '/sign-up',
