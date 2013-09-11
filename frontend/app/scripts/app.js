@@ -2,7 +2,7 @@
 
 angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
 
-    .constant('serverUrl', 'http://stylemateapp.com/dev')
+    .constant('serverUrl', 'http://stylemateapp.com')
     .constant('imagePath', 'http://stylemateapp.com/uploads/')
     .constant('imageWidth', '640')
 
