@@ -180,7 +180,7 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 #container {
 	background: url(../images/background.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-search-results {
@@ -190,83 +190,86 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 #sub-container-weather.clear-morning {
 	background: url(../images/background-clear-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.clear-evening {
 	background: url(../images/background-clear-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.clear-night {
 	background: url(../images/background-night.png) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.cloudy-morning {
 	background: url(../images/background-cloudy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.cloudy-day {
 	background: url(../images/background-cloudy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.cloudy-evening {
 	background: url(../images/background-cloudy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.cloudy-night {
 	background: url(../images/background-cloudy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.rainy-morning {
 	background: url(../images/background-rainy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.rainy-day {
 	background: url(../images/background-rainy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.rainy-evening {
 	background: url(../images/background-rainy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 #sub-container-weather.rainy-night {
 	background: url(../images/background-rainy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1136px;
+	height: 1094px;
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
 
     #container, #sub-container-weather.rainy-night, #sub-container-weather.rainy-evening {
-        height: 960px;
+        height: 920px;
+    }
+    
+    #sub-container-weather.clear-morning, #sub-container-weather.clear-evening, #sub-container-weather.clear-night {
+        height: 920px;
     }
 
     #sub-container-weather.rainy-day, #sub-container-weather.rainy-morning, #sub-container-weather.cloudy-night {
-        height: 960px;
+        height: 920px;
     }
 
     #sub-container-weather.cloudy-evening, #sub-container-weather.cloudy-day, #sub-container-weather.cloudy-morning {
-        height: 960px;
+        height: 920px;
     }
 }
 
@@ -285,6 +288,13 @@ header.main {
 	color: #98b6d6;
 	padding-left: 86px;
 	border: 1px solid transparent;
+}
+
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    .text-field {
+        margin-bottom: 10px !important;
+    }
 }
 
 .text-field:focus {
@@ -320,6 +330,14 @@ header.main {
 	color: #c6d6e7;
 }
 
+@media only screen
+and (device-aspect-ratio: 2/3) {
+
+    #forgot a {
+        margin-bottom: 23px !important;
+    }
+}
+
 .submit-data {
     background: url("../images/submit.png") no-repeat;
     width: 474px;
@@ -343,8 +361,7 @@ header.main {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
     #sign-up-submit {
         margin-top: 0;
     }
@@ -354,13 +371,20 @@ and (max-device-width : 480px) {
     margin-top: 30px;
 }
 
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    
+    #set-location-submit {
+        margin-top: 10px !important;
+    }
+}
+
 #choose-styles-submit {
     margin-top: 30px;
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
     #choose-styles-submit {
         margin-top: 10px;
     }
@@ -390,6 +414,7 @@ and (max-device-width : 480px) {
 	font-size: 24px;
 	color: #c6d6e7;
 	margin: 26px 0 0 100px;
+    padding: 0 0 25px 0;
 }
 
 #sign-up a {
@@ -403,7 +428,14 @@ and (max-device-width : 480px) {
 }
 
 #woman-image {
-	margin-top: 133px;
+	margin-top: 73px;
+}
+
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    #woman-image {
+        margin-top: 33px !important;
+    }
 }
 
 .back {
@@ -492,11 +524,10 @@ and (max-device-width : 480px) {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
 
     #account {
-        margin: 35px 0 19px 82px;
+        margin: 35px 0 0 82px;
     }
 }
 
@@ -530,6 +561,14 @@ and (max-device-width : 480px) {
     margin: 60px 0 16px 82px;
 }
 
+@media only screen
+and (device-aspect-ratio: 2/3) {
+
+    #select-location {
+        margin-top: 23px !important;
+    }
+}
+
 #select-styles {
     margin: 50px 0 0 82px;
 }
@@ -538,8 +577,22 @@ and (max-device-width : 480px) {
     margin: 43px 0 0 161px;
 }
 
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    #occasion {
+        margin-top: 23px !important;
+    }
+}
+
 #future-date {
     margin: 43px 0 0 201px;
+}
+
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    #future-date {
+        margin-top: 23px !important;
+    }
 }
 
 .sub-header {
@@ -579,8 +632,7 @@ ul.choose-location li {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
 
 	ul.choose-location {
 		height: 220px;
@@ -747,6 +799,13 @@ ul.choose-occasion li {
 	text-transform: lowercase;
 }
 
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    ul.choose-occasion li {
+        margin-top: 6px !important;
+    }
+}
+
 ul.choose-occasion li.selected {
     background-position: 0 -96px;
     color: #429d91;
@@ -764,12 +823,11 @@ ul.choose-occasion li.selected {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
 
     #main-home-page {
     	position: relative;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
 
@@ -830,8 +888,7 @@ and (max-device-width : 480px) {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
 
     .weather-image {
         margin: 0 auto;
@@ -846,6 +903,14 @@ and (max-device-width : 480px) {
 	width: 440px;
 	height: 391px;
 	background: url("../images/partially-cloudy.png") no-repeat;
+}
+
+@media only screen
+and (device-aspect-ratio: 2/3) {
+
+    #cloudCover {
+        margin-top: -60px !important;
+    }
 }
 
 #cloudCover.clear-day, #cloudCover.clear-evening, #cloudCover.clear-morning {
@@ -1047,14 +1112,13 @@ ul.settings-submenu li a {
 
 .gallery {
 	background: #fff;
-	height: 1048px;
+	height: 1008px;
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
     .gallery {
-    	height: 872px;
+    	height: 832px;
     }
 }
 
@@ -1070,18 +1134,30 @@ and (max-device-width : 480px) {
 	vertical-align: top;
 }
 
+.gallery ul li img {
+    width: 640px;
+    min-height: 900px;
+}
+
+@media only screen
+and (device-aspect-ratio: 2/3) {
+    .gallery ul li img {
+        width: 640px;
+        min-height: 724px;
+    }
+}
+
 .gallery-window {
 	position: relative;
 	width: 640px;
-	height: 1048px;
+	height: 1008px;
 	overflow: hidden;
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
     .gallery-window {
-    	height: 872px;
+    	height: 832px;
     }
 }
 
@@ -1157,7 +1233,7 @@ and (max-device-width : 480px) {
 #gallery-items {
 	position: absolute;
 	width: 640px;
-	height: 1048px;
+	height: 1008px;
 	overflow: auto;
 	top: 0;
 	left: 0;
@@ -1165,10 +1241,9 @@ and (max-device-width : 480px) {
 }
 
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
+and (device-aspect-ratio: 2/3) {
     #gallery-items {
-    	height: 872px;
+    	height: 832px;
     }
 }
 
@@ -1221,9 +1296,10 @@ and (max-device-width : 480px) {
 }
 
 #search-information #search-location-name {
+    overflow: hidden;
     width: 372px;
-    height: 88px;
-    padding-top: 21px;
+    height: 60px;
+    padding-top: 29px;
     text-align: center;
     font-family: 'novecento_widenormal', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 25px;
@@ -1235,12 +1311,12 @@ and (max-device-width : 480px) {
     font-size: 25px;
     width: 100px;
     height: 88px;
-    padding-top: 21px;
+    padding-top: 29px;
     color: #87a1bb;
 }
 
 #search-information #search-location-weather {
-    margin-top: 21px;
+    margin-top: 29px;
     width: 30px;
     height: 30px;
 }

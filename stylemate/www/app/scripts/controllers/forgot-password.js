@@ -19,7 +19,7 @@ function ForgotPasswordController($scope, $state, $http, serverUrl, FacebookServ
 
         $scope.$on('event:gatheredFacebookData', function () {
 			
-			$scope.email = facebookService.email;
+			$scope.userData = FacebookService.email;
 			
 			$scope.part1 = false;
 			$scope.part2 = true;
