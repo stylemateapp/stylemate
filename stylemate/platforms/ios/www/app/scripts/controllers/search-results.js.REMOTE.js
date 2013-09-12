@@ -164,7 +164,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
             if ($scope.selected) {
 
-                return 'https://www.facebook.com/sharer/sharer.php?m2w&s=100&p[url]=' + imagePath + $scope.selected.name + '&p[images][0]=' + imagePath + $scope.selected.name + '&p[title]=Stylemateapp&p[summary]=Like%20this%20look?%20Check%20it%20out%20on%20@Stylemateapp%20-%0Athe%20everyday%20style%20and%20weather%20companion%20for%20personalized%20fashion%20inspiration.';
+                return 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=' + imagePath + $scope.selected.name + '&p[images][0]=' + imagePath + $scope.selected.name + '&p[title]=Stylemateapp&p[summary]=Like%20this%20look?%20Check%20it%20out%20on%20@Stylemateapp%20-%0Athe%20everyday%20style%20and%20weather%20companion%20for%20personalized%20fashion%20inspiration.';
             }
 
             return '';
@@ -172,7 +172,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
         $scope.twitterLink = function () {
 
-            return 'https://twitter.com/intent/tweet?url=http://stylemateapp.com/&text=Like%20this%20look?%20Check%20it%20out%20on%20@Stylemateapp%20-%20the%20everyday%20style%20and%20weather%20companion%20for%20fashion%20inspiration.';
+            return 'https://twitter.com/intent/tweet?url=http://stylemateapp.com/&text=Like%20this%20look?%20Check%20it%20out%20on%20@Stylemateapp%20-%20the%20everyday%20style%20and%20weather%20companion%20for%20personalized%20fashion%20inspiration.';
         };
     }
 }

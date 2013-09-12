@@ -25,7 +25,7 @@
                 </div>
                 <ul class="gallery-list" ng-style="listPosition">
                     <li ng-repeat="image in images">
-                        <img ng-src="{{imagePath + image.name}}">
+                        <img ng-src="{{imagePath + image.name}}" width="640">
                     </li>
                 </ul>
                 <div id="gallery-next" ng-click="goNext()" ng-show="isNext()"></div>

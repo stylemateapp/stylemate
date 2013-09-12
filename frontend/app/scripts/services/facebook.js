@@ -28,7 +28,7 @@ app.factory('FacebookService', ['$rootScope', function ($rootScope) {
 
         ref.addEventListener('loadstart', function (event) {
 
-            this.facebookLocChanged(event.url);
+            FacebookService.facebookLocChanged(event.url);
         });
     };
 
@@ -61,8 +61,8 @@ app.factory('FacebookService', ['$rootScope', function ($rootScope) {
                                 if (xmlhttp2.status == 200) {
 
                                     var data = JSON.parse(xmlhttp2.responseText);
-                                    this.email = data.email;
-                                    this.name = data.name;
+                                    FacebookService.email = data.email;
+                                    FacebookService.name = data.name;
 
                                     $rootScope.$broadcast('event:gatheredFacebookData');
 

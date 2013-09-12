@@ -76,6 +76,8 @@ function SignUpController($scope, $http, $rootScope, $state, serverUrl, Facebook
 
             $scope.email = FacebookService.email;
             $scope.name = FacebookService.name;
+			
+			$scope.$apply();
         });
 
     };
