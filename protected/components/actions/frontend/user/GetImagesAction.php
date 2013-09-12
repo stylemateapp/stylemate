@@ -39,6 +39,14 @@ class GetImagesAction extends Action
 
         $images = Image::model()->findAll($criteria);
 
+        foreach($images as $key => $image) {
+
+            if(sizeof($image->imageFields) < 1) {
+
+                unset($images[$key]);
+            }
+        }
+
         /**
          * Filtering by occasion
          */
