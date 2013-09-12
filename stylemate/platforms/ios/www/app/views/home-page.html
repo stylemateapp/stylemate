@@ -28,11 +28,10 @@
                 </div>
             </div>
 
-            <ul class="buttons">
-                <li ng-click="goToDressForToday()">DRESS FOR TODAY</li>
-                <li ng-click="goToDressForFuture()">DRESS FOR FUTURE</li>
-            </ul>
-
+            <div id="homepage-buttons">
+                <input type="button" ng-click="goToDressForToday()" class="submit-data" id="today-button" value="DRESS FOR TODAY">
+                <input type="button" ng-click="goToDressForFuture()" class="submit-data" id="future-button" value="DRESS FOR FUTURE">
+            </div>
 
         </section>
     </div>

@@ -1,21 +1,15 @@
 <header class="wizard">
-    <div class="left">
+    <div class="back left" ng-click="goTo('login')">
 
-        <div class="back" ng-click="goTo('login')">
-
-        </div>
-        <div class="logo" ng-click="goToHomepage()">
-
-        </div>
     </div>
-    <div class="next" ng-click="goToSetLocation()">
+    <div class="logo left" ng-click="goToHomepage()">
 
     </div>
 </header>
 
 <section class="main">
 
-    <div id="account">
+    <div id="account" class="typical-header">
         ACCOUNT
     </div>
 
@@ -25,7 +19,7 @@
         <input type="text" class="text-field username" placeholder="username" ng-model="username" required>
         <input type="password" class="text-field password" placeholder="password" ng-model="password" required>
 
-        <div id="profile">
+        <div id="profile" class="typical-header">
             PROFILE
         </div>
 
@@ -33,6 +27,7 @@
         </div>
         <input type="email" class="text-field email" placeholder="email" ng-model="email" required>
         <input type="text" class="text-field name" placeholder="name" ng-model="name">
+        <input type="button" id="sign-up-submit" class="submit-data" ng-click="goNext()" value="REGISTER">
     </form>
 
 </section>

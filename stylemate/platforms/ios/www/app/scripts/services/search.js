@@ -6,11 +6,11 @@ app.factory('Search', [function () {
 
     function Search() {
 
-        if (localStorage) {
+        if (sessionStorage) {
 
-            if (localStorage.getItem('searchParams')) {
+            if (sessionStorage.getItem('searchParams')) {
 
-                this.searchParams = JSON.parse(localStorage.getItem('searchParams'));
+                this.searchParams = JSON.parse(sessionStorage.getItem('searchParams'));
             }
             else {
                 this.searchParams = {
@@ -18,6 +18,8 @@ app.factory('Search', [function () {
                     temperature: -1000,
                     occasion: -1,
                     location: '',
+                    locationName: '',
+                    locationTemperature: '',
                     date: 'today',
                     styles: {},
                     cloudyClass: ''
@@ -31,6 +33,8 @@ app.factory('Search', [function () {
                 temperature: -1000,
                 occasion: -1,
                 location: '',
+                locationName: '',
+                locationTemperature: '',
                 date: 'today',
                 styles: {},
                 cloudyClass: ''
@@ -42,9 +46,9 @@ app.factory('Search', [function () {
 
         this.searchParams[key] = value;
 
-        if (localStorage) {
+        if (sessionStorage) {
 
-            localStorage.setItem('searchParams', JSON.stringify(this.searchParams));
+            sessionStorage.setItem('searchParams', JSON.stringify(this.searchParams));
         }
     };
 

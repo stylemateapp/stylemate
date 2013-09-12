@@ -62,6 +62,8 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
 		Search.setParam('styles', selectedStyles);
 		Search.setParam('temperature', $scope.location.temperature);
 		Search.setParam('location', $scope.location);
+        Search.setParam('locationName', $scope.location.name);
+        Search.setParam('locationTemperature', $scope.location.temperature);
 		Search.setParam('date', 'today');
 		Search.setParam('cloudyClass', $scope.location.cloudyClass);
 
@@ -73,8 +75,10 @@ function HomePageController($scope, $rootScope, $state, WeatherService, Search, 
 		Search.setParam('styles', selectedStyles);
 		Search.setParam('temperature', $scope.location.name);
 		Search.setParam('location', $scope.location.name);
+        Search.setParam('locationName', $scope.location.name);
+        Search.setParam('locationTemperature', $scope.location.temperature);
 		Search.setParam('date', '');
-		Search.setParam('cloudyClass', '');
+		Search.setParam('cloudyClass', $scope.location.cloudyClass);
 
 		$state.transitionTo('dress-for-future-date');
 	};

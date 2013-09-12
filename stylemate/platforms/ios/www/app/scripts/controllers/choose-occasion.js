@@ -1,6 +1,6 @@
 'use strict';
 
-function ChooseOccasionController($scope,  $state, Search, userInfo) {
+function ChooseOccasionController($scope, $state, Search, userInfo) {
 
     $scope.errorMessage = '';
     $scope.cloudyClass = Search.getParam('cloudyClass');
@@ -9,7 +9,9 @@ function ChooseOccasionController($scope,  $state, Search, userInfo) {
 
     if(!Search.isValidForOccasionPage()) {
 
-        $scope.errorMessage = 'Not all required params are set. Try to go to homepage.';
+        $scope.goToHomepage();
+
+        $scope.errorMessage = 'Not all required params are set. Going back to homepage, please wait...';
     }
     else {
 

@@ -1,23 +1,19 @@
 <div>
     <div id="sub-container-weather" class="{{cloudyClass}}">
-        <header class="header" ng-show="loggedIn" ng-animate="'fade'">
-            <div class="left">
+        <header class="header" ng-show="loggedIn">
+            <div class="back" ng-click="goToHomepage()">
 
-                <div class="back" ng-click="goToHomepage()">
+            </div>
 
-                </div>
-                <div class="logo choose-occasion" ng-click="goToHomepage()">
+            <div class="logo-long short" ng-click="goToHomepage()">
 
-                </div>
             </div>
             <div ng-include src="'app/views/settings.html'"></div>
         </header>
 
         <section class="main" ng-show="loggedIn">
 
-            <div class="validation-message">{{errorMessage}}</div>
-
-            <div id="occasion" ng-show="errorMessage == ''">
+            <div id="occasion" class="typical-header" ng-show="errorMessage == ''">
                 SELECT OCCASION
             </div>
 
