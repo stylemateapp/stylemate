@@ -71,7 +71,6 @@ body {
 	color: #fff;
 	font-family: 'karlaregular', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size: 12px;
-    overflow: hidden;
 }
 
 body:after {
