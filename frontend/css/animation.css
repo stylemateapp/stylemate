@@ -78,9 +78,9 @@
     display: none;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 88px;
     width: 640px;
-    height: 1094px;
+    height: 1006px;
     z-index: 10000;
 }
 
