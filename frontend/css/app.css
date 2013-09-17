@@ -967,7 +967,7 @@ and (device-aspect-ratio: 2/3) {
 	outline: none;
 }
 
-.settings:focus ul.settings-submenu {
+.settings.show ul.settings-submenu {
 	height: 256px;
 }
 
