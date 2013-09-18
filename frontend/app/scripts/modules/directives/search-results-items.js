@@ -1,6 +1,6 @@
 angular.module('stylemate.directives')
 
-    .directive('settingsMenu', function() {
+    .directive('searchResultsItems', function() {
         return {
             restrict: 'EA',
             replace: true,
@@ -21,12 +21,10 @@ angular.module('stylemate.directives')
                     }
                 });
             },
-            template:  '<nav class="settings needsclick" tabindex="0">' +
-                '<ul class="settings-submenu needsclick">' +
-                    '<li><a href="#/set-location">EDIT LOCATIONS</a></li>' +
-                    '<li><a href="#/choose-styles">EDIT STYLES</a></li>' +
-                    '<li><a ng-click="logOut()">LOGOUT</a></li>' +
-                '</ul>' +
-            '</nav>'
+            template:  '<section class="shop-look" id="shop-look" tabindex="1" ng-show="selected.items" ng-click="clickShopThisLook()">' +
+                        '<ul class="clothing-items">' +
+                            '<li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)">{{name}}</li>' +
+                        '</ul>' +
+                    '</section>'
         };
     });

@@ -1036,15 +1036,15 @@ ul.settings-submenu li a {
 	background: url('../images/shop-look.png') no-repeat;
 }
 
-.shop-look:focus {
+.shop-look.show {
     background-position: 0 -108px;
 }
 
-.shop-look:focus .clothing-items {
+.shop-look.show .clothing-items {
 	max-height: 700px;
 }
 
-.shop-look:focus + .social-buttons {
+.shop-look.show + .social-buttons {
     display: none;
 }
 

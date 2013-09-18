@@ -33,11 +33,7 @@
             </div>
         </div>
 
-        <section class="shop-look needsclick" id="shop-look" tabindex="1" ng-show="selected.items" ng-click="clickShopThisLook()">
-            <ul class="clothing-items">
-                <li ng-repeat="(name, item) in selected.items" ng-click="showItemsBlock(item)">{{name}}</li>
-            </ul>
-        </section>
+        <search-results-items></search-results-items>
 
         <section class="social-buttons" ng-show="selected.items && !showItems">
             <div id="facebook-button" onclick="var ref = window.open('{{facebookLink()}}', '_blank', 'location=yes'); return false;"></div>
