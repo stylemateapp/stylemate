@@ -3,7 +3,7 @@
 angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives', 'stylemate.filters'])
 
     .constant('serverUrl', 'http://stylemateapp.com')
-    .constant('imagePath', 'http://stylemateapp.com/uploads/')
+    .constant('imagePath', 'http://i0.wp.com/stylemateapp.com/uploads/')
     .constant('imageWidth', '640')
 
     .constant('topLocations',

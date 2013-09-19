@@ -1133,15 +1133,13 @@ and (device-aspect-ratio: 2/3) {
 }
 
 .gallery ul li img {
-    width: 640px;
-    min-height: 900px;
+    max-width: 640px;
 }
 
 @media only screen
 and (device-aspect-ratio: 2/3) {
     .gallery ul li img {
-        width: 640px;
-        min-height: 724px;
+        max-width: 640px;
     }
 }
 

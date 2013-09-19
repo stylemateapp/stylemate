@@ -1,6 +1,6 @@
 'use strict';
 
-function SearchResultsController($scope, $http,  $state, Search, serverUrl, imagePath, imageWidth) {
+function SearchResultsController($scope, $http, Search, serverUrl, imagePath, imageWidth) {
 
     $scope.errorMessage = '';
     $scope.imagePath = imagePath;
@@ -11,6 +11,10 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     $scope.arrayIndex = 0;
     $scope.querySuccess = false;
     $scope.showItems = false;
+
+    $scope.imageHeight = document.documentElement.clientHeight <= 850 ? '724' : '900';
+
+    alert($scope.imageHeight);
 
     function preload(images, callback) {
 
@@ -52,7 +56,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
                         if (data.images[k].name) {
 
-                            imagesArray.push(imagePath + data.images[k].name);
+                            imagesArray.push(imagePath + data.images[k].name + '?h=' + $scope.imageHeight);
                         }
                     }
 
@@ -189,4 +193,4 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     }
 }
 
-SearchResultsController.$inject = ['$scope', '$http', '$state', 'Search', 'serverUrl', 'imagePath', 'imageWidth'];
+SearchResultsController.$inject = ['$scope', '$http', 'Search', 'serverUrl', 'imagePath', 'imageWidth'];

@@ -14,7 +14,7 @@
 
     <section class="main">
 
-        <div class="gallery needsclick" ng-swipe-left="goNext()" ng-swipe-right="goPrevious()">
+        <div id="gallery-main-block" class="gallery needsclick" ng-swipe-left="goNext()" ng-swipe-right="goPrevious()">
             <div class="validation-message" ng-show="errorMessage != ''" style="padding-top:150px;">{{errorMessage}}
             </div>
             <div class="gallery-window">
@@ -25,7 +25,7 @@
                 </div>
                 <ul class="gallery-list" ng-style="listPosition">
                     <li ng-repeat="image in images">
-                        <img ng-src="{{imagePath + image.name}}" width="640">
+                        <img ng-src="{{imagePath + image.name}}?h={{imageHeight}}">
                     </li>
                 </ul>
                 <div id="gallery-next" ng-click="goNext()" ng-show="isNext()"></div>
