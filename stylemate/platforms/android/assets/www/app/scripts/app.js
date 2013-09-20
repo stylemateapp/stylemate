@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives'])
+angular.module('stylemate', ['ui.state', 'ngMobile', 'stylemate.states', 'stylemate.login', 'stylemate.services', 'stylemate.directives', 'stylemate.filters'])
 
-    .constant('serverUrl', 'http://lastdayz.ru/stylemate')
-    .constant('imagePath', 'http://lastdayz.ru/stylemate/uploads/')
+    .constant('serverUrl', 'http://stylemateapp.com')
+    .constant('imagePath', 'http://i0.wp.com/stylemateapp.com/uploads/')
     .constant('imageWidth', '640')
 
     .constant('topLocations',
@@ -18,17 +18,22 @@ angular.module('stylemate', ['ui.state', 'stylemate.states', 'stylemate.login', 
         'Sydney'
     ])
 
+    .constant('eventStartRequest', 'event:startRequest')
+    .constant('eventEndRequest', 'event:endRequest')
+    .constant('eventStartLoadingData', 'event:startLoadingData')
+    .constant('eventEndLoadingData', 'event:endLoadingData')
+
     .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
         $urlRouterProvider.otherwise('homepage');
 
         $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        $httpProvider.defaults.withCredentials = true;
     }])
 
     .run([
-        '$rootScope', '$http', '$state', '$stateParams', 'serverUrl',
-        function ($rootScope, $http, $state, $stateParams, serverUrl) {
+        '$rootScope', '$http', '$state', '$stateParams', 'serverUrl', 'GeoLocationService',
+        function ($rootScope, $http, $state, $stateParams, serverUrl, GeoLocationService) {
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;

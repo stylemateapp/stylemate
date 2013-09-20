@@ -1,0 +1,26 @@
+<header class="wizard">
+    <div class="back left" ng-click="goTo('set-location')">
+
+    </div>
+    <div class="logo left" ng-click="goToHomepage()">
+
+    </div>
+</header>
+
+<section class="main" id="choose-styles">
+
+    <div id="select-styles" class="typical-header">
+        SELECT YOUR STYLE(S)
+    </div>
+
+    <form class="form" action="">
+        <ul class="choose-style">
+            <li ng-repeat="style in styles | orderBy:style.name" ng-class="style.selected"
+                ng-click="toggleStyle(style.id)" id="user-style-{{style.id}}">{{style.name}}
+            </li>
+        </ul>
+    </form>
+
+    <input type="button" id="choose-styles-submit" class="submit-data" ng-disabled="!selectedStyles.length" ng-click="goToHomepage()" value="DONE">
+
+</section>

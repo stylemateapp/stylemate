@@ -1,6 +1,6 @@
 'use strict';
 
-function SetLocationController($scope, $rootScope, $http, $state, serverUrl, topLocations) {
+function SetLocationController($scope, $rootScope, $state, topLocations) {
 
     $scope.topLocations = topLocations;
     $scope.errorMessage = '';
@@ -22,7 +22,7 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
 
         var defaultLocation = $scope.locations.default;
 
-        if (defaultLocation) {
+        if (defaultLocation.length != 0) {
 
             if ($scope.previousStateName === 'sign-up') {
 
@@ -38,6 +38,18 @@ function SetLocationController($scope, $rootScope, $http, $state, serverUrl, top
             $scope.errorMessage = 'You have not selected default location';
         }
     };
+
+    $scope.goBack = function () {
+
+        if ($rootScope.loggedIn) {
+
+            $state.transitionTo('homepage');
+        }
+        else {
+
+            $state.transitionTo('sign-up');
+        }
+    };
 }
 
-SetLocationController.$inject = ['$scope', '$rootScope', '$http', '$state', 'serverUrl', 'topLocations'];
+SetLocationController.$inject = ['$scope', '$rootScope', '$state', 'topLocations'];

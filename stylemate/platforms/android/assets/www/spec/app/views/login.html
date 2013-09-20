@@ -1,0 +1,29 @@
+<header class="main">
+    <img src="images/header.png">
+</header>
+
+<section class="main">
+
+    <div class="validation-message">{{errorMessage}}</div>
+
+    <form class="form" name="loginForm">
+        <div class="control-group">
+            <input type="text" class="text-field username" placeholder="username" name="username" ng-model="username" required>
+        </div>
+        <div class="control-group">
+            <input type="password" class="text-field password" placeholder="password" name="password" ng-model="password" required>
+        </div>
+		<div id="forgot">
+			<a href="#/forgot-password">Forgot Password?</a>
+		</div>
+        <input type="submit" class="sign-in" id="sign-in-button" value="SIGN IN" ng-click="login(loginForm.$invalid)">
+    </form>
+
+    <div id="sign-up">
+        <label> Not a member? </label>
+        <a href="#/sign-up"> Sign Up Now </a>
+    </div>
+
+    <img id="woman-image" src="images/woman.jpg" height="271" width="640">
+
+</section>

@@ -1,0 +1,22 @@
+<header class="wizard">
+    <div class="back left" ng-click="goTo('sign-up')">
+
+    </div>
+    <div class="logo left" ng-click="goToHomepage()">
+
+    </div>
+</header>
+
+<section class="main" id="location-main-block">
+
+    <div id="select-location" class="typical-header">
+        SAVE UP TO 5 LOCATION(S)
+    </div>
+
+    <form class="form" name="setLocationForm">
+        <choose-location></choose-location>
+    </form>
+
+    <input type="button" id="set-location-submit" class="submit-data" ng-disabled="!locations.default.name" ng-click="goToNextState()" value="CONTINUE">
+
+</section>

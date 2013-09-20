@@ -4,27 +4,41 @@
     <meta charset="utf-8">
     <title>Stylemate</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=device-dpi">
 
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/animation.css">
 </head>
 <body>
 
+<div ajax-loader id="ajax-loader-block">
+    <div id="ajax-loader"></div>
+</div>
+
+<div id="loading-images-block">
+    <div id="ajax-images-loader"></div>
+    <div id="ajax-images-loader-label">Loading images, please wait...</div>
+</div>
+
 <div id="container" ng-cloak ui-view ng-animate="{enter: 'main-view-enter', leave: 'main-view-leave'}">
 
 </div>
 
-<script src="phonegap.js"></script>
+<script src="cordova.js"></script>
+<script src="components/fastclick/fastclick.js"></script>
 <script src="components/angular/angular.min.js"></script>
-<script src="components/angular-mobile/angular-mobile.min.js"></script>
+<script src="components/angular-mobile/angular-mobile.js"></script>
 <script src="components/angular-ui-router/angular-ui-router.min.js"></script>
 
 <script src="app/scripts/app.js"></script>
 <script src="app/scripts/modules/states/states.js"></script>
 <script src="app/scripts/modules/authorization/login.js"></script>
-<script src="app/scripts/modules/directives/focus-element.js"></script>
+<script src="app/scripts/modules/misc/loading.js"></script>
 <script src="app/scripts/modules/directives/choose-location.js"></script>
+<script src="app/scripts/modules/directives/ajax-loader.js"></script>
+<script src="app/scripts/modules/directives/settings-menu.js"></script>
+<script src="app/scripts/modules/directives/search-results-items.js"></script>
+<script src="app/scripts/modules/filters/cut-off.js"></script>
 
 <script src="app/scripts/controllers/login.js"></script>
 <script src="app/scripts/controllers/sign-up.js"></script>
@@ -34,10 +48,20 @@
 <script src="app/scripts/controllers/choose-occasion.js"></script>
 <script src="app/scripts/controllers/search-results.js"></script>
 <script src="app/scripts/controllers/dress-for-future-date.js"></script>
+<script src="app/scripts/controllers/forgot-password.js"></script>
+<script src="app/scripts/controllers/forgot-password-part-two.js"></script>
 
 <script src="app/scripts/services/user.js"></script>
+<script src="app/scripts/services/geo-location.js"></script>
 <script src="app/scripts/services/weather.js"></script>
 <script src="app/scripts/services/search.js"></script>
+<script src="app/scripts/services/facebook.js"></script>
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        FastClick.attach(document.body);
+    }, false);
+</script>
 
 </body>
 </html>
