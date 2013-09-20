@@ -76,6 +76,18 @@ function ChooseStylesController($scope, $http, $state, serverUrl) {
                 $scope.errorMessage = data.errorMessage;
             });
     };
+
+    $scope.goBack = function () {
+
+        if ($scope.loggedIn) {
+
+            $state.transitionTo('homepage');
+        }
+        else {
+
+            $state.transitionTo('set-location');
+        }
+    };
 }
 
 ChooseStylesController.$inject = ['$scope', '$http', '$state', 'serverUrl'];

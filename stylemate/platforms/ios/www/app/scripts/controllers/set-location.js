@@ -38,6 +38,18 @@ function SetLocationController($scope, $rootScope, $state, topLocations) {
             $scope.errorMessage = 'You have not selected default location';
         }
     };
+
+    $scope.goBack = function () {
+
+        if ($rootScope.loggedIn) {
+
+            $state.transitionTo('homepage');
+        }
+        else {
+
+            $state.transitionTo('sign-up');
+        }
+    };
 }
 
 SetLocationController.$inject = ['$scope', '$rootScope', '$state', 'topLocations'];

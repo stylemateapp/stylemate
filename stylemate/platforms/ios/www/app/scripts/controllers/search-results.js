@@ -1,6 +1,6 @@
 'use strict';
 
-function SearchResultsController($scope, $http,  $state, Search, serverUrl, imagePath, imageWidth) {
+function SearchResultsController($scope, $http, Search, serverUrl, imagePath, imageWidth) {
 
     $scope.errorMessage = '';
     $scope.imagePath = imagePath;
@@ -11,6 +11,9 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
     $scope.arrayIndex = 0;
     $scope.querySuccess = false;
     $scope.showItems = false;
+
+    $scope.imageHeight = document.documentElement.clientHeight <= 960 ? '724' : '900';
+
 
     function preload(images, callback) {
 
@@ -52,13 +55,11 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
                         if (data.images[k].name) {
 
-                            imagesArray.push(imagePath + data.images[k].name);
+                            imagesArray.push(imagePath + data.images[k].name + '?h=' + $scope.imageHeight);
                         }
                     }
 
-                    // Not true angularJS way, but deadlines, deadlines...
-
-                    angular.element(document.getElementById('loading-images-block')).addClass('show');
+                    $scope.showPreLoader();
 
                     preload(imagesArray, function (preloadedImages) {
 
@@ -75,9 +76,7 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
                         $scope.$apply();
 
-                        // Not true angularJS way, but deadlines, deadlines...
-
-                        angular.element(document.getElementById('loading-images-block')).removeClass('show');
+                        $scope.hidePreLoader();
                     });
                 }
                 else {
@@ -146,6 +145,8 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
         $scope.goBack = function() {
 
+            $scope.hidePreLoader();
+
             if(!$scope.showItems) {
 
                 $scope.goTo('choose-occasion');
@@ -174,7 +175,21 @@ function SearchResultsController($scope, $http,  $state, Search, serverUrl, imag
 
             return 'https://twitter.com/intent/tweet?url=http://stylemateapp.com/&text=Like%20this%20look?%20Check%20it%20out%20on%20@Stylemateapp%20-%20the%20everyday%20style%20and%20weather%20companion%20for%20fashion%20inspiration.';
         };
+
+        $scope.showPreLoader = function () {
+
+            // Not true angularJS way, but deadlines, deadlines...
+
+            angular.element(document.getElementById('loading-images-block')).addClass('show');
+        };
+
+        $scope.hidePreLoader = function () {
+
+            // Not true angularJS way, but deadlines, deadlines...
+
+            angular.element(document.getElementById('loading-images-block')).removeClass('show');
+        };
     }
 }
 
-SearchResultsController.$inject = ['$scope', '$http', '$state', 'Search', 'serverUrl', 'imagePath', 'imageWidth'];
+SearchResultsController.$inject = ['$scope', '$http', 'Search', 'serverUrl', 'imagePath', 'imageWidth'];

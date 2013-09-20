@@ -21,7 +21,7 @@ angular.module('stylemate.directives')
                     }
                 });
             },
-            template:  '<nav class="settings" tabindex="0">' +
+            template:  '<nav class="settings">' +
                 '<ul class="settings-submenu needsclick">' +
                     '<li><a href="#/set-location">EDIT LOCATIONS</a></li>' +
                     '<li><a href="#/choose-styles">EDIT STYLES</a></li>' +

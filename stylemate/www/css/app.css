@@ -412,7 +412,7 @@ and (device-aspect-ratio: 2/3) {
 	height: 25px;
 	font-size: 24px;
 	color: #c6d6e7;
-	margin: 26px 0 0 100px;
+	margin: 26px 0 0 132px;
     padding: 0 0 25px 0;
 }
 
@@ -884,6 +884,9 @@ and (device-aspect-ratio: 2/3) {
 	margin: 0 auto 20px auto;
 	width: 440px;
 	height: 440px;
+    -webkit-transform: scale(0.8, 0.8);
+    -moz-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
 }
 
 @media only screen
@@ -891,9 +894,9 @@ and (device-aspect-ratio: 2/3) {
 
     .weather-image {
         margin: 0 auto;
-        -webkit-transform: scale(0.7, 0.7);
-        -moz-transform: scale(0.7, 0.7);
-        transform: scale(0.7, 0.7);
+        -webkit-transform: scale(0.7, 0.7) !important;
+        -moz-transform: scale(0.7, 0.7) !important;
+        transform: scale(0.7, 0.7) !important;
         height: 380px;
     }
 }
@@ -950,10 +953,6 @@ and (device-aspect-ratio: 2/3) {
     margin-bottom: 15px;
 }
 
-#homepage-buttons #future-button {
-    background: url('../images/submit-disabled.png') no-repeat;
-}
-
 .settings {
 	background: url("../images/settings.png") no-repeat;
 	width: 122px;
@@ -964,7 +963,7 @@ and (device-aspect-ratio: 2/3) {
 	outline: none;
 }
 
-.settings:focus ul.settings-submenu {
+.settings.show ul.settings-submenu {
 	height: 256px;
 }
 
@@ -1037,15 +1036,15 @@ ul.settings-submenu li a {
 	background: url('../images/shop-look.png') no-repeat;
 }
 
-.shop-look:focus {
+.shop-look.show {
     background-position: 0 -108px;
 }
 
-.shop-look:focus .clothing-items {
+.shop-look.show .clothing-items {
 	max-height: 700px;
 }
 
-.shop-look:focus + .social-buttons {
+.shop-look.show + .social-buttons {
     display: none;
 }
 
@@ -1134,15 +1133,13 @@ and (device-aspect-ratio: 2/3) {
 }
 
 .gallery ul li img {
-    width: 640px;
-    min-height: 900px;
+    max-width: 640px;
 }
 
 @media only screen
 and (device-aspect-ratio: 2/3) {
     .gallery ul li img {
-        width: 640px;
-        min-height: 724px;
+        max-width: 640px;
     }
 }
 

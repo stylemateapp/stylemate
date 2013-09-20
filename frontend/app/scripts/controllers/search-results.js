@@ -12,9 +12,7 @@ function SearchResultsController($scope, $http, Search, serverUrl, imagePath, im
     $scope.querySuccess = false;
     $scope.showItems = false;
 
-    $scope.imageHeight = document.documentElement.clientHeight <= 850 ? '724' : '900';
-
-    alert($scope.imageHeight);
+    $scope.imageHeight = document.documentElement.clientHeight <= 960 ? '724' : '900';
 
     function preload(images, callback) {
 

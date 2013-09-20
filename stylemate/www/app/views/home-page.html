@@ -13,7 +13,7 @@
                 <div id="location-next" ng-click="goNext()" ng-show="isNext()"></div>
                 <div id="location-previous" ng-click="goPrevious()" ng-show="isPrevious()"></div>
                 <div id="city">
-                    {{location.name}}
+                    {{location.name | cutoff}}
                 </div>
                 <div id="weather-conditions">
                     {{location.cloudyPhrase}}
