@@ -9,7 +9,7 @@ app.factory('FacebookService', ['$rootScope', function ($rootScope) {
     FacebookService.email = '';
     FacebookService.name = '';
 
-    var my_client_id = "1410312039183601",
+    var my_client_id = "684349924916237",
         my_secret = "c44f68526bd887a7c26326d43ef97cb5",
         my_redirect_uri = "https://www.facebook.com/connect/login_success.html",
         my_type = "user_agent", my_display = "touch";

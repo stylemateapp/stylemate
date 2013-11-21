@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DC975918-6835-4C11-B08D-63108BC0F9AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Stylemate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9A25521-167B-492A-A5CB-B7BB426ABE0A</key>
+		<string>https://github.com/stylemateapp/stylemate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>stylemate/platforms/ios/Stylemate.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9A25521-167B-492A-A5CB-B7BB426ABE0A</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/stylemateapp/stylemate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9A25521-167B-492A-A5CB-B7BB426ABE0A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9A25521-167B-492A-A5CB-B7BB426ABE0A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stylemate</string>
+		</dict>
+	</array>
+</dict>
+</plist>
