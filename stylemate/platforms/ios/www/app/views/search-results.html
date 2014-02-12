@@ -48,7 +48,7 @@
                             <img ng-src="{{item.reference_image}}">
                         </a>
                     </div>
-                    <input type="button" onclick="var ref = window.open('{{item.reference_url}}', '_blank', 'location=yes'); return false;" class="buy-now">
+                   <input type="button" onclick="var ref = window.plugins.childBrowser.showWebPage('{{item.reference_url}}', '_blank', 'location=yes'); return false;" class="buy-now">
                 </li>
             </ul>
         </section>
