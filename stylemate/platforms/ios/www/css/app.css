@@ -179,7 +179,7 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 #container {
 	background: url(../images/background.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-search-results {
@@ -189,67 +189,68 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 #sub-container-weather.clear-morning {
 	background: url(../images/background-clear-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.clear-evening {
 	background: url(../images/background-clear-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
+
 }
 
 #sub-container-weather.clear-night {
 	background: url(../images/background-night.png) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-morning {
 	background: url(../images/background-cloudy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-day {
 	background: url(../images/background-cloudy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-evening {
 	background: url(../images/background-cloudy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.cloudy-night {
 	background: url(../images/background-cloudy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-morning {
 	background: url(../images/background-rainy-morning.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-day {
 	background: url(../images/background-rainy-day.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-evening {
 	background: url(../images/background-rainy-evening.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 #sub-container-weather.rainy-night {
 	background: url(../images/background-rainy-night.jpg) no-repeat;
 	width: 640px;
-	height: 1094px;
+	height: 1136px;
 }
 
 @media only screen
@@ -273,7 +274,7 @@ and (device-aspect-ratio: 2/3) {
 }
 
 header.main {
-	padding-top: 98px;
+	padding-top: 90px;
 	text-align: center;
 	margin-bottom: 58px;
 }
@@ -427,7 +428,7 @@ and (device-aspect-ratio: 2/3) {
 }
 
 #woman-image {
-	margin-top: 73px;
+	margin-top: 122px;
 }
 
 @media only screen
@@ -509,6 +510,7 @@ and (device-aspect-ratio: 2/3) {
 .wizard {
 	width: 640px;
 	height: 88px;
+    margin-top: 50px;
 }
 
 .typical-header {
@@ -745,7 +747,7 @@ ul.choose-style li.selected {
 
 .logo-long {
 	cursor: pointer;
-	background: url("../images/logo-long.png") no-repeat;
+	background: url("../images/logo-long-beta.png") no-repeat;
 	width: 518px;
 	height: 88px;
 	float: left;
@@ -814,6 +816,7 @@ ul.choose-occasion li.selected {
 	position: relative;
 	width: 640px;
 	height: 88px;
+    margin-top: 42px;
 }
 
 #main-home-page {
@@ -1171,14 +1174,22 @@ and (device-aspect-ratio: 2/3) {
 	position: absolute;
 	bottom: 115px;
 	z-index: 99;
-	font-size: 14px;
+	font-size: 18px;
 	margin: 4px;
+	background-color:#ccc;
+	opacity:0.5;
+	width:650px;
+	padding:1px;
+	margin-bottom:-30px;
 }
 
 #gallery-copyrights a {
 	color: #000;
 	text-decoration: none;
+		margin-left:230px;
+
 }
+
 
 #gallery-next {
 	position: absolute;
